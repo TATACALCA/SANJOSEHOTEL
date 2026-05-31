@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San José Hotel — Villa Carlos Paz · Córdoba, Argentina</title>
+<meta name="description" content="Hotel céntrico en Villa Carlos Paz. A metros de la peatonal y la zona de teatros. Habitaciones confortables, desayuno incluido y atención personalizada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1A1916;--ink-soft:#3A3835;
+  --olive:#5C6B3A;--olive-deep:#3D4A24;--olive-pale:#C8D4A8;--olive-wash:#EFF3E6;
+  --terra:#B85C38;--terra-soft:#D4795A;
+  --sand:#C8B898;--sand-light:#E8DDD0;--sand-pale:#F5F0E8;
+  --paper:#FDFAF5;--white:#FFFFFF;--rule:rgba(26,25,22,0.1);
+  --nav-h:68px;--ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;line-height:1.6;}
+img{display:block;width:100%;object-fit:cover;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;border:none;background:none;font-family:inherit;color:inherit;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 56px;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(61,74,36,0.97);transition:background .4s,border-color .4s;}
+nav.scrolled{background:rgba(45,56,26,0.99);border-bottom-color:rgba(255,255,255,.06);}
+.nav-wordmark{display:flex;align-items:center;gap:0;color:var(--paper);transition:color .4s;}
+.nav-wordmark svg{overflow:visible;}
+.nav-wordmark text{transition:fill .4s;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{font-size:10.5px;font-weight:400;letter-spacing:1.8px;text-transform:uppercase;color:rgba(253,250,245,0.55);transition:color .3s;}
+.nav-links a:hover{color:var(--sand);}
+nav.scrolled .nav-links a{color:rgba(253,250,245,0.5);}
+.nav-cta{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:9px 22px;border:1px solid rgba(253,250,245,0.35);color:rgba(253,250,245,0.75);transition:all .25s;border-radius:1px;}
+.nav-cta:hover,.nav-cta:focus{background:var(--terra);border-color:var(--terra);color:var(--white);}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;}
+.hamburger span{width:22px;height:1px;background:var(--paper);display:block;transition:all .3s;}
+.mob-menu{display:none;position:fixed;inset:0;z-index:190;background:var(--ink);flex-direction:column;align-items:center;justify-content:center;gap:28px;}
+.mob-menu.open{display:flex;}
+.mob-menu a{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;color:var(--paper);}
+.mob-menu a:hover{color:var(--sand);}
+
+/* HERO */
+.hero{height:100vh;min-height:620px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-photo{position:absolute;inset:0;}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease;animation:hz 22s ease-in-out infinite alternate;}
+.hero-slide.active{opacity:1;}
+@keyframes hz{from{transform:scale(1)}to{transform:scale(1.06)}}
+/* slide dots */
+.hero-dots{position:absolute;bottom:36px;left:64px;z-index:3;display:flex;gap:8px;}
+.hero-dot{width:20px;height:2px;background:rgba(253,250,245,0.25);border:none;padding:0;cursor:pointer;transition:background .3s,width .3s;}
+.hero-dot.active{background:var(--sand);width:32px;}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,25,22,.88) 0%,rgba(26,25,22,.2) 50%,rgba(26,25,22,.55) 100%);}
+.hero-content{position:relative;z-index:2;padding:0 64px 80px;}
+.hero-label{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--sand);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.hero-label::before{content:'';width:28px;height:1px;background:var(--terra);}
+.hero-hed{font-family:'Playfair Display',serif;font-size:clamp(60px,9vw,110px);font-weight:400;line-height:.92;letter-spacing:-2px;color:var(--white);margin-bottom:10px;}
+.hero-hed em{font-style:italic;color:var(--sand);}
+.hero-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(14px,1.8vw,19px);color:rgba(253,250,245,0.82);margin-bottom:38px;}
+.hero-rule{width:40px;height:1px;background:var(--terra);margin-bottom:26px;}
+.hero-desc{font-size:13.5px;color:rgba(253,250,245,0.78);line-height:1.9;max-width:440px;font-weight:300;}
+.hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
+.btn-solid{font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;padding:13px 32px;background:var(--terra);color:var(--white);border-radius:1px;border:1px solid var(--terra);transition:all .25s;display:inline-block;}
+.btn-solid:hover{background:var(--terra-soft);border-color:var(--terra-soft);}
+.btn-ghost{font-size:10px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;padding:13px 28px;border:1px solid rgba(253,250,245,.25);border-radius:1px;color:rgba(253,250,245,.6);transition:all .25s;display:inline-block;}
+.btn-ghost:hover{border-color:var(--sand);color:var(--sand);}
+.hero-scroll{position:absolute;bottom:36px;right:64px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.hero-scroll span{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(253,250,245,.25);}
+.scroll-bar{width:1px;height:44px;background:linear-gradient(to bottom,var(--sand),transparent);animation:sb 2.2s ease-in-out infinite;}
+@keyframes sb{0%,100%{opacity:.2}50%{opacity:.8}}
+
+/* TICKER */
+.ticker{background:var(--ink);padding:13px 0;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.03);}
+.ticker-inner{display:inline-flex;gap:52px;animation:tick 24s linear infinite;white-space:nowrap;}
+.ticker-item{font-size:9.5px;letter-spacing:3.5px;text-transform:uppercase;color:rgba(253,250,245,.3);display:inline-flex;align-items:center;gap:12px;}
+.ticker-dot{width:3px;height:3px;border-radius:50%;background:var(--terra);flex-shrink:0;}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTION */
+section{padding:100px 0;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 64px;}
+.sec-label{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;font-weight:500;}
+.sec-label::after{content:'';width:16px;height:1px;background:var(--terra);}
+.sec-hed{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,54px);font-weight:400;line-height:1.06;letter-spacing:-.5px;color:var(--ink);}
+.sec-hed em{font-style:italic;color:var(--olive);}
+.sec-body{font-size:14.5px;color:#6A6560;line-height:1.9;font-weight:300;margin-top:18px;}
+
+/* EL HOTEL */
+.elhotel{background:var(--white);}
+.elhotel-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.elhotel-main{aspect-ratio:4/5;border-radius:1px;overflow:hidden;}
+.elhotel-main img{height:100%;}
+.elhotel-float{position:absolute;bottom:-28px;right:-28px;width:200px;aspect-ratio:1;overflow:hidden;border-radius:1px;border:5px solid var(--white);box-shadow:0 12px 40px rgba(0,0,0,.14);}
+.elhotel-float img{height:100%;}
+.elhotel-photos{position:relative;}
+.elhotel-text{padding-left:12px;}
+.elhotel-body{font-size:15px;color:#6A6560;line-height:1.95;font-weight:300;margin:22px 0 34px;}
+.valores{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.valor{padding:14px 16px;border:1px solid var(--sand-light);display:flex;align-items:center;gap:11px;background:var(--sand-pale);transition:all .3s;}
+.valor:hover{background:var(--olive-deep);border-color:var(--olive-deep);}
+.valor:hover .valor-label{color:var(--white);}
+.valor-icon{font-size:15px;}
+.valor-label{font-size:11.5px;font-weight:500;color:var(--ink-soft);transition:color .3s;}
+
+/* HABITACIONES */
+.habitaciones{background:var(--sand-pale);}
+.hab-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:20px;}
+.hab-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.hab-card{background:var(--white);overflow:hidden;position:relative;transition:transform .35s;}
+.hab-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.09);}
+.hab-photo{aspect-ratio:3/2;overflow:hidden;}
+.hab-photo img{height:100%;transition:transform .6s;}
+.hab-card:hover .hab-photo img{transform:scale(1.04);}
+.hab-badge{position:absolute;top:12px;left:12px;background:var(--ink);color:var(--sand);font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;}
+.hab-body{padding:20px 18px 22px;}
+.hab-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--ink);margin-bottom:3px;}
+.hab-cap{font-size:11px;color:#8A8880;margin-bottom:8px;}
+.hab-price{font-size:11px;color:#8A8880;margin-bottom:11px;letter-spacing:.3px;}
+.hab-price strong{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--ink);}
+.hab-price span{font-size:10px;}
+.hab-pills{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px;}
+.pill{font-size:9px;letter-spacing:.5px;padding:3px 8px;border:1px solid var(--sand-light);color:var(--olive-deep);}
+.btn-res{display:block;width:100%;padding:11px;text-align:center;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;background:var(--ink);color:var(--paper);transition:background .25s;}
+.btn-res:hover{background:var(--olive-deep);}
+
+/* SERVICIOS */
+.servicios{background:var(--white);}
+.servicios-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.srv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:36px;}
+.srv-item{background:var(--white);padding:20px 18px;display:flex;gap:12px;align-items:flex-start;}
+.srv-ico{font-size:17px;flex-shrink:0;margin-top:1px;}
+.srv-item h4{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:2px;}
+.srv-item p{font-size:11px;color:#8A8880;line-height:1.5;}
+.srv-photo{aspect-ratio:4/5;overflow:hidden;border-radius:1px;position:relative;}
+.srv-photo img{height:100%;}
+.srv-photo-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(26,25,22,.85),transparent);padding:26px 22px;color:var(--white);}
+.srv-photo-cap em{font-family:'Playfair Display',serif;font-style:italic;font-size:17px;display:block;margin-bottom:3px;}
+.srv-photo-cap span{font-size:9.5px;letter-spacing:2px;color:var(--sand);}
+
+/* ACTIVIDADES */
+.actividades{background:var(--sand-pale);}
+.act-tabs{display:flex;border-bottom:1px solid var(--rule);margin-bottom:44px;overflow-x:auto;scrollbar-width:none;}
+.act-tabs::-webkit-scrollbar{display:none;}
+.act-tab{font-size:10px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;padding:13px 22px;color:#8A8880;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .25s;cursor:pointer;}
+.act-tab.active{color:var(--olive-deep);border-bottom-color:var(--terra);}
+.act-tab:hover:not(.active){color:var(--ink);}
+.act-panel{display:none;animation:fi .3s ease;}
+.act-panel.active{display:block;}
+@keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+.teatro-cta{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.teatro-photo{aspect-ratio:16/9;overflow:hidden;border-radius:1px;}
+.teatro-photo img{height:100%;}
+.teatro-info h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;margin-bottom:14px;}
+.teatro-info p{font-size:13.5px;color:#6A6560;line-height:1.85;font-weight:300;margin-bottom:20px;}
+.btn-link{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--olive-deep);border-bottom:1px solid var(--olive-deep);padding-bottom:3px;transition:all .25s;}
+.btn-link:hover{color:var(--terra);border-bottom-color:var(--terra);}
+.info-tip{margin-top:24px;background:var(--white);padding:16px 18px;border-left:3px solid var(--terra);font-size:12px;color:#6A6560;line-height:1.7;}
+
+.exc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.exc-card{background:var(--white);overflow:hidden;transition:transform .3s;}
+.exc-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.07);}
+.exc-photo{aspect-ratio:3/2;overflow:hidden;}
+.exc-photo img{height:100%;transition:transform .5s;}
+.exc-card:hover .exc-photo img{transform:scale(1.05);}
+.exc-body{padding:16px 14px 18px;}
+.exc-tag{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:6px;}
+.exc-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;color:var(--ink);margin-bottom:7px;line-height:1.3;}
+.exc-desc{font-size:11px;color:#8A8880;line-height:1.55;margin-bottom:12px;}
+.exc-price{font-size:11px;color:#8A8880;}
+.exc-price strong{font-size:16px;color:var(--ink);font-weight:500;font-family:'Playfair Display',serif;}
+.exc-inc{font-size:9.5px;color:var(--olive);margin-top:3px;}
+.exc-note{font-size:10.5px;color:#8A8880;margin-top:18px;font-style:italic;}
+
+.ent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.ent-card{background:var(--white);padding:26px 22px;border-left:3px solid var(--olive);}
+.ent-card .ent-icon{font-size:22px;margin-bottom:10px;}
+.ent-card h4{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--ink);margin-bottom:8px;}
+.ent-card p{font-size:12.5px;color:#6A6560;line-height:1.75;font-weight:300;}
+
+.gast-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.gast-card{background:var(--white);overflow:hidden;}
+.gast-photo{aspect-ratio:3/2;overflow:hidden;}
+.gast-photo img{height:100%;transition:transform .5s;}
+.gast-card:hover .gast-photo img{transform:scale(1.05);}
+.gast-body{padding:18px;}
+.gast-body h4{font-family:'Playfair Display',serif;font-size:15px;font-weight:400;color:var(--ink);margin-bottom:5px;}
+.gast-body p{font-size:11.5px;color:#8A8880;line-height:1.6;}
+
+.noche-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.noche-card{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:default;}
+.noche-photo{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s;}
+.noche-card:hover .noche-photo{transform:scale(1.05);}
+.noche-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,25,22,.9) 0%,transparent 55%);}
+.noche-body{position:absolute;bottom:0;left:0;right:0;padding:22px 18px;}
+.noche-tag{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:6px;}
+.noche-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--white);margin-bottom:4px;}
+.noche-desc{font-size:11px;color:rgba(253,250,245,.5);line-height:1.55;}
+
+.nat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.nat-card{background:var(--white);overflow:hidden;}
+.nat-photo{aspect-ratio:4/3;overflow:hidden;}
+.nat-photo img{height:100%;transition:transform .5s;}
+.nat-card:hover .nat-photo img{transform:scale(1.04);}
+.nat-body{padding:18px;}
+.nat-body h4{font-family:'Playfair Display',serif;font-size:15px;font-weight:400;color:var(--ink);margin-bottom:5px;}
+.nat-body p{font-size:11.5px;color:#8A8880;line-height:1.6;}
+.act-more{margin-top:18px;text-align:center;}
+
+/* GALERÍA */
+.galeria{background:var(--ink);padding:72px 0 0;}
+.gal-hd{display:flex;justify-content:space-between;align-items:flex-end;padding:0 64px;margin-bottom:32px;}
+.gal-strip{display:flex;height:280px;gap:2px;}
+.gal-item{flex:1;overflow:hidden;cursor:pointer;position:relative;}
+.gal-item img{height:100%;transition:transform .6s;}
+.gal-item:hover{flex:2.6;}
+.gal-item:hover img{transform:scale(1.04);}
+.gal-lbl{position:absolute;bottom:0;left:0;right:0;padding:14px 12px 10px;background:linear-gradient(to top,rgba(26,25,22,.65),transparent);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(253,250,245,.45);opacity:0;transition:opacity .3s;}
+.gal-item:hover .gal-lbl{opacity:1;}
+
+/* UBICACIÓN */
+.ubicacion{background:var(--white);padding:100px 0;}
+.ubi-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.mapa-wrap{aspect-ratio:4/3;overflow:hidden;border-radius:1px;box-shadow:0 16px 48px rgba(0,0,0,.11);}
+.mapa-wrap iframe{width:100%;height:100%;border:none;}
+.ubi-items{display:flex;flex-direction:column;gap:12px;margin:24px 0 30px;}
+.ubi-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--sand-pale);border-left:3px solid var(--olive);}
+.ubi-icon{font-size:15px;flex-shrink:0;margin-top:1px;}
+.ubi-text h5{font-size:11.5px;font-weight:600;color:var(--ink);margin-bottom:2px;}
+.ubi-text p{font-size:11.5px;color:#6A6560;line-height:1.5;}
+.ubi-dist{font-size:10px;color:var(--olive);font-weight:500;margin-top:2px;}
+
+/* CONTACTO */
+.contacto{background:var(--ink);padding:80px 0;}
+.contacto-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:56px;}
+.foot-logo{font-family:'Playfair Display',serif;font-size:19px;font-weight:400;color:var(--paper);margin-bottom:12px;}
+.foot-logo span{font-style:italic;color:var(--sand);}
+.foot-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--sand);margin-bottom:14px;}
+.foot-desc{font-size:12.5px;color:rgba(253,250,245,.35);line-height:1.85;font-weight:300;max-width:280px;}
+.foot-social{display:flex;gap:10px;margin-top:18px;}
+.foot-social a{font-size:10.5px;letter-spacing:.5px;color:rgba(253,250,245,.3);border:1px solid rgba(255,255,255,.1);padding:7px 13px;transition:all .25s;}
+.foot-social a:hover{color:var(--sand);border-color:rgba(253,250,245,.3);}
+.foot-col h5{font-size:8.5px;letter-spacing:4px;text-transform:uppercase;color:rgba(253,250,245,.2);margin-bottom:16px;}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.foot-col ul li{font-size:13px;color:rgba(253,250,245,.4);display:flex;align-items:flex-start;gap:9px;line-height:1.5;}
+.foot-col ul li a{color:rgba(253,250,245,.4);transition:color .25s;}
+.foot-col ul li a:hover{color:var(--sand);}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.04);padding-top:26px;margin-top:56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.foot-bottom span{font-size:10px;color:rgba(253,250,245,.15);}
+.foot-links{display:flex;gap:18px;}
+.foot-links a{font-size:10px;color:rgba(253,250,245,.15);transition:color .25s;}
+.foot-links a:hover{color:var(--sand);}
+
+/* WHATSAPP */
+.wa-float{position:fixed;bottom:26px;right:26px;z-index:300;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .25s,box-shadow .25s;}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 8px 28px rgba(37,211,102,.5);}
+.wa-float svg{width:26px;height:26px;fill:#fff;}
+.wa-tip{position:absolute;right:60px;top:50%;transform:translateY(-50%);background:var(--ink);color:var(--paper);font-size:11px;white-space:nowrap;padding:7px 12px;border-radius:1px;opacity:0;pointer-events:none;transition:opacity .2s;}
+.wa-float:hover .wa-tip{opacity:1;}
+
+/* MODAL */
+.modal-bg{position:fixed;inset:0;z-index:500;background:rgba(26,25,22,.82);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .35s;}
+.modal-bg.open{opacity:1;pointer-events:all;}
+.modal{background:var(--paper);width:100%;max-width:860px;max-height:90vh;overflow-y:auto;transform:translateY(20px) scale(.99);transition:transform .35s var(--ease);position:relative;}
+.modal-bg.open .modal{transform:none;}
+.modal-hd{padding:26px 34px 20px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:flex-start;}
+.modal-hd h2{font-family:'Playfair Display',serif;font-size:21px;font-weight:400;}
+.modal-hd p{font-size:11px;color:#8A8880;margin-top:3px;}
+.modal-x{width:30px;height:30px;display:flex;align-items:center;justify-content:center;background:var(--sand-pale);font-size:15px;color:#8A8880;transition:all .2s;flex-shrink:0;margin-left:10px;}
+.modal-x:hover{background:var(--ink);color:var(--white);}
+.modal-bd{padding:26px 34px;}
+.modal-ft{padding:18px 34px 26px;border-top:1px solid var(--rule);display:flex;justify-content:flex-end;gap:12px;}
+
+.steps{display:flex;margin-bottom:24px;border:1px solid var(--rule);}
+.step-btn{flex:1;padding:10px;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#8A8880;text-align:center;transition:all .2s;border-right:1px solid var(--rule);}
+.step-btn:last-child{border-right:none;}
+.step-btn.active{background:var(--ink);color:var(--paper);}
+.step-btn.done{background:var(--olive);color:var(--white);}
+.step{display:none;}
+.step.active{display:block;animation:fi .3s ease;}
+.fld{margin-bottom:16px;}
+.fld label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--olive-deep);font-weight:500;display:block;margin-bottom:6px;}
+.fld input,.fld select{width:100%;padding:10px 13px;border:1px solid var(--sand-light);font-size:13px;font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);transition:border-color .2s;appearance:none;}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--olive);}
+.cal-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.cal-box{border:1px solid var(--sand-light);overflow:hidden;}
+.cal-hd{background:var(--olive-deep);color:var(--white);display:flex;align-items:center;justify-content:space-between;padding:9px 13px;}
+.cal-hd h4{font-size:12px;font-weight:500;}
+.cal-arr{background:none;border:none;color:rgba(253,250,245,.55);font-size:18px;cursor:pointer;padding:2px 6px;line-height:1;transition:color .2s;}
+.cal-arr:hover{color:var(--white);}
+.cal-bd{padding:9px;}
+.cal-wk{display:grid;grid-template-columns:repeat(7,1fr);margin-bottom:2px;}
+.cal-wk span{text-align:center;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#8A8880;padding:3px 0;}
+.cal-dates{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;}
+.cd{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;color:var(--ink);transition:all .15s;position:relative;}
+.cd:hover:not(.cd-off):not(.cd-empty):not(.cd-booked){background:var(--olive-wash);}
+.cd-empty{cursor:default;}
+.cd-off{color:var(--sand-light);cursor:not-allowed;font-size:10.5px;text-decoration:line-through;}
+.cd-booked{background:#FEE8E0;color:var(--terra);cursor:not-allowed;}
+.cd-booked::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:3px;height:3px;border-radius:50%;background:var(--terra);}
+.cd-sel{background:var(--olive-deep)!important;color:var(--white)!important;font-weight:600;}
+.cd-range{background:var(--olive-wash);}
+.cd-today::before{content:'';position:absolute;top:2px;right:2px;width:4px;height:4px;border-radius:50%;background:var(--terra);}
+.cal-leg{display:flex;gap:14px;margin-top:8px;flex-wrap:wrap;}
+.leg{display:flex;align-items:center;gap:5px;font-size:9.5px;color:#8A8880;}
+.leg-d{width:8px;height:8px;flex-shrink:0;}
+.av-box{padding:14px 16px;margin-top:14px;display:none;}
+.av-ok{background:#EEF5E8;border:1px solid #A8C880;}
+.av-ok p{color:#3D6020;font-size:12.5px;}
+.av-no{background:#FEE8E0;border:1px solid #E8A090;}
+.av-no p{color:#8A2010;font-size:12.5px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.sum-tbl{background:var(--sand-pale);border:1px solid var(--sand-light);padding:18px;margin-bottom:18px;}
+.s-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--rule);font-size:12.5px;}
+.s-row:last-child{border-bottom:none;font-weight:600;font-size:14px;padding-top:10px;}
+.s-row span:first-child{color:#8A8880;}
+.sena-box{background:var(--olive-wash);border:1px solid var(--olive-pale);padding:16px;margin-bottom:14px;}
+.sena-box p{font-size:12.5px;color:var(--ink-soft);line-height:1.75;}
+.sena-box strong{color:var(--olive-deep);}
+.ld{display:none;text-align:center;padding:36px;}
+.spin{width:26px;height:26px;border:2px solid var(--sand-light);border-top-color:var(--olive);border-radius:50%;animation:sp .7s linear infinite;margin:0 auto 10px;}
+@keyframes sp{to{transform:rotate(360deg)}}
+.ld p{font-size:11.5px;color:#8A8880;}
+.mbtn-back{padding:10px 22px;border:1px solid var(--sand-light);font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#8A8880;transition:all .2s;}
+.mbtn-back:hover{border-color:var(--ink);color:var(--ink);}
+.mbtn-next{padding:10px 26px;background:var(--olive);color:var(--white);font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;transition:background .2s;}
+.mbtn-next:hover{background:var(--olive-deep);}
+.mbtn-next:disabled{opacity:.3;cursor:not-allowed;}
+.mbtn-wa{padding:11px 26px;background:#25D366;color:#fff;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:8px;transition:background .2s;}
+.mbtn-wa:hover{background:#1DB954;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .wrap{padding:0 40px;}nav{padding:0 40px;}
+  .hero-content{padding:0 40px 68px;}
+  .gal-hd{padding:0 40px;}
+  .elhotel-grid,.servicios-inner,.ubi-grid{grid-template-columns:1fr;gap:44px;}
+  .elhotel-photos{display:none;}.servicios .srv-photo{display:none;}
+  .hab-grid,.exc-grid{grid-template-columns:repeat(2,1fr);}
+  .ent-grid,.gast-grid,.noche-grid,.nat-grid{grid-template-columns:repeat(2,1fr);}
+  .contacto-grid{grid-template-columns:1fr 1fr;gap:40px;}
+  .teatro-cta{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .wrap{padding:0 22px;}nav{padding:0 22px;}
+  .nav-links,.nav-cta{display:none;}.hamburger{display:flex;}
+  .hero-content{padding:0 22px 62px;}
+  .hero-scroll{display:none;}
+  .gal-hd{padding:0 22px;flex-direction:column;align-items:flex-start;gap:6px;}
+  section{padding:64px 0;}
+  .hab-grid,.exc-grid,.ent-grid,.gast-grid,.noche-grid,.nat-grid{grid-template-columns:1fr;}
+  .contacto-grid{grid-template-columns:1fr;gap:32px;}
+  .modal-hd,.modal-bd,.modal-ft{padding-left:18px;padding-right:18px;}
+  .cal-wrap,.form-row{grid-template-columns:1fr;}
+  .act-tab{padding:11px 14px;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#inicio" class="nav-wordmark">
+    <svg width="160" height="38" viewBox="0 0 160 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- sierra curves -->
+      <path d="M8,13 C24,13 29,5 42,7.5 C55,10 60,3 73,5 C86,7 91,13 104,10.5 C114,8.5 120,6 128,4" stroke="#E8E0C8" stroke-width="0.7" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <path d="M8,17 C24,17 29,9 42,11.5 C55,14 60,7 73,9 C86,11 91,17 104,14.5 C114,12.5 120,10 128,8" stroke="#E8E0C8" stroke-width="0.3" fill="none" stroke-linecap="round" opacity="0.3"/>
+      <!-- SAN JOSÉ -->
+      <text x="80" y="29" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="17" letter-spacing="5" fill="#FDFAF5">SAN JOSÉ</text>
+      <!-- HOTEL -->
+      <text x="80" y="37.5" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="5.5" letter-spacing="7" fill="#E8E0C8" opacity="0.45">H O T E L</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#elhotel">El hotel</a></li>
+    <li><a href="#habitaciones">Habitaciones</a></li>
+    <li><a href="#actividades">Actividades</a></li>
+    <li><a href="#ubicacion">Ubicación</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openModal()">Reservar</button>
+  <button class="hamburger" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="#elhotel" onclick="toggleMob()">El hotel</a>
+  <a href="#habitaciones" onclick="toggleMob()">Habitaciones</a>
+  <a href="#actividades" onclick="toggleMob()">Actividades</a>
+  <a href="#ubicacion" onclick="toggleMob()">Ubicación</a>
+  <a href="#contacto" onclick="toggleMob()">Contacto</a>
+  <button class="btn-solid" style="margin-top:10px" onclick="toggleMob();openModal()">Reservar ahora</button>
+</div>
+
+<section class="hero" id="inicio">
+  <div class="hero-photo">
+    <div class="hero-slide active" style="background-image:url('fotos/frente floral.jpeg');background-position:center 35%;"></div>
+    <div class="hero-slide" style="background-image:url('fotos/costanera 2.jpeg');background-position:center 50%;"></div>
+    <div class="hero-slide" style="background-image:url('fotos/equipo de trabajo.jpeg');background-position:center 40%;"></div>
+    <div class="hero-slide" style="background-image:url('fotos/frente.jpeg');background-position:center 35%;"></div>
+    <div class="hero-slide" style="background-image:url('fotos/peatonal temporada.jpeg');background-position:center 45%;"></div>
+    <div class="hero-slide" style="background-image:url('fotos/lago san roque.jpeg');background-position:center 50%;"></div>
+  </div>
+  <div class="hero-dots" id="heroDots"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-content">
+    <div class="hero-label">Villa Carlos Paz · Córdoba, Argentina</div>
+    <h1 class="hero-hed">San<br><em>José</em></h1>
+    <p class="hero-tag">Alma de sierra y amor de familia</p>
+    <div class="hero-rule"></div>
+    <p class="hero-desc">En el centro de Villa Carlos Paz, a metros de la peatonal y la zona de teatros. Alojamiento confortable, desayuno incluido y atención personalizada.</p>
+    <div class="hero-actions">
+      <button class="btn-solid" onclick="openModal()">Reservar ahora</button>
+      <a href="#elhotel" class="btn-ghost">Conocer el hotel</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-bar"></div></div>
+</section>
+
+<div class="ticker"><div class="ticker-inner" id="tick">
+  <span class="ticker-item"><span class="ticker-dot"></span>Alvear 195 · Villa Carlos Paz</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>A 100m de la peatonal</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>Zona de teatros</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>Desayuno incluido</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>WiFi alta velocidad</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>Recepción 24hs</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>3541 494712</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>Cocheras disponibles</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>Alvear 195 · Villa Carlos Paz</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>A 100m de la peatonal</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>Zona de teatros</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>Desayuno incluido</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>WiFi alta velocidad</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>Recepción 24hs</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>3541 494712</span>
+  <span class="ticker-item"><span class="ticker-dot"></span>Cocheras disponibles</span>
+</div></div>
+
+<section class="elhotel" id="elhotel">
+  <div class="wrap">
+    <div class="elhotel-grid">
+      <div class="elhotel-photos">
+        <div class="elhotel-main"><img src="fotos/desayunador y living.jpeg" alt="Living San José Hotel"></div>
+        <div class="elhotel-float"><img src="fotos/desayuno.jpeg" alt="Desayuno San José Hotel"></div>
+      </div>
+      <div class="elhotel-text">
+        <span class="sec-label">El hotel</span>
+        <h2 class="sec-hed">Céntrico.<br><em>Cálido. Propio.</em></h2>
+        <p class="elhotel-body">San José Hotel está ubicado en el corazón de Villa Carlos Paz, a metros de la peatonal, los teatros y el lago San Roque. Combinamos la comodidad de una ubicación inmejorable con un ambiente tranquilo y una atención cuidada en cada etapa de la estadía.<br><br>Espacios limpios, desayuno casero incluido y un equipo disponible las 24 horas para que la visita a Carlos Paz sea simple y disfrutable.</p>
+        <div class="valores">
+          <div class="valor"><span class="valor-icon">📍</span><span class="valor-label">Ubicación central</span></div>
+          <div class="valor"><span class="valor-icon">☕</span><span class="valor-label">Desayuno artesanal</span></div>
+          <div class="valor"><span class="valor-icon">🎭</span><span class="valor-label">Zona de teatros</span></div>
+          <div class="valor"><span class="valor-icon">🕐</span><span class="valor-label">Recepción 24hs</span></div>
+          <div class="valor"><span class="valor-icon">🚗</span><span class="valor-label">Cocheras</span></div>
+          <div class="valor"><span class="valor-icon">👥</span><span class="valor-label">Grupos y contingentes</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="habitaciones" id="habitaciones">
+  <div class="wrap">
+    <div class="hab-top">
+      <div><span class="sec-label">Habitaciones</span><h2 class="sec-hed">Tu espacio,<br><em>a tu medida</em></h2></div>
+      <button class="btn-solid" onclick="openModal()">Consultar disponibilidad</button>
+    </div>
+    <div class="hab-grid">
+      <div class="hab-card">
+        <div class="hab-photo"><img src="fotos/habitacion individual.jpeg" alt="Habitación Individual"></div>
+        <div class="hab-badge">Individual</div>
+        <div class="hab-body">
+          <div class="hab-name">Habitación Individual</div>
+          <div class="hab-cap">👤 1 persona</div>
+          <div class="hab-price">desde <strong>$45.000</strong> <span>/ noche</span></div>
+          <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Baño privado</span></div>
+          <button class="btn-res" onclick="openModal('Individual')">Consultar y reservar</button>
+        </div>
+      </div>
+      <div class="hab-card">
+        <div class="hab-photo"><img src="fotos/doble standard.jpeg" alt="Habitación Doble Standard"></div>
+        <div class="hab-badge">Doble Standard</div>
+        <div class="hab-body">
+          <div class="hab-name">Habitación Doble</div>
+          <div class="hab-cap">👥 2 personas</div>
+          <div class="hab-price">desde <strong>$69.000</strong> <span>/ noche</span></div>
+          <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Desayuno</span></div>
+          <button class="btn-res" onclick="openModal('Doble Standard')">Consultar y reservar</button>
+        </div>
+      </div>
+      <div class="hab-card">
+        <div class="hab-photo"><img src="fotos/triple 1.jpeg" alt="Habitación Triple"></div>
+        <div class="hab-badge">Triple</div>
+        <div class="hab-body">
+          <div class="hab-name">Habitación Triple</div>
+          <div class="hab-cap">👥 3 personas</div>
+          <div class="hab-price">desde <strong>$89.000</strong> <span>/ noche</span></div>
+          <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Desayuno</span></div>
+          <button class="btn-res" onclick="openModal('Triple')">Consultar y reservar</button>
+        </div>
+      </div>
+      <div class="hab-card">
+        <div class="hab-photo"><img src="fotos/familiar 1.jpeg" alt="Suite Familiar"></div>
+        <div class="hab-badge">Familiar</div>
+        <div class="hab-body">
+          <div class="hab-name">Suite Familiar</div>
+          <div class="hab-cap">👨‍👩‍👧‍👦 Hasta 5 personas</div>
+          <div class="hab-price">desde <strong>$119.000</strong> <span>/ noche</span></div>
+          <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Desayuno</span><span class="pill">Cochera</span></div>
+          <button class="btn-res" onclick="openModal('Familiar')">Consultar y reservar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="servicios" id="servicios">
+  <div class="wrap">
+    <div class="servicios-inner">
+      <div>
+        <span class="sec-label">Servicios</span>
+        <h2 class="sec-hed">Todo lo que<br><em>necesitás, incluido</em></h2>
+        <p class="sec-body">Equipamiento completo para una estadía sin imprevistos, desde el primer hasta el último día.</p>
+        <div class="srv-grid">
+          <div class="srv-item"><span class="srv-ico">☕</span><div><h4>Desayuno incluido</h4><p>Casero, cada mañana</p></div></div>
+          <div class="srv-item"><span class="srv-ico">📶</span><div><h4>WiFi alta velocidad</h4><p>En todo el hotel</p></div></div>
+          <div class="srv-item"><span class="srv-ico">❄️</span><div><h4>Aire acondicionado</h4><p>Frío/calor por habitación</p></div></div>
+          <div class="srv-item"><span class="srv-ico">🕐</span><div><h4>Recepción 24hs</h4><p>Siempre hay alguien</p></div></div>
+          <div class="srv-item"><span class="srv-ico">🚗</span><div><h4>Cocheras</h4><p>Sujeto a disponibilidad</p></div></div>
+          <div class="srv-item"><span class="srv-ico">📺</span><div><h4>TV LED</h4><p>En todas las habitaciones</p></div></div>
+          <div class="srv-item"><span class="srv-ico">🔑</span><div><h4>Late check-out</h4><p>Con previo acuerdo</p></div></div>
+          <div class="srv-item"><span class="srv-ico">🎮</span><div><h4>Sala de juegos</h4><p>Espacio de esparcimiento</p></div></div>
+        </div>
+      </div>
+      <div class="srv-photo">
+        <img src="fotos/sala de juegos.jpeg" alt="Sala de juegos San José Hotel">
+        <div class="srv-photo-cap"><em>"Carlos Paz a tu ritmo."</em><span>San José Hotel · Alvear 195</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="actividades" id="actividades">
+  <div class="wrap">
+    <div style="margin-bottom:32px;">
+      <span class="sec-label">Actividades</span>
+      <h2 class="sec-hed">Villa Carlos Paz<br><em>tiene mucho para dar</em></h2>
+      <p class="sec-body" style="max-width:520px;">Desde el hotel llegás a pie o en minutos a los mejores planes de la ciudad y las sierras cordobesas.</p>
+    </div>
+    <div class="act-tabs">
+      <button class="act-tab active" onclick="showTab('teatro',this)">🎭 Teatro</button>
+      <button class="act-tab" onclick="showTab('excursiones',this)">🚌 Excursiones</button>
+      <button class="act-tab" onclick="showTab('entretenimientos',this)">🎡 Entretenimientos</button>
+      <button class="act-tab" onclick="showTab('gastronomia',this)">🍽️ Gastronomía</button>
+      <button class="act-tab" onclick="showTab('nocturna',this)">🌙 Vida nocturna</button>
+      <button class="act-tab" onclick="showTab('naturaleza',this)">🏔️ Naturaleza</button>
+    </div>
+
+    <div class="act-panel active" id="tab-teatro">
+      <div class="teatro-cta">
+        <div class="teatro-photo"><img src="fotos/peatonal temporada.jpeg" alt="Teatro Carlos Paz"></div>
+        <div class="teatro-info">
+          <h3>Temporada teatral<br><em>2025–2026</em></h3>
+          <p>Villa Carlos Paz concentra la mayor oferta teatral de temporada del país. Grandes espectáculos, humoristas, musicales y shows de primer nivel a pasos del hotel. La zona de teatros rodea directamente al San José.</p>
+          <p>Consultá la cartelera actualizada directamente en el sitio oficial de turismo de Villa Carlos Paz.</p>
+          <a href="https://villacarlospaz.tur.ar/cartelera-teatral-temporada-2025-2026/" target="_blank" class="btn-link">Ver cartelera completa →</a>
+          <div class="info-tip">📍 <strong>Ventaja San José:</strong> La mayoría de los teatros de la temporada quedan a menos de 10 minutos caminando. Consultá en recepción sobre las obras en cartel durante tu estadía.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="act-panel" id="tab-excursiones">
+      <div class="exc-grid">
+        <div class="exc-card"><div class="exc-photo"><img src="fotos/sierras y lago.jpeg" alt="Cabalgata Serrana"></div><div class="exc-body"><div class="exc-tag">Medio día · Aventura</div><div class="exc-name">Cabalgata Serrana en Monte Nativo</div><div class="exc-desc">Paseo a caballo por las sierras de Córdoba. Paisajes únicos con guía especializado.</div><div class="exc-price">Desde <strong>$30.000</strong> p/p</div><div class="exc-inc">✓ Guía · Traslado puerta a puerta</div></div></div>
+        <div class="exc-card"><div class="exc-photo"><img src="fotos/costanera.jpeg" alt="Valle de Calamuchita"></div><div class="exc-body"><div class="exc-tag">Medio día · Cultural</div><div class="exc-name">Valle de Calamuchita: VGB + Dique + Alta Gracia</div><div class="exc-desc">Villa General Belgrano, Dique Los Molinos y Alta Gracia. Recorrido por el sur de Córdoba.</div><div class="exc-price">Desde <strong>$43.000</strong> p/p</div><div class="exc-inc">✓ Guía · Traslado puerta a puerta</div></div></div>
+        <div class="exc-card"><div class="exc-photo"><img src="fotos/lago san roque.jpeg" alt="Altas Cumbres"></div><div class="exc-body"><div class="exc-tag">Día completo · Paisajismo</div><div class="exc-name">Mina Clavero + Cura Brochero + Altas Cumbres</div><div class="exc-desc">El camino de las Altas Cumbres con parada en Mina Clavero (3hs) y Villa Cura Brochero (2hs).</div><div class="exc-price">Desde <strong>$52.500</strong> p/p</div><div class="exc-inc">✓ Guía · Traslado · Día completo</div></div></div>
+        <div class="exc-card"><div class="exc-photo"><img src="fotos/costanera 2.jpeg" alt="City Tour"></div><div class="exc-body"><div class="exc-tag">Medio día · City Tour</div><div class="exc-name">City Tour: Carlos Paz + Cabalango + Tanti</div><div class="exc-desc">Recorrido por los alrededores de Carlos Paz. Ideal para grupos. Promo otoño-invierno.</div><div class="exc-price">Desde <strong>$38.000</strong> p/p</div><div class="exc-inc">✓ Guía · Traslado puerta a puerta</div></div></div>
+        <div class="exc-card"><div class="exc-photo"><img src="fotos/lago y patos.jpeg" alt="Túneles"></div><div class="exc-body"><div class="exc-tag">Día completo · Aventura</div><div class="exc-name">Los Túneles + Altas Cumbres + Mina Clavero</div><div class="exc-desc">Los icónicos túneles del camino de Altas Cumbres combinados con Traslasierra. Paisajes de altura.</div><div class="exc-price">Desde <strong>$64.500</strong> p/p</div><div class="exc-inc">✓ Guía · Traslado · Día completo</div></div></div>
+        <div class="exc-card"><div class="exc-photo"><img src="fotos/sierras y lago.jpeg" alt="Valle de Punilla"></div><div class="exc-body"><div class="exc-tag">Día completo · Cultural</div><div class="exc-name">Valle de Punilla + Capilla del Monte + Uritorco</div><div class="exc-desc">Recorrido por el Valle de Punilla con visita al Cerro Uritorco y Capilla del Monte.</div><div class="exc-price">Desde <strong>$52.400</strong> p/p</div><div class="exc-inc">✓ Guía · Traslado · Día completo</div></div></div>
+        <div class="exc-card"><div class="exc-photo"><img src="fotos/costanera.jpeg" alt="Capilla del Monte"></div><div class="exc-body"><div class="exc-tag">Medio día · Cultural</div><div class="exc-name">Capilla del Monte + Los Cocos + Lago + Cosquín</div><div class="exc-desc">Aerosilla Los Cocos, Lago San Roque y Cosquín en un solo recorrido de medio día.</div><div class="exc-price">Desde <strong>$42.800</strong> p/p</div><div class="exc-inc">✓ Guía · Traslado puerta a puerta</div></div></div>
+        <div class="exc-card"><div class="exc-photo"><img src="fotos/lago san roque.jpeg" alt="La Cumbrecita"></div><div class="exc-body"><div class="exc-tag">Día completo · Sierra</div><div class="exc-name">La Cumbrecita + VGB + Dique Los Molinos</div><div class="exc-desc">3 horas en La Cumbrecita, el pueblo de montaña sin autos, más Valle de Calamuchita. Ideal otoño/invierno.</div><div class="exc-price">Desde <strong>$52.400</strong> p/p</div><div class="exc-inc">✓ Guía · Traslado · Día completo</div></div></div>
+      </div>
+      <p class="exc-note">* Precios orientativos por persona. Incluyen guía a bordo y traslado puerta a puerta dentro del ejido urbano de VCP. Salidas diarias sujetas a disponibilidad. Consultá en recepción.</p>
+    </div>
+
+    <div class="act-panel" id="tab-entretenimientos">
+      <div class="ent-grid">
+        <div class="ent-card"><div class="ent-icon">🎢</div><h4>Parques temáticos</h4><p>Opciones para toda la familia: parques de diversiones, temáticos y propuestas pensadas para los más chicos durante toda la temporada.</p></div>
+        <div class="ent-card"><div class="ent-icon">🎳</div><h4>Bowling y juegos</h4><p>Bowling, minigolf y salas de juegos electrónicos disponibles en el centro de la ciudad, a pocos minutos del hotel.</p></div>
+        <div class="ent-card"><div class="ent-icon">🏎️</div><h4>Karting y adrenalina</h4><p>Circuitos de karting, paintball, cuatriciclos y actividades de aventura para quienes buscan más acción durante la estadía.</p></div>
+        <div class="ent-card"><div class="ent-icon">🎬</div><h4>Cine y espectáculos</h4><p>Sala de cine y múltiples espacios culturales activos durante la temporada, con shows en vivo y propuestas variadas para todas las edades.</p></div>
+        <div class="ent-card"><div class="ent-icon">🚤</div><h4>Deportes acuáticos</h4><p>Kayak, botes a pedal, motos de agua y pesca deportiva en el Lago San Roque, accesible en minutos desde el hotel.</p></div>
+        <div class="ent-card"><div class="ent-icon">🎨</div><h4>Mercado artesanal</h4><p>El Paseo de las Artesanías y el mercado de la peatonal con productos regionales, artesanías y recuerdos únicos de las sierras de Córdoba.</p></div>
+      </div>
+      <div class="act-more"><a href="https://villacarlospaz.tur.ar/entretenimientos/" target="_blank" class="btn-link">Ver más entretenimientos en VCP →</a></div>
+    </div>
+
+    <div class="act-panel" id="tab-gastronomia">
+      <div class="gast-grid">
+        <div class="gast-card"><div class="gast-photo"><img src="fotos/desayuno2.jpeg" alt="Desayuno San José"></div><div class="gast-body"><h4>Desayuno en el hotel</h4><p>El punto de partida del día. Desayuno casero incluido para todos los huéspedes, servido en el desayunador del San José.</p></div></div>
+        <div class="gast-card"><div class="gast-photo"><img src="fotos/peatonal temporada.jpeg" alt="Peatonal VCP"></div><div class="gast-body"><h4>La peatonal y sus bares</h4><p>A 100 metros del hotel, la peatonal de Carlos Paz concentra restaurantes, pizzerías, bares y heladerías para todos los gustos.</p></div></div>
+        <div class="gast-card"><div class="gast-photo"><img src="fotos/costanera.jpeg" alt="Costanera VCP"></div><div class="gast-body"><h4>Restaurantes de costanera</h4><p>La costanera del Lago San Roque con propuestas gastronómicas con vista al agua. Parrillas, mariscos y cocina regional.</p></div></div>
+        <div class="gast-card"><div class="gast-photo"><img src="fotos/libro cafe.jpeg" alt="Cafeterías VCP"></div><div class="gast-body"><h4>Cafés y espacios de trabajo</h4><p>Carlos Paz tiene una escena de cafeterías de calidad. Ideales para pausas tranquilas, lectura o trabajo durante la estadía.</p></div></div>
+        <div class="gast-card"><div class="gast-photo"><img src="fotos/lago san roque.jpeg" alt="Cocina regional"></div><div class="gast-body"><h4>Cocina regional</h4><p>Empanadas cordobesas, locro, humita y los sabores tradicionales de las sierras. A pasos del hotel en el centro de la ciudad.</p></div></div>
+        <div class="gast-card"><div class="gast-photo"><img src="fotos/detalle floral.jpeg" alt="Heladerías VCP"></div><div class="gast-body"><h4>Heladerías artesanales</h4><p>Carlos Paz es reconocida por sus heladerías artesanales. Un imperdible de la ciudad que no puede faltar en ninguna visita.</p></div></div>
+      </div>
+      <div class="act-more"><a href="https://villacarlospaz.tur.ar/donde-comer/" target="_blank" class="btn-link">Ver más opciones gastronómicas →</a></div>
+    </div>
+
+    <div class="act-panel" id="tab-nocturna">
+      <div class="noche-grid">
+        <div class="noche-card"><div class="noche-photo" style="background-image:url('fotos/ciudad noche.jpeg');"></div><div class="noche-veil"></div><div class="noche-body"><div class="noche-tag">Show · Casino</div><div class="noche-name">Casino de Carlos Paz</div><div class="noche-desc">Tragamonedas, ruleta, póker y shows en vivo. Uno de los principales centros de entretenimiento nocturno de la ciudad.</div></div></div>
+        <div class="noche-card"><div class="noche-photo" style="background-image:url('fotos/peatonal temporada.jpeg');"></div><div class="noche-veil"></div><div class="noche-body"><div class="noche-tag">Folklore · Show</div><div class="noche-name">Peñas y shows de cuarteto</div><div class="noche-desc">Las peñas folclóricas y los espectáculos de cuarteto cordobés son parte esencial de la identidad nocturna de Carlos Paz.</div></div></div>
+        <div class="noche-card"><div class="noche-photo" style="background-image:url('fotos/costanera.jpeg');"></div><div class="noche-veil"></div><div class="noche-body"><div class="noche-tag">Bares · Terraza</div><div class="noche-name">Bares de la Costanera</div><div class="noche-desc">Bares con vista al lago, terrazas y propuestas musicales en vivo. La costanera nocturna es el centro del movimiento estival.</div></div></div>
+      </div>
+      <div class="act-more"><a href="https://www.tripadvisor.com.ar/Attractions-g312774-Activities-c20-Villa_Carlos_Paz_Province_of_Cordoba_Central_Argentina.html" target="_blank" class="btn-link">Ver destacados en TripAdvisor →</a></div>
+    </div>
+
+    <div class="act-panel" id="tab-naturaleza">
+      <div class="nat-grid">
+        <div class="nat-card"><div class="nat-photo"><img src="fotos/lago san roque.jpeg" alt="Lago San Roque"></div><div class="nat-body"><h4>Lago San Roque</h4><p>El espejo de agua más icónico de la región. Kayak, pesca deportiva, vela y actividades acuáticas a orillas del lago.</p></div></div>
+        <div class="nat-card"><div class="nat-photo"><img src="fotos/sierras y lago.jpeg" alt="Senderismo Sierras"></div><div class="nat-body"><h4>Senderismo serrano</h4><p>Cerros, senderos y miradores naturales a pocos kilómetros de la ciudad. Paisajes únicos de las sierras de Córdoba.</p></div></div>
+        <div class="nat-card"><div class="nat-photo"><img src="fotos/costanera 2.jpeg" alt="Costanera"></div><div class="nat-body"><h4>Paseo costanero</h4><p>El paseo peatonal a orillas del lago San Roque. Ideal para caminatas, bicicleta y disfrutar el ambiente serrano al atardecer.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="galeria" id="galeria">
+  <div class="gal-hd">
+    <div><span class="sec-label" style="color:var(--sand);">Galería</span><h2 class="sec-hed" style="color:var(--paper);">El hotel en <em style="color:var(--sand)">imágenes</em></h2></div>
+  </div>
+  <div class="gal-strip">
+    <div class="gal-item"><img src="fotos/pasillo.jpeg" alt="Pasillo"><div class="gal-lbl">Pasillo</div></div>
+    <div class="gal-item"><img src="fotos/desayunador.jpeg" alt="Desayunador"><div class="gal-lbl">Desayunador</div></div>
+    <div class="gal-item"><img src="fotos/Living 1.jpeg" alt="Living"><div class="gal-lbl">Living</div></div>
+    <div class="gal-item"><img src="fotos/doble standard 2.jpeg" alt="Habitación Doble"><div class="gal-lbl">Habitación Doble</div></div>
+    <div class="gal-item"><img src="fotos/frente floral.jpeg" alt="Frente del Hotel"><div class="gal-lbl">Frente del hotel</div></div>
+  </div>
+</section>
+
+<section class="ubicacion" id="ubicacion">
+  <div class="wrap">
+    <div class="ubi-grid">
+      <div class="mapa-wrap">
+        <iframe src="https://maps.google.com/maps?q=-31.420492,-64.494919&t=&z=17&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" title="Ubicación San José Hotel, Alvear 195, Villa Carlos Paz"></iframe>
+      </div>
+      <div>
+        <span class="sec-label">Dónde estamos</span>
+        <h2 class="sec-hed">En el <em>centro</em><br>de todo</h2>
+        <div class="ubi-items">
+          <div class="ubi-item"><span class="ubi-icon">📍</span><div class="ubi-text"><h5>Dirección</h5><p>Alvear 195, Villa Carlos Paz<br>Córdoba, Argentina</p></div></div>
+          <div class="ubi-item"><span class="ubi-icon">🚶</span><div class="ubi-text"><h5>Peatonal y zona comercial</h5><p>A 100 metros del hotel.</p><p class="ubi-dist">~2 min caminando</p></div></div>
+          <div class="ubi-item"><span class="ubi-icon">🎭</span><div class="ubi-text"><h5>Zona de teatros</h5><p>Los principales teatros de la temporada a pasos del hotel.</p><p class="ubi-dist">~5 min caminando</p></div></div>
+          <div class="ubi-item"><span class="ubi-icon">🌊</span><div class="ubi-text"><h5>Lago San Roque</h5><p>Costanera y balneario accesible en minutos.</p><p class="ubi-dist">~10 min caminando</p></div></div>
+        </div>
+        <a href="https://maps.google.com/?q=-31.420492,-64.494919" target="_blank" class="btn-solid">Ver en Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="contacto" id="contacto">
+  <div class="wrap">
+    <div class="contacto-grid">
+      <div>
+        <div class="foot-logo">San <span>José</span> Hotel</div>
+        <div class="foot-tag">"Alma de sierra y amor de familia."</div>
+        <p class="foot-desc">Hotel céntrico en Villa Carlos Paz, Córdoba. A metros de la peatonal, la zona de teatros y el Lago San Roque.</p>
+        <div class="foot-social">
+          <a href="https://instagram.com/sanjosehotelvcp" target="_blank">📸 Instagram</a>
+          <a href="https://wa.me/543541372428" target="_blank">💬 WhatsApp</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li>📞 <a href="tel:+543541494712">3541 494712</a></li>
+          <li>💬 <a href="https://wa.me/543541372428" target="_blank">WA: 3541 372428</a></li>
+          <li>💬 <a href="https://wa.me/543517645037" target="_blank">WA: 3517 645037</a></li>
+          <li>✉️ <a href="mailto:sanjosehotelvcp@gmail.com">sanjosehotelvcp@gmail.com</a></li>
+          <li>📸 <a href="https://instagram.com/sanjosehotelvcp" target="_blank">@sanjosehotelvcp</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Ubicación</h5>
+        <ul>
+          <li>📍 Alvear 195, Villa Carlos Paz, Córdoba</li>
+          <li>🚶 A 100m de la peatonal</li>
+          <li>🎭 Zona de teatros</li>
+          <li>🌊 Cerca del Lago San Roque</li>
+          <li>🕐 Recepción 24hs</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 San José Hotel · Villa Carlos Paz · Todos los derechos reservados</span>
+      <div class="foot-links"><a href="#">Política de privacidad</a><a href="#">Términos de reserva</a></div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/543541372428?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20disponibilidad%20en%20el%20Hotel%20San%20Jos%C3%A9" target="_blank" aria-label="WhatsApp">
+  <div class="wa-tip">Escribinos por WhatsApp</div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<div class="modal-bg" id="modalBg" onclick="bgClick(event)">
+  <div class="modal" id="modal">
+    <div class="modal-hd">
+      <div><h2 id="mT">Consultar disponibilidad</h2><p id="mS">Paso 1 de 4 — Seleccioná tus fechas</p></div>
+      <button class="modal-x" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-bd">
+      <div class="steps">
+        <button class="step-btn active" id="sb1">01 · Fechas</button>
+        <button class="step-btn" id="sb2">02 · Disponibilidad</button>
+        <button class="step-btn" id="sb3">03 · Tus datos</button>
+        <button class="step-btn" id="sb4">04 · Confirmar</button>
+      </div>
+      <div class="step active" id="s1">
+        <div class="fld"><label>Tipo de habitación</label>
+          <select id="habSel"><option value="">— Seleccioná —</option><option value="Individual">Individual — 1 persona</option><option value="Doble Standard">Doble Standard — 2 personas</option><option value="Triple">Triple — 3 personas</option><option value="Familiar">Suite Familiar — hasta 5 personas</option></select>
+        </div>
+        <div class="cal-wrap">
+          <div>
+            <label style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--olive-deep);font-weight:500;display:block;margin-bottom:6px;">Check-in</label>
+            <div class="cal-box" id="calIn"></div>
+            <p style="font-size:10.5px;color:var(--olive);margin-top:5px;">Seleccionado: <strong id="dIn">—</strong></p>
+          </div>
+          <div>
+            <label style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--olive-deep);font-weight:500;display:block;margin-bottom:6px;">Check-out</label>
+            <div class="cal-box" id="calOut"></div>
+            <p style="font-size:10.5px;color:var(--olive);margin-top:5px;">Seleccionado: <strong id="dOut">—</strong></p>
+          </div>
+        </div>
+        <div class="cal-leg">
+          <div class="leg"><div class="leg-d" style="background:var(--olive-deep)"></div>Seleccionado</div>
+          <div class="leg"><div class="leg-d" style="background:#FEE8E0;border:1px solid var(--terra)"></div>Ocupado</div>
+          <div class="leg"><div class="leg-d" style="background:var(--sand-light)"></div>No disponible</div>
+        </div>
+        <p id="calMsg" style="font-size:10.5px;color:var(--terra);margin-top:8px;min-height:14px;"></p>
+      </div>
+      <div class="step" id="s2">
+        <div class="ld" id="ldAv"><div class="spin"></div><p>Verificando disponibilidad...</p></div>
+        <div id="avCont">
+          <h3 style="font-family:'Playfair Display',serif;font-size:19px;font-weight:400;margin-bottom:14px;">Resumen</h3>
+          <div class="sum-tbl">
+            <div class="s-row"><span>Habitación</span><span id="r2h">—</span></div>
+            <div class="s-row"><span>Check-in</span><span id="r2i">—</span></div>
+            <div class="s-row"><span>Check-out</span><span id="r2o">—</span></div>
+            <div class="s-row"><span>Noches</span><span id="r2n">—</span></div>
+          </div>
+          <div class="av-box" id="avBox"><p id="avMsg"></p></div>
+        </div>
+      </div>
+      <div class="step" id="s3">
+        <h3 style="font-family:'Playfair Display',serif;font-size:19px;font-weight:400;margin-bottom:18px;">Completá tus datos</h3>
+        <div class="form-row">
+          <div class="fld"><label>Nombre completo *</label><input type="text" id="gN" placeholder="Ej: María García"></div>
+          <div class="fld"><label>DNI *</label><input type="text" id="gD" placeholder="Ej: 28.000.000"></div>
+          <div class="fld"><label>Teléfono *</label><input type="tel" id="gT" placeholder="Ej: 351 123 4567"></div>
+          <div class="fld"><label>Email *</label><input type="email" id="gE" placeholder="tu@email.com"></div>
+          <div class="fld" style="grid-column:1/-1"><label>Domicilio</label><input type="text" id="gDir" placeholder="Ciudad, Provincia"></div>
+          <div class="fld" style="grid-column:1/-1"><label>Notas adicionales</label><input type="text" id="gX" placeholder="Llegada tardía, requerimientos especiales, etc."></div>
+        </div>
+        <p style="font-size:10px;color:#8A8880;">* Campos obligatorios.</p>
+      </div>
+      <div class="step" id="s4">
+        <h3 style="font-family:'Playfair Display',serif;font-size:19px;font-weight:400;margin-bottom:6px;">Confirmación</h3>
+        <p style="font-size:12.5px;color:#8A8880;margin-bottom:18px;">Revisá los datos antes de continuar al pago de la seña por WhatsApp.</p>
+        <div class="sum-tbl">
+          <div class="s-row"><span>Huésped</span><span id="r4n">—</span></div>
+          <div class="s-row"><span>Habitación</span><span id="r4h">—</span></div>
+          <div class="s-row"><span>Check-in</span><span id="r4i">—</span></div>
+          <div class="s-row"><span>Check-out</span><span id="r4o">—</span></div>
+          <div class="s-row"><span>Total de noches</span><span id="r4nn">—</span></div>
+        </div>
+        <div class="sena-box"><p>💳 <strong>Pago de seña:</strong> Al confirmar se abre una conversación de WhatsApp con todos los datos precargados. Allí coordinamos el monto y método de pago de la seña para efectivizar la reserva. Recibirás un email de confirmación automático.</p></div>
+        <div class="ld" id="ldSend"><div class="spin"></div><p>Enviando...</p></div>
+      </div>
+    </div>
+    <div class="modal-ft" id="mFt">
+      <button class="mbtn-back" id="mBack" onclick="prevSt()" style="display:none">← Volver</button>
+      <button class="mbtn-next" id="mNext" onclick="nextSt()">Verificar disponibilidad →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── HERO SLIDESHOW ── */
+(function(){
+  const slides=document.querySelectorAll('.hero-slide');
+  const dotsEl=document.getElementById('heroDots');
+  let cur=0,timer;
+  slides.forEach((_,i)=>{
+    const d=document.createElement('button');
+    d.className='hero-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Imagen '+(i+1));
+    d.onclick=()=>goTo(i);
+    dotsEl.appendChild(d);
+  });
+  function goTo(n){
+    slides[cur].classList.remove('active');
+    dotsEl.children[cur].classList.remove('active');
+    cur=n;
+    slides[cur].classList.add('active');
+    dotsEl.children[cur].classList.add('active');
+    clearInterval(timer);
+    timer=setInterval(next,6000);
+  }
+  function next(){goTo((cur+1)%slides.length);}
+  timer=setInterval(next,6000);
+})();
+
+const WA='543541372428';
+const SHEET_ID='1HA5t9FQghgJN3zcgpUjRD9Hzhk-S-zbYoe80_tFtMEY';
+const SHEET_GID='323992916';
+const SCRIPT_URL='https://script.google.com/macros/s/TU_SCRIPT_ID/exec';
+const MES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const DIA=['Do','Lu','Ma','Mi','Ju','Vi','Sa'];
+let step=1,dIn=null,dOut=null,csIn=null,csOut=null,booked=[];
+const hoy=new Date();hoy.setHours(0,0,0,0);
+
+/* Nav */
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
+function toggleMob(){document.getElementById('mobMenu').classList.toggle('open');}
+
+/* Tabs */
+function showTab(id,btn){
+  document.querySelectorAll('.act-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.act-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* Modal */
+function openModal(hab=''){
+  document.getElementById('modalBg').classList.add('open');
+  document.body.style.overflow='hidden';
+  if(hab)document.getElementById('habSel').value=hab;
+  step=1;showStep(1);
+  loadSheet();
+}
+function closeModal(){document.getElementById('modalBg').classList.remove('open');document.body.style.overflow='';}
+function bgClick(e){if(e.target===document.getElementById('modalBg'))closeModal();}
+
+/* Google Sheets */
+async function loadSheet(){
+  try{
+    const url=`https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${SHEET_GID}`;
+    const r=await fetch(url);if(!r.ok)return;
+    parseCSV(await r.text());
+    renderCal('calIn','in');renderCal('calOut','out');
+  }catch(e){renderCal('calIn','in');renderCal('calOut','out');}
+}
+function parseCSV(csv){
+  const rows=csv.split('\n').map(r=>r.split(',').map(c=>c.replace(/^"|"$/g,'').trim()));
+  if(rows.length<2)return;
+  const h=rows[0].map(x=>x.toLowerCase());
+  const hi=h.findIndex(x=>x.includes('hab'));
+  const ii=h.findIndex(x=>(x.includes('in')||x.includes('ingreso')||x.includes('entrada'))&&!x.includes('out'));
+  const oi=h.findIndex(x=>x.includes('out')||x.includes('salida'));
+  const si=h.findIndex(x=>x.includes('estado')||x.includes('status'));
+  if(ii<0||oi<0)return;
+  booked=[];
+  for(let i=1;i<rows.length;i++){
+    const row=rows[i];if(!row||row.length<2)continue;
+    const st=si>=0?row[si].toLowerCase():'';
+    if(st.includes('cancel'))continue;
+    const f=pd(row[ii]),t=pd(row[oi]);
+    if(!f||!t)continue;
+    booked.push({hab:hi>=0?row[hi]:'',from:f,to:t});
+  }
+}
+function pd(s){
+  if(!s)return null;
+  let d=new Date(s+(s.includes('T')?'':'T12:00:00'));
+  if(!isNaN(d))return d;
+  const p=s.split(/[\/\-]/);
+  if(p.length===3){d=new Date(+p[2],+p[1]-1,+p[0],12);if(!isNaN(d))return d;}
+  return null;
+}
+function isBooked(date){
+  const hab=(document.getElementById('habSel').value||'').toLowerCase();
+  return booked.some(r=>{
+    const m=!r.hab||!hab||r.hab.toLowerCase().includes(hab)||hab.includes(r.hab.toLowerCase());
+    return m&&date>=r.from&&date<r.to;
+  });
+}
+
+/* Calendar */
+function initCal(t){const s={y:hoy.getFullYear(),m:hoy.getMonth()};if(t==='in')csIn=s;else csOut=s;}
+function renderCal(id,t){
+  if(!csIn)initCal('in');if(!csOut)initCal('out');
+  const s=t==='in'?csIn:csOut;const{y,m}=s;
+  const first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate();
+  let html=`<div class="cal-hd"><button class="cal-arr" onclick="shiftC('${id}','${t}',-1)">&#8249;</button><h4>${MES[m]} ${y}</h4><button class="cal-arr" onclick="shiftC('${id}','${t}',1)">&#8250;</button></div><div class="cal-bd"><div class="cal-wk">${DIA.map(d=>`<span>${d}</span>`).join('')}</div><div class="cal-dates">`;
+  for(let i=0;i<first;i++)html+=`<div class="cd cd-empty"></div>`;
+  for(let d=1;d<=days;d++){
+    const dt=new Date(y,m,d);dt.setHours(0,0,0,0);
+    const past=dt<hoy,bkd=!past&&isBooked(dt),isT=dt.getTime()===hoy.getTime();
+    const sI=dIn&&dt.getTime()===dIn.getTime(),sO=dOut&&dt.getTime()===dOut.getTime();
+    const inR=dIn&&dOut&&dt>dIn&&dt<dOut;
+    let cls='cd';
+    if(past)cls+=' cd-off';else if(bkd)cls+=' cd-booked';
+    else if(sI||sO)cls+=' cd-sel';else if(inR)cls+=' cd-range';
+    if(isT)cls+=' cd-today';
+    const cl=(past||bkd)?'':`onclick="pickD(${y},${m},${d},'${t}')"`;
+    html+=`<div class="${cls}" ${cl}>${d}</div>`;
+  }
+  html+=`</div></div>`;
+  document.getElementById(id).innerHTML=html;
+}
+function shiftC(id,t,dir){const s=t==='in'?csIn:csOut;s.m+=dir;if(s.m>11){s.m=0;s.y++;}if(s.m<0){s.m=11;s.y--;}renderCal(id,t);}
+function pickD(y,m,d,t){
+  const dt=new Date(y,m,d);dt.setHours(0,0,0,0);
+  if(t==='in'){dIn=dt;if(dOut&&dOut<=dIn)dOut=null;document.getElementById('dIn').textContent=fmt(dt);}
+  else{if(dIn&&dt<=dIn){document.getElementById('calMsg').textContent='El check-out debe ser posterior al check-in.';return;}dOut=dt;document.getElementById('dOut').textContent=fmt(dt);}
+  document.getElementById('calMsg').textContent='';
+  renderCal('calIn','in');renderCal('calOut','out');
+}
+
+/* Steps */
+function showStep(n){
+  [1,2,3,4].forEach(i=>{
+    document.getElementById('s'+i).classList.toggle('active',i===n);
+    const b=document.getElementById('sb'+i);b.classList.remove('active','done');
+    if(i===n)b.classList.add('active');if(i<n)b.classList.add('done');
+  });
+  const subs=['Paso 1 de 4 — Seleccioná tus fechas','Paso 2 de 4 — Verificar disponibilidad','Paso 3 de 4 — Tus datos','Paso 4 de 4 — Confirmación'];
+  document.getElementById('mS').textContent=subs[n-1];
+  document.getElementById('mBack').style.display=n>1?'block':'none';
+  const nx=document.getElementById('mNext');
+  if(n<4){nx.style.display='block';nx.textContent=['Verificar disponibilidad →','Completar mis datos →','Revisar y confirmar →'][n-1];nx.disabled=false;}
+  else{nx.style.display='none';document.getElementById('mFt').innerHTML=`<button class="mbtn-back" onclick="prevSt()">← Volver</button><button class="mbtn-wa" onclick="confirm()"><svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>Confirmar por WhatsApp</button>`;}
+  step=n;
+}
+async function nextSt(){
+  if(step===1){
+    if(!document.getElementById('habSel').value){alert('Seleccioná el tipo de habitación.');return;}
+    if(!dIn){alert('Seleccioná la fecha de check-in.');return;}
+    if(!dOut){alert('Seleccioná la fecha de check-out.');return;}
+    if(dOut<=dIn){alert('El check-out debe ser posterior al check-in.');return;}
+    document.getElementById('r2h').textContent=document.getElementById('habSel').value;
+    document.getElementById('r2i').textContent=fmt(dIn);
+    document.getElementById('r2o').textContent=fmt(dOut);
+    document.getElementById('r2n').textContent=nts()+' noches';
+    showStep(2);await chkAv();
+  }else if(step===2){showStep(3);}
+  else if(step===3){
+    const n=g('gN'),d=g('gD'),t=g('gT'),e=g('gE');
+    if(!n||!d||!t||!e){alert('Completá todos los campos obligatorios.');return;}
+    if(!/\S+@\S+\.\S+/.test(e)){alert('Ingresá un email válido.');return;}
+    document.getElementById('r4n').textContent=n;
+    document.getElementById('r4h').textContent=document.getElementById('habSel').value;
+    document.getElementById('r4i').textContent=fmt(dIn);
+    document.getElementById('r4o').textContent=fmt(dOut);
+    document.getElementById('r4nn').textContent=nts()+' noches';
+    showStep(4);
+  }
+}
+function prevSt(){
+  if(step===4){document.getElementById('mFt').innerHTML=`<button class="mbtn-back" id="mBack" onclick="prevSt()" style="display:block">← Volver</button><button class="mbtn-next" id="mNext" onclick="nextSt()">Revisar y confirmar →</button>`;}
+  if(step>1)showStep(step-1);
+}
+async function chkAv(){
+  const ld=document.getElementById('ldAv'),ac=document.getElementById('avCont'),bx=document.getElementById('avBox'),msg=document.getElementById('avMsg'),nx=document.getElementById('mNext');
+  ld.style.display='block';ac.style.opacity='.4';bx.style.display='none';nx.disabled=true;
+  await new Promise(r=>setTimeout(r,800));
+  ld.style.display='none';ac.style.opacity='1';bx.style.display='block';
+  let conflict=false;
+  for(let d=new Date(dIn);d<dOut;d.setDate(d.getDate()+1)){if(isBooked(new Date(d))){conflict=true;break;}}
+  if(!conflict){bx.className='av-box av-ok';msg.textContent='✅ Disponible para las fechas y habitación seleccionadas.';nx.disabled=false;}
+  else{bx.className='av-box av-no';msg.textContent='❌ Sin disponibilidad para ese período. Por favor elegí otras fechas o tipo de habitación.';nx.disabled=true;}
+}
+async function confirm(){
+  document.getElementById('ldSend').style.display='block';
+  const data={action:'saveBooking',nombre:g('gN'),dni:g('gD'),telefono:g('gT'),email:g('gE'),direccion:g('gDir'),notas:g('gX'),hab:document.getElementById('habSel').value,checkin:dIn.toISOString().split('T')[0],checkout:dOut.toISOString().split('T')[0],noches:nts(),timestamp:new Date().toISOString()};
+  try{await fetch(SCRIPT_URL,{method:'POST',body:JSON.stringify(data)});}catch(e){}
+  document.getElementById('ldSend').style.display='none';
+  const msg=encodeURIComponent(`🏨 *RESERVA — HOTEL SAN JOSÉ*\n\n👤 *Nombre:* ${data.nombre}\n🪪 *DNI:* ${data.dni}\n📞 *Teléfono:* ${data.telefono}\n✉️ *Email:* ${data.email}\n🏠 *Domicilio:* ${data.direccion||'—'}\n\n🛏️ *Habitación:* ${data.hab}\n📅 *Check-in:* ${fmt(dIn)}\n📅 *Check-out:* ${fmt(dOut)}\n🌙 *Noches:* ${data.noches}\n\n`+(data.notas?`📝 *Notas:* ${data.notas}\n\n`:'')+`Quiero confirmar esta reserva y acordar el pago de la seña. ¡Gracias!`);
+  closeModal();
+  window.open(`https://wa.me/${WA}?text=${msg}`,'_blank');
+}
+function fmt(d){if(!d)return'—';return`${d.getDate()} de ${MES[d.getMonth()]} ${d.getFullYear()}`;}
+function nts(){if(!dIn||!dOut)return 0;return Math.round((dOut-dIn)/864e5);}
+function g(id){return document.getElementById(id).value.trim();}
+document.addEventListener('DOMContentLoaded',()=>{initCal('in');initCal('out');renderCal('calIn','in');renderCal('calOut','out');});
+</script>
+</body>
+</html>

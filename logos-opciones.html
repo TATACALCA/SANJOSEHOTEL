@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San José Hotel — Opciones de Logo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Inter', sans-serif;
+  background: #F5F0E8;
+  color: #2A2826;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  padding: 64px 32px 32px;
+  background: #2A2826;
+  color: #F5F0E8;
+}
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.header p {
+  font-size: 13px;
+  color: rgba(245,240,232,0.55);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.logos-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.logo-option {
+  background: #FDFAF5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+}
+
+.option-label {
+  background: #2A2826;
+  color: #F5F0E8;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.option-label span {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.5);
+}
+.option-label strong {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.option-concept {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #C4704A;
+}
+
+.logo-previews {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  background: #E8E3DA;
+}
+
+.preview-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 40px;
+  position: relative;
+}
+.preview-tile.on-light { background: #FDFAF5; }
+.preview-tile.on-dark  { background: #2A2826; }
+.preview-tile.on-terra { background: #4A5830; }
+
+.tile-label {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.on-light .tile-label { color: rgba(42,40,38,0.3); }
+.on-dark  .tile-label { color: rgba(245,240,232,0.3); }
+.on-terra .tile-label { color: rgba(245,240,232,0.3); }
+
+.option-desc {
+  padding: 32px;
+  border-top: 1px solid #E8E3DA;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+.desc-item h4 {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #6B7A4A;
+  margin-bottom: 6px;
+}
+.desc-item p {
+  font-size: 13px;
+  color: #6A6560;
+  line-height: 1.6;
+}
+
+/* ─── LOGO 1: ARCO SERRANO ─── */
+/* SVG inline, see below */
+
+/* ─── FOOTER ─── */
+.page-footer {
+  text-align: center;
+  padding: 48px 32px;
+  color: rgba(42,40,38,0.4);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>San José Hotel — Opciones de Logo</h1>
+  <p>Rebranding · Tres propuestas visuales · Mayo 2026</p>
+</div>
+
+<div class="logos-container">
+
+  <!-- ═══════════════════════════════════════════
+       OPCIÓN 1: ARCO SERRANO
+  ═══════════════════════════════════════════ -->
+  <div class="logo-option">
+    <div class="option-label">
+      <div>
+        <span>Opción 01</span>
+        <strong style="display:block;margin-top:4px">Arco Serrano</strong>
+      </div>
+      <span class="option-concept">Minimalismo orgánico</span>
+    </div>
+
+    <div class="logo-previews">
+      <!-- Fondo claro -->
+      <div class="preview-tile on-light">
+        <svg width="220" height="80" viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Arco doble línea evocando sierra/horizonte -->
+          <path d="M12 52 Q36 22 60 40 Q84 58 108 28 Q132 -2 156 28 Q180 58 208 38" stroke="#6B7A4A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M12 60 Q36 30 60 48 Q84 66 108 36 Q132 6 156 36 Q180 66 208 46" stroke="#C4704A" stroke-width="1" fill="none" stroke-linecap="round" stroke-opacity="0.5"/>
+          <!-- Texto -->
+          <text x="110" y="73" text-anchor="middle" font-family="'Playfair Display', serif" font-size="16" font-weight="400" letter-spacing="5" fill="#2A2826">SAN JOSÉ</text>
+          <text x="110" y="82" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" font-weight="400" letter-spacing="6" fill="#6B7A4A">H O T E L</text>
+        </svg>
+        <span class="tile-label">Fondo claro</span>
+      </div>
+      <!-- Fondo oscuro -->
+      <div class="preview-tile on-dark">
+        <svg width="220" height="80" viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 52 Q36 22 60 40 Q84 58 108 28 Q132 -2 156 28 Q180 58 208 38" stroke="#B5C28A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M12 60 Q36 30 60 48 Q84 66 108 36 Q132 6 156 36 Q180 66 208 46" stroke="#C4704A" stroke-width="1" fill="none" stroke-linecap="round" stroke-opacity="0.6"/>
+          <text x="110" y="73" text-anchor="middle" font-family="'Playfair Display', serif" font-size="16" font-weight="400" letter-spacing="5" fill="#FDFAF5">SAN JOSÉ</text>
+          <text x="110" y="82" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" font-weight="400" letter-spacing="6" fill="#B5C28A">H O T E L</text>
+        </svg>
+        <span class="tile-label">Fondo oscuro</span>
+      </div>
+      <!-- Fondo verde -->
+      <div class="preview-tile on-terra">
+        <svg width="220" height="80" viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 52 Q36 22 60 40 Q84 58 108 28 Q132 -2 156 28 Q180 58 208 38" stroke="#D4B896" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M12 60 Q36 30 60 48 Q84 66 108 36 Q132 6 156 36 Q180 66 208 46" stroke="rgba(245,240,232,0.4)" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <text x="110" y="73" text-anchor="middle" font-family="'Playfair Display', serif" font-size="16" font-weight="400" letter-spacing="5" fill="#FDFAF5">SAN JOSÉ</text>
+          <text x="110" y="82" text-anchor="middle" font-family="'Inter', sans-serif" font-size="7" font-weight="400" letter-spacing="6" fill="#D4B896">H O T E L</text>
+        </svg>
+        <span class="tile-label">Fondo verde oliva</span>
+      </div>
+    </div>
+
+    <div class="option-desc">
+      <div class="desc-item">
+        <h4>Concepto</h4>
+        <p>Dos líneas curvas que evocan el horizonte serrano de Córdoba. Orgánico, dinámico, libre.</p>
+      </div>
+      <div class="desc-item">
+        <h4>Personalidad</h4>
+        <p>Artístico y relajado. Moderno sin ser frío. Conecta con naturaleza y movimiento.</p>
+      </div>
+      <div class="desc-item">
+        <h4>Uso ideal</h4>
+        <p>Web, Instagram, cartelería horizontal. Escala bien en todos los formatos digitales.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       OPCIÓN 2: MONOGRAMA BOTÁNICO
+  ═══════════════════════════════════════════ -->
+  <div class="logo-option">
+    <div class="option-label">
+      <div>
+        <span>Opción 02</span>
+        <strong style="display:block;margin-top:4px">Monograma Botánico</strong>
+      </div>
+      <span class="option-concept">Identidad + Naturaleza</span>
+    </div>
+
+    <div class="logo-previews">
+      <div class="preview-tile on-light">
+        <svg width="200" height="90" viewBox="0 0 200 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Ícono: hoja geométrica formando SJ -->
+          <g transform="translate(0, 5)">
+            <!-- hoja izquierda -->
+            <path d="M28 55 C28 55 14 42 16 28 C18 14 28 10 36 18 C44 10 54 14 56 28 C58 42 44 55 36 55 Z" fill="none" stroke="#6B7A4A" stroke-width="1.4"/>
+            <!-- vena central -->
+            <line x1="36" y1="55" x2="36" y2="18" stroke="#6B7A4A" stroke-width="0.8" stroke-dasharray="1,2"/>
+            <!-- punto terracota -->
+            <circle cx="36" cy="16" r="2.5" fill="#C4704A"/>
+          </g>
+          <!-- Texto vertical a la derecha -->
+          <text x="72" y="42" font-family="'Playfair Display', serif" font-size="20" font-weight="400" letter-spacing="3" fill="#2A2826">SAN JOSÉ</text>
+          <text x="73" y="56" font-family="'Inter', sans-serif" font-size="7.5" font-weight="300" letter-spacing="7" fill="#6B7A4A">H O T E L  ·  V C P</text>
+        </svg>
+        <span class="tile-label">Fondo claro</span>
+      </div>
+      <div class="preview-tile on-dark">
+        <svg width="200" height="90" viewBox="0 0 200 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(0, 5)">
+            <path d="M28 55 C28 55 14 42 16 28 C18 14 28 10 36 18 C44 10 54 14 56 28 C58 42 44 55 36 55 Z" fill="none" stroke="#B5C28A" stroke-width="1.4"/>
+            <line x1="36" y1="55" x2="36" y2="18" stroke="#B5C28A" stroke-width="0.8" stroke-dasharray="1,2"/>
+            <circle cx="36" cy="16" r="2.5" fill="#C4704A"/>
+          </g>
+          <text x="72" y="42" font-family="'Playfair Display', serif" font-size="20" font-weight="400" letter-spacing="3" fill="#FDFAF5">SAN JOSÉ</text>
+          <text x="73" y="56" font-family="'Inter', sans-serif" font-size="7.5" font-weight="300" letter-spacing="7" fill="#B5C28A">H O T E L  ·  V C P</text>
+        </svg>
+        <span class="tile-label">Fondo oscuro</span>
+      </div>
+      <div class="preview-tile on-terra">
+        <svg width="200" height="90" viewBox="0 0 200 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(0, 5)">
+            <path d="M28 55 C28 55 14 42 16 28 C18 14 28 10 36 18 C44 10 54 14 56 28 C58 42 44 55 36 55 Z" fill="none" stroke="#D4B896" stroke-width="1.4"/>
+            <line x1="36" y1="55" x2="36" y2="18" stroke="#D4B896" stroke-width="0.8" stroke-dasharray="1,2"/>
+            <circle cx="36" cy="16" r="2.5" fill="#E8A080"/>
+          </g>
+          <text x="72" y="42" font-family="'Playfair Display', serif" font-size="20" font-weight="400" letter-spacing="3" fill="#FDFAF5">SAN JOSÉ</text>
+          <text x="73" y="56" font-family="'Inter', sans-serif" font-size="7.5" font-weight="300" letter-spacing="7" fill="#D4B896">H O T E L  ·  V C P</text>
+        </svg>
+        <span class="tile-label">Fondo verde oliva</span>
+      </div>
+    </div>
+
+    <div class="option-desc">
+      <div class="desc-item">
+        <h4>Concepto</h4>
+        <p>Hoja botánica geométrica que evoca las sierras y la naturaleza de Córdoba. Punto terracota como acento emocional.</p>
+      </div>
+      <div class="desc-item">
+        <h4>Personalidad</h4>
+        <p>Cálido y humano. Con identidad marcada. Siente boutique serrano sin ser pretencioso.</p>
+      </div>
+      <div class="desc-item">
+        <h4>Uso ideal</h4>
+        <p>Versátil: web, favicon, papelería, uniformes, señalética del hotel. El ícono funciona solo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       OPCIÓN 3: TIPOGRÁFICO ARTÍSTICO
+  ═══════════════════════════════════════════ -->
+  <div class="logo-option">
+    <div class="option-label">
+      <div>
+        <span>Opción 03</span>
+        <strong style="display:block;margin-top:4px">Tipográfico Artístico</strong>
+      </div>
+      <span class="option-concept">Carácter tipográfico puro</span>
+    </div>
+
+    <div class="logo-previews">
+      <div class="preview-tile on-light">
+        <svg width="220" height="80" viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Línea decorativa superior -->
+          <line x1="10" y1="18" x2="80" y2="18" stroke="#C4704A" stroke-width="0.8"/>
+          <circle cx="85" cy="18" r="1.8" fill="#C4704A"/>
+          <!-- Nombre serif grande -->
+          <text x="10" y="46" font-family="'Playfair Display', serif" font-size="28" font-weight="300" letter-spacing="1" fill="#2A2826">San <tspan font-style="italic" fill="#6B7A4A">José</tspan></text>
+          <!-- Subtítulo separado -->
+          <line x1="10" y1="56" x2="210" y2="56" stroke="#E8E3DA" stroke-width="0.6"/>
+          <text x="10" y="68" font-family="'Inter', sans-serif" font-size="7" font-weight="400" letter-spacing="8" fill="#8A8880">H O T E L</text>
+          <text x="130" y="68" font-family="'Inter', sans-serif" font-size="7" font-weight="300" letter-spacing="4" fill="#C4704A">V I L L A  C A R L O S  P A Z</text>
+        </svg>
+        <span class="tile-label">Fondo claro</span>
+      </div>
+      <div class="preview-tile on-dark">
+        <svg width="220" height="80" viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="10" y1="18" x2="80" y2="18" stroke="#C4704A" stroke-width="0.8"/>
+          <circle cx="85" cy="18" r="1.8" fill="#C4704A"/>
+          <text x="10" y="46" font-family="'Playfair Display', serif" font-size="28" font-weight="300" letter-spacing="1" fill="#FDFAF5">San <tspan font-style="italic" fill="#B5C28A">José</tspan></text>
+          <line x1="10" y1="56" x2="210" y2="56" stroke="rgba(245,240,232,0.12)" stroke-width="0.6"/>
+          <text x="10" y="68" font-family="'Inter', sans-serif" font-size="7" font-weight="400" letter-spacing="8" fill="rgba(245,240,232,0.45)">H O T E L</text>
+          <text x="130" y="68" font-family="'Inter', sans-serif" font-size="7" font-weight="300" letter-spacing="4" fill="#C4704A">V I L L A  C A R L O S  P A Z</text>
+        </svg>
+        <span class="tile-label">Fondo oscuro</span>
+      </div>
+      <div class="preview-tile on-terra">
+        <svg width="220" height="80" viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="10" y1="18" x2="80" y2="18" stroke="#D4B896" stroke-width="0.8"/>
+          <circle cx="85" cy="18" r="1.8" fill="#D4B896"/>
+          <text x="10" y="46" font-family="'Playfair Display', serif" font-size="28" font-weight="300" letter-spacing="1" fill="#FDFAF5">San <tspan font-style="italic" fill="#D4B896">José</tspan></text>
+          <line x1="10" y1="56" x2="210" y2="56" stroke="rgba(245,240,232,0.2)" stroke-width="0.6"/>
+          <text x="10" y="68" font-family="'Inter', sans-serif" font-size="7" font-weight="400" letter-spacing="8" fill="rgba(245,240,232,0.5)">H O T E L</text>
+          <text x="130" y="68" font-family="'Inter', sans-serif" font-size="7" font-weight="300" letter-spacing="4" fill="rgba(212,184,150,0.8)">V I L L A  C A R L O S  P A Z</text>
+        </svg>
+        <span class="tile-label">Fondo verde oliva</span>
+      </div>
+    </div>
+
+    <div class="option-desc">
+      <div class="desc-item">
+        <h4>Concepto</h4>
+        <p>Contraste entre "San" en redonda y "José" en itálica, creando tensión artística. La línea superior enmarca con elegancia.</p>
+      </div>
+      <div class="desc-item">
+        <h4>Personalidad</h4>
+        <p>Editorial, moderno, con carácter literario. Muy original. Evoca boutique cultural y artístico.</p>
+      </div>
+      <div class="desc-item">
+        <h4>Uso ideal</h4>
+        <p>Web, newsletters, papelería premium. Requiere espacio horizontal. Muy impactante en grande.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="page-footer">
+  San José Hotel — Opciones de Identidad Visual · 2026
+</div>
+
+</body>
+</html>

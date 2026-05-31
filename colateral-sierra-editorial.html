@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San José Hotel — Colateral Sierra Editorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #EDEAE3;
+  color: #1C1A18;
+}
+
+/* ─── PAGE HEADER ─── */
+.page-header {
+  background: #3A4A22;
+  padding: 72px 56px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.page-header .eyebrow {
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(232,224,200,0.4);
+  margin-bottom: 20px;
+}
+.page-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 34px;
+  letter-spacing: 4px;
+  color: #E8E0C8;
+  text-align: center;
+}
+.page-header .sub {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(232,224,200,0.28);
+  margin-top: 18px;
+}
+.sierra-header {
+  margin-top: 36px;
+  width: 100%;
+  max-width: 560px;
+}
+
+/* ─── SECTION ─── */
+.section {
+  padding: 96px 56px;
+  border-bottom: 1px solid rgba(28,26,24,0.08);
+}
+.section:last-child { border-bottom: none; }
+
+.section-label {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 56px;
+}
+.section-number {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(28,26,24,0.3);
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: #1C1A18;
+}
+.section-desc {
+  font-size: 12px;
+  color: rgba(28,26,24,0.45);
+  letter-spacing: 1.5px;
+  line-height: 1.7;
+  max-width: 440px;
+  margin-top: 8px;
+}
+
+/* ─── CARD DISPLAY ─── */
+.cards-display {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.card-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.card-group-label {
+  font-size: 8px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: rgba(28,26,24,0.3);
+}
+
+/* Business Card: 85mm × 55mm → 340px × 220px */
+.biz-card {
+  width: 340px;
+  height: 220px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.14), 0 1px 4px rgba(0,0,0,0.06);
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Door Hanger: 75mm × 210mm → 188px × 525px */
+.hanger {
+  width: 188px;
+  height: 525px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.14), 0 1px 4px rgba(0,0,0,0.06);
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Luggage Tag: 55mm × 110mm → 193px × 385px */
+.luggage-tag {
+  width: 193px;
+  height: 385px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.14), 0 1px 4px rgba(0,0,0,0.06);
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* ─── BACKGROUND UTILITIES ─── */
+.bg-olive  { background: #3A4A22; }
+.bg-cream  { background: #F4EFE6; }
+.bg-ink    { background: #1C1A18; }
+.bg-white  { background: #FDFCFA; }
+
+/* ─── SIZES NOTE ─── */
+.size-note {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: rgba(28,26,24,0.3);
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* ─── HANGER HOLE ─── */
+.hanger-hole-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.hanger-hole {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #EDEAE3;
+  border: 1.5px solid rgba(232,224,200,0.2);
+}
+.hanger-hole.dark-bg {
+  background: #EDEAE3;
+  border: 1.5px solid rgba(28,26,24,0.2);
+}
+
+/* ─── TAG HOLE ─── */
+.tag-hole-area {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.tag-hole {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(232,224,200,0.4);
+  background: #EDEAE3;
+}
+.tag-hole-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 8px;
+  background: rgba(232,224,200,0.15);
+}
+
+/* ─── PAPER TEXTURE OVERLAY ─── */
+.paper {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ════════════════ PAGE HEADER ════════════════ -->
+<div class="page-header">
+  <span class="eyebrow">Hotel San José · Villa Carlos Paz · Colateral de Marca</span>
+  <h1>Sierra Editorial</h1>
+  <span class="sub">Tarjetas · Colgante · Souvenir</span>
+  <svg class="sierra-header" height="28" viewBox="0 0 560 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,18 C40,18 52,4 88,9 C124,14 134,0 170,4 C206,8 218,18 254,12 C290,6 302,14 338,10 C374,6 386,18 422,14 C458,10 470,2 506,6 C524,8 538,14 560,10" stroke="#E8E0C8" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+    <path d="M0,24 C40,24 52,10 88,15 C124,20 134,6 170,10 C206,14 218,24 254,18 C290,12 302,20 338,16 C374,12 386,24 422,20 C458,16 470,8 506,12 C524,14 538,20 560,16" stroke="#E8E0C8" stroke-width="0.35" fill="none" stroke-linecap="round" opacity="0.3"/>
+  </svg>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     01 · TARJETAS DE PRESENTACIÓN
+════════════════════════════════════════════ -->
+<div class="section" style="background:#EDEAE3">
+  <div class="section-label">
+    <span class="section-number">— 01</span>
+    <div>
+      <div class="section-title">Tarjetas de Presentación</div>
+      <div class="section-desc">85 mm × 55 mm · Frente limpido en oliva · Reverso con información completa en crema</div>
+    </div>
+  </div>
+
+  <div class="cards-display">
+
+    <!-- Frente -->
+    <div class="card-group">
+      <div class="biz-card bg-olive">
+        <div class="paper"></div>
+        <svg width="340" height="220" viewBox="0 0 340 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+          <!-- Sierra: dos curvas sutiles en la mitad superior -->
+          <path d="M24,86 C56,86 66,62 98,68 C130,74 140,52 172,58 C204,64 216,84 248,78 C268,74 284,68 300,62" stroke="#E8E0C8" stroke-width="0.75" fill="none" stroke-linecap="round"/>
+          <path d="M24,96 C56,96 66,72 98,78 C130,84 140,62 172,68 C204,74 216,94 248,88 C268,84 284,78 300,72" stroke="#E8E0C8" stroke-width="0.35" fill="none" stroke-linecap="round" opacity="0.3"/>
+          <!-- Nombre -->
+          <text x="170" y="136" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="28" letter-spacing="9" fill="#E8E0C8">SAN JOSÉ</text>
+          <!-- Línea -->
+          <line x1="60" y1="146" x2="280" y2="146" stroke="#E8E0C8" stroke-width="0.35" opacity="0.3"/>
+          <!-- HOTEL -->
+          <text x="170" y="164" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="7" letter-spacing="12" fill="#E8E0C8" opacity="0.5">H O T E L</text>
+        </svg>
+      </div>
+      <span class="card-group-label">Frente · Fondo oliva</span>
+      <span class="size-note">85 × 55 mm · impresión offset</span>
+    </div>
+
+    <!-- Reverso: con información -->
+    <div class="card-group">
+      <div class="biz-card bg-cream">
+        <div class="paper"></div>
+        <svg width="340" height="220" viewBox="0 0 340 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+          <!-- Sierra muy sutil en esquina superior izquierda -->
+          <path d="M22,32 C44,32 50,20 68,24 C86,28 90,16 108,18 C126,20 132,30 150,26" stroke="#3A4A22" stroke-width="0.5" fill="none" stroke-linecap="round" opacity="0.25"/>
+          <!-- Nombre pequeño arriba -->
+          <text x="22" y="54" font-family="'Cormorant Garamond',serif" font-weight="400" font-size="13" letter-spacing="4" fill="#1C1A18" opacity="0.7">SAN JOSÉ</text>
+          <text x="22" y="67" font-family="'Inter',sans-serif" font-weight="200" font-size="6" letter-spacing="6" fill="#3A4A22" opacity="0.6">H O T E L</text>
+          <!-- Línea divisoria -->
+          <line x1="22" y1="78" x2="318" y2="78" stroke="#1C1A18" stroke-width="0.3" opacity="0.18"/>
+          <!-- Nombre de la persona -->
+          <text x="22" y="106" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="16" letter-spacing="1" fill="#1C1A18">Ricardo Calcabrini</text>
+          <text x="22" y="120" font-family="'Inter',sans-serif" font-weight="200" font-size="7.5" letter-spacing="2" fill="#3A4A22" opacity="0.7">Dirección General</text>
+          <!-- Datos de contacto -->
+          <text x="22" y="148" font-family="'Inter',sans-serif" font-weight="200" font-size="7.5" letter-spacing="1.2" fill="#1C1A18" opacity="0.6">+54 351 000-0000</text>
+          <text x="22" y="162" font-family="'Inter',sans-serif" font-weight="200" font-size="7.5" letter-spacing="1.2" fill="#1C1A18" opacity="0.6">info@hotelsanjose.com.ar</text>
+          <text x="22" y="176" font-family="'Inter',sans-serif" font-weight="200" font-size="7.5" letter-spacing="1.2" fill="#1C1A18" opacity="0.6">hotelsanjose.com.ar</text>
+          <!-- Dirección abajo derecha -->
+          <text x="318" y="162" text-anchor="end" font-family="'Inter',sans-serif" font-weight="200" font-size="7" letter-spacing="1" fill="#1C1A18" opacity="0.38">Av. San Martín 000</text>
+          <text x="318" y="174" text-anchor="end" font-family="'Inter',sans-serif" font-weight="200" font-size="7" letter-spacing="1" fill="#1C1A18" opacity="0.38">Villa Carlos Paz · Córdoba</text>
+          <!-- Punto oliva decorativo -->
+          <circle cx="318" cy="56" r="3" fill="#3A4A22" opacity="0.35"/>
+        </svg>
+      </div>
+      <span class="card-group-label">Reverso · Fondo crema</span>
+    </div>
+
+    <!-- Variante ink: para otros roles del equipo -->
+    <div class="card-group">
+      <div class="biz-card bg-ink">
+        <div class="paper"></div>
+        <svg width="340" height="220" viewBox="0 0 340 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+          <path d="M24,86 C56,86 66,62 98,68 C130,74 140,52 172,58 C204,64 216,84 248,78 C268,74 284,68 300,62" stroke="#E8E0C8" stroke-width="0.75" fill="none" stroke-linecap="round"/>
+          <path d="M24,96 C56,96 66,72 98,78 C130,84 140,62 172,68 C204,74 216,94 248,88 C268,84 284,78 300,72" stroke="#E8E0C8" stroke-width="0.35" fill="none" stroke-linecap="round" opacity="0.28"/>
+          <text x="170" y="136" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="28" letter-spacing="9" fill="#E8E0C8">SAN JOSÉ</text>
+          <line x1="60" y1="146" x2="280" y2="146" stroke="#E8E0C8" stroke-width="0.35" opacity="0.22"/>
+          <text x="170" y="164" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="7" letter-spacing="12" fill="#E8E0C8" opacity="0.4">H O T E L</text>
+        </svg>
+      </div>
+      <span class="card-group-label">Frente · Variante oscura</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     02 · COLGANTE DE PUERTA
+════════════════════════════════════════════ -->
+<div class="section" style="background:#F0ECE4">
+  <div class="section-label">
+    <span class="section-number">— 02</span>
+    <div>
+      <div class="section-title">Colgante de Puerta</div>
+      <div class="section-desc">75 mm × 210 mm · Dos caras · Papel 400 g con perforación superior</div>
+    </div>
+  </div>
+
+  <div class="cards-display" style="align-items:flex-start">
+
+    <!-- Cara A: No Molestar -->
+    <div class="card-group">
+      <div class="hanger bg-olive" style="position:relative">
+        <div class="paper"></div>
+        <!-- Agujero -->
+        <div class="hanger-hole-wrap">
+          <div class="hanger-hole"></div>
+        </div>
+        <svg width="188" height="525" viewBox="0 0 188 525" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+          <!-- Sierra en la parte superior (debajo del agujero) -->
+          <path d="M14,80 C34,80 40,64 60,68 C80,72 84,56 104,60 C124,64 130,78 152,72 C162,69 170,66 176,62" stroke="#E8E0C8" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+          <path d="M14,90 C34,90 40,74 60,78 C80,82 84,66 104,70 C124,74 130,88 152,82 C162,79 170,76 176,72" stroke="#E8E0C8" stroke-width="0.3" fill="none" stroke-linecap="round" opacity="0.28"/>
+
+          <!-- Mensaje principal -->
+          <!-- "Por favor" sutil arriba -->
+          <text x="94" y="160" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="13" letter-spacing="2" fill="#E8E0C8" opacity="0.55">Por favor,</text>
+
+          <!-- No Molestar: en dos líneas, gran escala -->
+          <text x="94" y="204" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="26" letter-spacing="3" fill="#E8E0C8">no</text>
+          <text x="94" y="240" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="26" letter-spacing="3" fill="#E8E0C8">molestar</text>
+
+          <!-- Línea -->
+          <line x1="30" y1="258" x2="158" y2="258" stroke="#E8E0C8" stroke-width="0.3" opacity="0.2"/>
+
+          <!-- Versión en inglés, muy pequeña -->
+          <text x="94" y="276" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="7" letter-spacing="4" fill="#E8E0C8" opacity="0.35">Do not disturb</text>
+
+          <!-- Ícono minimalista: luna -->
+          <path d="M94,330 C80,330 70,320 70,306 C70,292 80,282 94,282 C84,288 78,298 78,306 C78,318 84,326 94,330 Z" stroke="#E8E0C8" stroke-width="0.8" fill="none" opacity="0.4"/>
+
+          <!-- Firma del hotel abajo -->
+          <text x="94" y="450" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="11" letter-spacing="5" fill="#E8E0C8" opacity="0.45">SAN JOSÉ</text>
+          <line x1="40" y1="458" x2="148" y2="458" stroke="#E8E0C8" stroke-width="0.3" opacity="0.15"/>
+          <text x="94" y="472" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="6" letter-spacing="6" fill="#E8E0C8" opacity="0.3">H O T E L</text>
+        </svg>
+      </div>
+      <span class="card-group-label">Cara A · No Molestar</span>
+      <span class="size-note">75 × 210 mm</span>
+    </div>
+
+    <!-- Cara B: Arreglar Habitación -->
+    <div class="card-group">
+      <div class="hanger bg-cream" style="position:relative">
+        <div class="paper"></div>
+        <div class="hanger-hole-wrap">
+          <div class="hanger-hole dark-bg"></div>
+        </div>
+        <svg width="188" height="525" viewBox="0 0 188 525" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+          <!-- Sierra -->
+          <path d="M14,80 C34,80 40,64 60,68 C80,72 84,56 104,60 C124,64 130,78 152,72 C162,69 170,66 176,62" stroke="#3A4A22" stroke-width="0.7" fill="none" stroke-linecap="round" opacity="0.4"/>
+          <path d="M14,90 C34,90 40,74 60,78 C80,82 84,66 104,70 C124,74 130,88 152,82 C162,79 170,76 176,72" stroke="#3A4A22" stroke-width="0.3" fill="none" stroke-linecap="round" opacity="0.15"/>
+
+          <!-- Mensaje -->
+          <text x="94" y="160" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="13" letter-spacing="2" fill="#1C1A18" opacity="0.45">Gracias,</text>
+
+          <text x="94" y="200" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="22" letter-spacing="2" fill="#1C1A18">arreglar</text>
+          <text x="94" y="232" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="22" letter-spacing="2" fill="#1C1A18">habitación</text>
+
+          <line x1="30" y1="250" x2="158" y2="250" stroke="#1C1A18" stroke-width="0.3" opacity="0.15"/>
+          <text x="94" y="268" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="7" letter-spacing="4" fill="#1C1A18" opacity="0.3">Please make up the room</text>
+
+          <!-- Ícono minimalista: sol -->
+          <circle cx="94" cy="316" r="12" stroke="#3A4A22" stroke-width="0.7" fill="none" opacity="0.3"/>
+          <line x1="94" y1="296" x2="94" y2="292" stroke="#3A4A22" stroke-width="0.7" opacity="0.25"/>
+          <line x1="94" y1="336" x2="94" y2="340" stroke="#3A4A22" stroke-width="0.7" opacity="0.25"/>
+          <line x1="74" y1="316" x2="70" y2="316" stroke="#3A4A22" stroke-width="0.7" opacity="0.25"/>
+          <line x1="114" y1="316" x2="118" y2="316" stroke="#3A4A22" stroke-width="0.7" opacity="0.25"/>
+          <line x1="80" y1="302" x2="77" y2="299" stroke="#3A4A22" stroke-width="0.7" opacity="0.2"/>
+          <line x1="108" y1="330" x2="111" y2="333" stroke="#3A4A22" stroke-width="0.7" opacity="0.2"/>
+          <line x1="80" y1="330" x2="77" y2="333" stroke="#3A4A22" stroke-width="0.7" opacity="0.2"/>
+          <line x1="108" y1="302" x2="111" y2="299" stroke="#3A4A22" stroke-width="0.7" opacity="0.2"/>
+
+          <!-- Firma -->
+          <text x="94" y="450" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="11" letter-spacing="5" fill="#1C1A18" opacity="0.35">SAN JOSÉ</text>
+          <line x1="40" y1="458" x2="148" y2="458" stroke="#1C1A18" stroke-width="0.3" opacity="0.12"/>
+          <text x="94" y="472" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="6" letter-spacing="6" fill="#3A4A22" opacity="0.35">H O T E L</text>
+        </svg>
+      </div>
+      <span class="card-group-label">Cara B · Arreglar habitación</span>
+    </div>
+
+    <!-- Nota de diseño -->
+    <div style="max-width:280px;padding-top:60px">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;line-height:1.65;color:#3A4A22;margin-bottom:20px">"El colgante es el primer objeto físico que el huésped toca. Su calidad comunica la categoría del hotel antes que cualquier otra cosa."</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div>
+          <p style="font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(28,26,24,0.35);margin-bottom:4px">Material</p>
+          <p style="font-size:12px;color:rgba(28,26,24,0.6);line-height:1.6">Papel arena 400 g/m² con laminado mate velvet. Perforación troquelada en la parte superior.</p>
+        </div>
+        <div>
+          <p style="font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(28,26,24,0.35);margin-bottom:4px">Terminación</p>
+          <p style="font-size:12px;color:rgba(28,26,24,0.6);line-height:1.6">Impresión offset a 2 tintas: verde oliva Pantone 5747 C y negro. Sin brillos, sin barniz.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     03 · ETIQUETA DE EQUIPAJE · SOUVENIR
+════════════════════════════════════════════ -->
+<div class="section" style="background:#EDEAE3">
+  <div class="section-label">
+    <span class="section-number">— 03</span>
+    <div>
+      <div class="section-title">Etiqueta de Equipaje</div>
+      <div class="section-desc">El souvenir perfecto — viaja con el huésped. 55 mm × 110 mm · cuero vegetal con hilo de lino · impresión al calor</div>
+    </div>
+  </div>
+
+  <!-- Justificación -->
+  <div style="max-width:620px;margin-bottom:56px;padding:32px;background:#3A4A22;border-radius:4px">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;line-height:1.75;color:#E8E0C8;margin-bottom:16px">
+      Una etiqueta de equipaje en cuero vegetal es el souvenir más honesto que un hotel puede ofrecer. No va al cajón del olvido. Va en la valija. El huésped la lleva a cada destino posterior — y el hotel viaja con él.
+    </p>
+    <p style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(232,224,200,0.4)">Sierra Editorial · Grabado al calor · Cuero vegetal color habano</p>
+  </div>
+
+  <div class="cards-display" style="align-items:flex-start;gap:40px">
+
+    <!-- Frente de la etiqueta -->
+    <div class="card-group">
+      <div class="luggage-tag" style="background:#C8A87A;position:relative">
+        <svg width="193" height="385" viewBox="0 0 193 385" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+          <!-- Agujero para el hilo en la parte superior -->
+          <circle cx="96.5" cy="26" r="9" stroke="#8B6A40" stroke-width="1.2" fill="rgba(138,90,40,0.15)"/>
+          <!-- Línea de hilo sugerida -->
+          <line x1="96.5" y1="2" x2="96.5" y2="17" stroke="#8B6A40" stroke-width="0.8" opacity="0.4"/>
+          <!-- Sierra: impresión al calor → color más oscuro que el cuero -->
+          <path d="M18,74 C38,74 46,58 62,62 C78,66 82,50 100,54 C118,58 124,72 142,66 C154,62 162,58 168,54" stroke="#6B4A1E" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <path d="M18,84 C38,84 46,68 62,72 C78,76 82,60 100,64 C118,68 124,82 142,76 C154,72 162,68 168,64" stroke="#6B4A1E" stroke-width="0.45" fill="none" stroke-linecap="round" opacity="0.4"/>
+          <!-- Nombre -->
+          <text x="96.5" y="132" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="22" letter-spacing="6" fill="#4A2E0E">SAN JOSÉ</text>
+          <!-- Línea -->
+          <line x1="28" y1="144" x2="165" y2="144" stroke="#6B4A1E" stroke-width="0.4" opacity="0.3"/>
+          <!-- HOTEL -->
+          <text x="96.5" y="162" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="300" font-size="7" letter-spacing="10" fill="#4A2E0E" opacity="0.55">H O T E L</text>
+          <!-- Localidad -->
+          <text x="96.5" y="182" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="10" letter-spacing="1.5" fill="#4A2E0E" opacity="0.45">Villa Carlos Paz · Córdoba</text>
+          <!-- Línea divisoria central -->
+          <line x1="18" y1="210" x2="175" y2="210" stroke="#6B4A1E" stroke-width="0.4" opacity="0.2"/>
+          <!-- Área de datos del propietario -->
+          <text x="18" y="234" font-family="'Inter',sans-serif" font-weight="200" font-size="6.5" letter-spacing="2" fill="#4A2E0E" opacity="0.4">Nombre</text>
+          <line x1="18" y1="244" x2="175" y2="244" stroke="#6B4A1E" stroke-width="0.5" opacity="0.25"/>
+          <text x="18" y="268" font-family="'Inter',sans-serif" font-weight="200" font-size="6.5" letter-spacing="2" fill="#4A2E0E" opacity="0.4">Teléfono</text>
+          <line x1="18" y1="278" x2="175" y2="278" stroke="#6B4A1E" stroke-width="0.5" opacity="0.25"/>
+          <text x="18" y="302" font-family="'Inter',sans-serif" font-weight="200" font-size="6.5" letter-spacing="2" fill="#4A2E0E" opacity="0.4">Correo</text>
+          <line x1="18" y1="312" x2="175" y2="312" stroke="#6B4A1E" stroke-width="0.5" opacity="0.25"/>
+          <!-- Mensaje final abajo -->
+          <text x="96.5" y="352" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="9" letter-spacing="1" fill="#4A2E0E" opacity="0.35">Un recuerdo de las sierras</text>
+          <text x="96.5" y="366" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="9" letter-spacing="1" fill="#4A2E0E" opacity="0.35">de Córdoba</text>
+        </svg>
+      </div>
+      <span class="card-group-label">Frente · Cuero vegetal habano</span>
+      <span class="size-note">55 × 110 mm · grabado al calor</span>
+    </div>
+
+    <!-- Reverso de la etiqueta -->
+    <div class="card-group">
+      <div class="luggage-tag" style="background:#B89860;position:relative">
+        <svg width="193" height="385" viewBox="0 0 193 385" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+          <!-- Agujero -->
+          <circle cx="96.5" cy="26" r="9" stroke="#6B4A1E" stroke-width="1.2" fill="rgba(107,74,30,0.15)"/>
+          <line x1="96.5" y1="2" x2="96.5" y2="17" stroke="#6B4A1E" stroke-width="0.8" opacity="0.35"/>
+          <!-- Contenido reverso: datos de contacto del hotel -->
+          <text x="96.5" y="90" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="7" letter-spacing="4" fill="#3A2008" opacity="0.45">SI LA ENCUENTRA, POR FAVOR</text>
+          <text x="96.5" y="106" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="7" letter-spacing="4" fill="#3A2008" opacity="0.45">COMUNÍQUESE CON:</text>
+          <!-- Sierra pequeña como separador -->
+          <path d="M40,126 C58,126 62,116 76,120 C90,124 94,112 110,116 C126,120 130,128 148,124" stroke="#3A2008" stroke-width="0.55" fill="none" stroke-linecap="round" opacity="0.25"/>
+          <!-- Datos del hotel -->
+          <text x="96.5" y="160" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="14" letter-spacing="4" fill="#3A2008" opacity="0.7">SAN JOSÉ</text>
+          <text x="96.5" y="176" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="6" letter-spacing="5" fill="#3A2008" opacity="0.5">H O T E L</text>
+          <text x="96.5" y="202" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="8" letter-spacing="1" fill="#3A2008" opacity="0.55">+54 351 000-0000</text>
+          <text x="96.5" y="220" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="8" letter-spacing="1" fill="#3A2008" opacity="0.55">info@hotelsanjose.com.ar</text>
+          <text x="96.5" y="250" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="9" letter-spacing="1.5" fill="#3A2008" opacity="0.4">Av. San Martín 000</text>
+          <text x="96.5" y="264" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="9" letter-spacing="1.5" fill="#3A2008" opacity="0.4">Villa Carlos Paz · Córdoba</text>
+          <!-- QR placeholder -->
+          <rect x="68" y="290" width="57" height="57" rx="3" stroke="#3A2008" stroke-width="0.6" fill="none" opacity="0.2"/>
+          <text x="96.5" y="310" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="6" letter-spacing="1" fill="#3A2008" opacity="0.25">QR</text>
+          <text x="96.5" y="322" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="6" letter-spacing="1" fill="#3A2008" opacity="0.25">reservas</text>
+          <!-- Mensaje final -->
+          <text x="96.5" y="366" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="8" letter-spacing="1" fill="#3A2008" opacity="0.3">Gracias por su visita</text>
+        </svg>
+      </div>
+      <span class="card-group-label">Reverso · Datos de contacto + QR</span>
+    </div>
+
+    <!-- Detalle con hilo -->
+    <div class="card-group">
+      <!-- Etiqueta con hilo representado -->
+      <div style="position:relative;display:flex;flex-direction:column;align-items:center">
+        <!-- Hilo de lino -->
+        <svg width="40" height="60" viewBox="0 0 40 60" fill="none">
+          <path d="M20,5 C24,15 16,25 20,35 C24,45 16,52 20,58" stroke="#9A7A4A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          <circle cx="20" cy="5" r="3" stroke="#9A7A4A" stroke-width="1" fill="none"/>
+        </svg>
+        <div class="luggage-tag" style="background:#C8A87A;position:relative;margin-top:-8px">
+          <svg width="193" height="385" viewBox="0 0 193 385" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+            <circle cx="96.5" cy="26" r="9" stroke="#8B6A40" stroke-width="1.2" fill="rgba(138,90,40,0.15)"/>
+            <path d="M18,74 C38,74 46,58 62,62 C78,66 82,50 100,54 C118,58 124,72 142,66 C154,62 162,58 168,54" stroke="#6B4A1E" stroke-width="1" fill="none" stroke-linecap="round"/>
+            <path d="M18,84 C38,84 46,68 62,72 C78,76 82,60 100,64 C118,68 124,82 142,76 C154,72 162,68 168,64" stroke="#6B4A1E" stroke-width="0.45" fill="none" stroke-linecap="round" opacity="0.4"/>
+            <text x="96.5" y="132" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="22" letter-spacing="6" fill="#4A2E0E">SAN JOSÉ</text>
+            <line x1="28" y1="144" x2="165" y2="144" stroke="#6B4A1E" stroke-width="0.4" opacity="0.3"/>
+            <text x="96.5" y="162" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="300" font-size="7" letter-spacing="10" fill="#4A2E0E" opacity="0.55">H O T E L</text>
+            <text x="96.5" y="182" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="10" letter-spacing="1.5" fill="#4A2E0E" opacity="0.45">Villa Carlos Paz · Córdoba</text>
+            <line x1="18" y1="210" x2="175" y2="210" stroke="#6B4A1E" stroke-width="0.4" opacity="0.2"/>
+            <text x="18" y="234" font-family="'Inter',sans-serif" font-weight="200" font-size="6.5" letter-spacing="2" fill="#4A2E0E" opacity="0.35">Nombre</text>
+            <line x1="18" y1="244" x2="175" y2="244" stroke="#6B4A1E" stroke-width="0.5" opacity="0.22"/>
+            <text x="18" y="268" font-family="'Inter',sans-serif" font-weight="200" font-size="6.5" letter-spacing="2" fill="#4A2E0E" opacity="0.35">Teléfono</text>
+            <line x1="18" y1="278" x2="175" y2="278" stroke="#6B4A1E" stroke-width="0.5" opacity="0.22"/>
+            <text x="18" y="302" font-family="'Inter',sans-serif" font-weight="200" font-size="6.5" letter-spacing="2" fill="#4A2E0E" opacity="0.35">Correo</text>
+            <line x1="18" y1="312" x2="175" y2="312" stroke="#6B4A1E" stroke-width="0.5" opacity="0.22"/>
+            <text x="96.5" y="356" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="9" letter-spacing="1" fill="#4A2E0E" opacity="0.3">Un recuerdo de las sierras de Córdoba</text>
+          </svg>
+        </div>
+      </div>
+      <span class="card-group-label">Con hilo de lino · Vista real</span>
+      <span class="size-note">Se entrega en el check-out · limitada</span>
+    </div>
+
+    <!-- Nota conceptual -->
+    <div style="max-width:260px;padding-top:60px">
+      <p style="font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(28,26,24,0.35);margin-bottom:16px">Por qué una etiqueta de equipaje</p>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <p style="font-size:12px;color:rgba(28,26,24,0.55);line-height:1.7">A diferencia de una libreta o un imán, la etiqueta cumple una función real. El huésped no la descarta.</p>
+        <p style="font-size:12px;color:rgba(28,26,24,0.55);line-height:1.7">Cada vez que viaja, San José viaja con él. Es publicidad orgánica en aeropuertos, hoteles y destinos de todo el mundo.</p>
+        <p style="font-size:12px;color:rgba(28,26,24,0.55);line-height:1.7">El cuero vegetal habano con grabado al calor no envejece — mejora. Con el tiempo se oscurece y adquiere carácter.</p>
+        <div style="border-top:1px solid rgba(28,26,24,0.1);padding-top:16px;margin-top:4px">
+          <p style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(28,26,24,0.3);margin-bottom:6px">Costo estimado</p>
+          <p style="font-size:12px;color:rgba(28,26,24,0.5);line-height:1.6">USD 3–5 por unidad en partidas de 100. Entrega selectiva: check-out de estancias de 3+ noches.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<div style="background:#3A4A22;padding:56px;display:flex;align-items:center;justify-content:space-between">
+  <div>
+    <p style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(232,224,200,0.3);margin-bottom:12px">Sistema de marca</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:20px;letter-spacing:3px;color:#E8E0C8">Sierra Editorial</p>
+  </div>
+  <svg width="280" height="24" viewBox="0 0 560 24" fill="none">
+    <path d="M0,14 C40,14 52,2 88,7 C124,12 134,0 170,3 C206,6 218,14 254,9 C290,4 302,12 338,8 C374,4 386,14 422,10 C458,6 470,0 506,4 C524,6 538,12 560,8" stroke="#E8E0C8" stroke-width="0.75" fill="none" stroke-linecap="round"/>
+    <path d="M0,20 C40,20 52,8 88,13 C124,18 134,6 170,9 C206,12 218,20 254,15 C290,10 302,18 338,14 C374,10 386,20 422,16 C458,12 470,6 506,10 C524,12 538,18 560,14" stroke="#E8E0C8" stroke-width="0.3" fill="none" stroke-linecap="round" opacity="0.28"/>
+  </svg>
+  <p style="font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(232,224,200,0.25)">Hotel San José · 2026</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San José Hotel — Logos Alternativos V2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Inter', sans-serif;
+  background: #F5F0E8;
+  color: #2A2826;
+}
+
+/* ─── HEADER ─── */
+.header {
+  text-align: center;
+  padding: 64px 32px 32px;
+  background: #2A2826;
+  color: #F5F0E8;
+}
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+.header p {
+  font-size: 11px;
+  color: rgba(245,240,232,0.45);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+/* ─── SECTION TITLE ─── */
+.section-title {
+  text-align: center;
+  padding: 56px 32px 8px;
+}
+.section-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #2A2826;
+}
+.section-title p {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #6B7A4A;
+  margin-top: 8px;
+}
+.divider {
+  width: 48px;
+  height: 1px;
+  background: #C4704A;
+  margin: 20px auto 0;
+}
+
+/* ─── LOGO OPTIONS GRID ─── */
+.logos-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 32px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.logo-option {
+  background: #FDFAF5;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.07);
+}
+
+.option-label {
+  background: #2A2826;
+  color: #F5F0E8;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.option-label span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.4);
+}
+.option-label strong {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  display: block;
+  margin-top: 4px;
+}
+.option-concept {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #C4704A;
+}
+
+.logo-previews {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  background: #E8E3DA;
+}
+.preview-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px 48px;
+  position: relative;
+  min-height: 180px;
+}
+.preview-tile.on-light { background: #FDFAF5; }
+.preview-tile.on-dark  { background: #2A2826; }
+.preview-tile.on-sand  { background: #D4B896; }
+.preview-tile.on-olive { background: #4A5830; }
+.preview-tile.on-terra { background: #C4704A; }
+
+.tile-label {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.on-light .tile-label { color: rgba(42,40,38,0.28); }
+.on-dark  .tile-label { color: rgba(245,240,232,0.28); }
+.on-sand  .tile-label { color: rgba(42,40,38,0.35); }
+.on-olive .tile-label { color: rgba(245,240,232,0.35); }
+.on-terra .tile-label { color: rgba(245,240,232,0.35); }
+
+.option-desc {
+  padding: 32px;
+  border-top: 1px solid #E8E3DA;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+.desc-item h4 {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #6B7A4A;
+  margin-bottom: 6px;
+}
+.desc-item p {
+  font-size: 13px;
+  color: #6A6560;
+  line-height: 1.65;
+}
+
+/* ─── BANNER SECTION ─── */
+.banner-section {
+  background: #2A2826;
+  padding: 80px 32px;
+}
+.banner-section .section-title h2 { color: #F5F0E8; }
+.banner-section .section-title p { color: #B5C28A; }
+.banner-section .divider { background: #C4704A; }
+
+.banners-grid {
+  max-width: 1140px;
+  margin: 56px auto 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.banner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.banner-card h5 {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.4);
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.banner-frame {
+  width: 100%;
+  aspect-ratio: 1 / 2.5;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.banner-frame.bf-dark  { background: #2A2826; border: 1px solid rgba(245,240,232,0.12); }
+.banner-frame.bf-light { background: #FDFAF5; }
+.banner-frame.bf-olive { background: #4A5830; }
+.banner-frame.bf-sand  { background: #D4B896; }
+.banner-frame.bf-terra { background: #C4704A; }
+
+.banner-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 20px 12px;
+}
+
+/* ─── PAGE FOOTER ─── */
+.page-footer {
+  text-align: center;
+  padding: 48px 32px;
+  color: rgba(42,40,38,0.35);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  background: #F5F0E8;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>San José Hotel — Alternativas de Logo</h1>
+  <p>Segunda ronda de propuestas · Inspiradas en Arco Serrano · Mayo 2026</p>
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     SECCIÓN: LOGOS
+════════════════════════════════════════════════════ -->
+<div class="section-title" style="padding-top:64px">
+  <h2>Cinco Nuevas Propuestas</h2>
+  <p>Cada logo en fondo claro · oscuro · color</p>
+  <div class="divider"></div>
+</div>
+
+<div class="logos-container">
+
+  <!-- ══════════ OPCIÓN A: HORIZONTE DOBLE ══════════ -->
+  <div class="logo-option">
+    <div class="option-label">
+      <div>
+        <span>Opción A</span>
+        <strong>Horizonte Doble</strong>
+      </div>
+      <span class="option-concept">Línea de montaña + reflejo</span>
+    </div>
+    <div class="logo-previews">
+
+      <div class="preview-tile on-light">
+        <svg width="240" height="90" viewBox="0 0 240 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Silueta de montaña estilizada -->
+          <polyline points="20,48 55,18 80,34 105,8 130,30 160,14 185,34 220,48" stroke="#6B7A4A" stroke-width="1.6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <!-- Reflejo tenue -->
+          <polyline points="20,56 55,72 80,62 105,82 130,66 160,76 185,62 220,56" stroke="#C4704A" stroke-width="0.9" fill="none" stroke-linejoin="round" stroke-linecap="round" opacity="0.45"/>
+          <!-- Línea central -->
+          <line x1="20" y1="52" x2="220" y2="52" stroke="#2A2826" stroke-width="0.5" opacity="0.18"/>
+          <text x="120" y="72" text-anchor="middle" font-family="'Playfair Display',serif" font-size="15" font-weight="300" letter-spacing="6" fill="#2A2826">SAN JOSÉ</text>
+          <text x="120" y="82" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6.5" font-weight="400" letter-spacing="7" fill="#6B7A4A">H O T E L</text>
+        </svg>
+        <span class="tile-label">Fondo claro</span>
+      </div>
+
+      <div class="preview-tile on-dark">
+        <svg width="240" height="90" viewBox="0 0 240 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="20,48 55,18 80,34 105,8 130,30 160,14 185,34 220,48" stroke="#B5C28A" stroke-width="1.6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="20,56 55,72 80,62 105,82 130,66 160,76 185,62 220,56" stroke="#C4704A" stroke-width="0.9" fill="none" stroke-linejoin="round" stroke-linecap="round" opacity="0.55"/>
+          <line x1="20" y1="52" x2="220" y2="52" stroke="#F5F0E8" stroke-width="0.5" opacity="0.15"/>
+          <text x="120" y="72" text-anchor="middle" font-family="'Playfair Display',serif" font-size="15" font-weight="300" letter-spacing="6" fill="#FDFAF5">SAN JOSÉ</text>
+          <text x="120" y="82" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6.5" font-weight="400" letter-spacing="7" fill="#B5C28A">H O T E L</text>
+        </svg>
+        <span class="tile-label">Fondo oscuro</span>
+      </div>
+
+      <div class="preview-tile on-olive">
+        <svg width="240" height="90" viewBox="0 0 240 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="20,48 55,18 80,34 105,8 130,30 160,14 185,34 220,48" stroke="#E8DFC8" stroke-width="1.6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="20,56 55,72 80,62 105,82 130,66 160,76 185,62 220,56" stroke="#D4B896" stroke-width="0.9" fill="none" stroke-linejoin="round" stroke-linecap="round" opacity="0.5"/>
+          <line x1="20" y1="52" x2="220" y2="52" stroke="#E8DFC8" stroke-width="0.5" opacity="0.2"/>
+          <text x="120" y="72" text-anchor="middle" font-family="'Playfair Display',serif" font-size="15" font-weight="300" letter-spacing="6" fill="#FDFAF5">SAN JOSÉ</text>
+          <text x="120" y="82" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6.5" font-weight="400" letter-spacing="7" fill="#D4B896">H O T E L</text>
+        </svg>
+        <span class="tile-label">Fondo oliva</span>
+      </div>
+
+    </div>
+    <div class="option-desc">
+      <div class="desc-item"><h4>Concepto</h4><p>Montaña estilizada con su reflejo. Evoca el lago, la sierra y la calma.</p></div>
+      <div class="desc-item"><h4>Tipografía</h4><p>Playfair Display Light · tracking amplio · jerarquía clara.</p></div>
+      <div class="desc-item"><h4>Paleta</h4><p>Verde oliva + terracota + crema. Completamente alineada con el brand book.</p></div>
+    </div>
+  </div>
+
+  <!-- ══════════ OPCIÓN B: PORTAL SERRANO ══════════ -->
+  <div class="logo-option">
+    <div class="option-label">
+      <div>
+        <span>Opción B</span>
+        <strong>Portal Serrano</strong>
+      </div>
+      <span class="option-concept">Arco + nombre contenido</span>
+    </div>
+    <div class="logo-previews">
+
+      <div class="preview-tile on-light">
+        <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Arco tipo portal -->
+          <path d="M55,80 L55,45 Q55,18 100,18 Q145,18 145,45 L145,80" stroke="#6B7A4A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <!-- Línea base -->
+          <line x1="40" y1="80" x2="160" y2="80" stroke="#2A2826" stroke-width="0.8"/>
+          <!-- Detalle interior: punto cúspide -->
+          <circle cx="100" cy="20" r="2.5" fill="#C4704A"/>
+          <text x="100" y="64" text-anchor="middle" font-family="'Playfair Display',serif" font-size="13" font-weight="400" letter-spacing="4" fill="#2A2826">SAN JOSÉ</text>
+          <text x="100" y="77" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" font-weight="400" letter-spacing="6.5" fill="#6B7A4A">H O T E L</text>
+          <!-- Ornamento lateral -->
+          <line x1="40" y1="80" x2="50" y2="80" stroke="#C4704A" stroke-width="1.5"/>
+          <line x1="150" y1="80" x2="160" y2="80" stroke="#C4704A" stroke-width="1.5"/>
+        </svg>
+        <span class="tile-label">Fondo claro</span>
+      </div>
+
+      <div class="preview-tile on-dark">
+        <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55,80 L55,45 Q55,18 100,18 Q145,18 145,45 L145,80" stroke="#B5C28A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <line x1="40" y1="80" x2="160" y2="80" stroke="#FDFAF5" stroke-width="0.8"/>
+          <circle cx="100" cy="20" r="2.5" fill="#C4704A"/>
+          <text x="100" y="64" text-anchor="middle" font-family="'Playfair Display',serif" font-size="13" font-weight="400" letter-spacing="4" fill="#FDFAF5">SAN JOSÉ</text>
+          <text x="100" y="77" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" font-weight="400" letter-spacing="6.5" fill="#B5C28A">H O T E L</text>
+          <line x1="40" y1="80" x2="50" y2="80" stroke="#C4704A" stroke-width="1.5"/>
+          <line x1="150" y1="80" x2="160" y2="80" stroke="#C4704A" stroke-width="1.5"/>
+        </svg>
+        <span class="tile-label">Fondo oscuro</span>
+      </div>
+
+      <div class="preview-tile on-sand">
+        <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M55,80 L55,45 Q55,18 100,18 Q145,18 145,45 L145,80" stroke="#2A2826" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <line x1="40" y1="80" x2="160" y2="80" stroke="#2A2826" stroke-width="0.8"/>
+          <circle cx="100" cy="20" r="2.5" fill="#4A5830"/>
+          <text x="100" y="64" text-anchor="middle" font-family="'Playfair Display',serif" font-size="13" font-weight="400" letter-spacing="4" fill="#2A2826">SAN JOSÉ</text>
+          <text x="100" y="77" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" font-weight="400" letter-spacing="6.5" fill="#4A5830">H O T E L</text>
+          <line x1="40" y1="80" x2="50" y2="80" stroke="#4A5830" stroke-width="1.5"/>
+          <line x1="150" y1="80" x2="160" y2="80" stroke="#4A5830" stroke-width="1.5"/>
+        </svg>
+        <span class="tile-label">Fondo arena</span>
+      </div>
+
+    </div>
+    <div class="option-desc">
+      <div class="desc-item"><h4>Concepto</h4><p>Un arco de bienvenida que enmarca el nombre. Hospitalidad clásica.</p></div>
+      <div class="desc-item"><h4>Tipografía</h4><p>Playfair Display Regular centrada dentro del arco. Máxima legibilidad.</p></div>
+      <div class="desc-item"><h4>Detalle</h4><p>Punto terracota en la cúspide y remates terracota en la base. Sutil y elegante.</p></div>
+    </div>
+  </div>
+
+  <!-- ══════════ OPCIÓN C: PINO GEOMÉTRICO ══════════ -->
+  <div class="logo-option">
+    <div class="option-label">
+      <div>
+        <span>Opción C</span>
+        <strong>Pino Geométrico</strong>
+      </div>
+      <span class="option-concept">Ícono naturaleza + texto</span>
+    </div>
+    <div class="logo-previews">
+
+      <div class="preview-tile on-light">
+        <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Pino estilizado con triángulos geométricos -->
+          <polygon points="100,8 116,32 84,32" stroke="#6B7A4A" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+          <polygon points="100,22 120,50 80,50" stroke="#6B7A4A" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+          <polygon points="100,36 124,66 76,66" stroke="#6B7A4A" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+          <!-- Tronco -->
+          <line x1="100" y1="66" x2="100" y2="76" stroke="#6B7A4A" stroke-width="1.8"/>
+          <!-- Texto debajo -->
+          <text x="100" y="88" text-anchor="middle" font-family="'Playfair Display',serif" font-size="13" font-weight="300" letter-spacing="5" fill="#2A2826">SAN JOSÉ</text>
+          <text x="100" y="97" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" font-weight="400" letter-spacing="6" fill="#C4704A">H O T E L</text>
+        </svg>
+        <span class="tile-label">Fondo claro</span>
+      </div>
+
+      <div class="preview-tile on-dark">
+        <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="100,8 116,32 84,32" stroke="#B5C28A" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+          <polygon points="100,22 120,50 80,50" stroke="#B5C28A" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+          <polygon points="100,36 124,66 76,66" stroke="#B5C28A" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+          <line x1="100" y1="66" x2="100" y2="76" stroke="#B5C28A" stroke-width="1.8"/>
+          <text x="100" y="88" text-anchor="middle" font-family="'Playfair Display',serif" font-size="13" font-weight="300" letter-spacing="5" fill="#FDFAF5">SAN JOSÉ</text>
+          <text x="100" y="97" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" font-weight="400" letter-spacing="6" fill="#C4704A">H O T E L</text>
+        </svg>
+        <span class="tile-label">Fondo oscuro</span>
+      </div>
+
+      <div class="preview-tile on-terra">
+        <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="100,8 116,32 84,32" stroke="#FDFAF5" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+          <polygon points="100,22 120,50 80,50" stroke="#FDFAF5" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+          <polygon points="100,36 124,66 76,66" stroke="#FDFAF5" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+          <line x1="100" y1="66" x2="100" y2="76" stroke="#FDFAF5" stroke-width="1.8"/>
+          <text x="100" y="88" text-anchor="middle" font-family="'Playfair Display',serif" font-size="13" font-weight="300" letter-spacing="5" fill="#FDFAF5">SAN JOSÉ</text>
+          <text x="100" y="97" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" font-weight="400" letter-spacing="6" fill="#2A2826">H O T E L</text>
+        </svg>
+        <span class="tile-label">Fondo terracota</span>
+      </div>
+
+    </div>
+    <div class="option-desc">
+      <div class="desc-item"><h4>Concepto</h4><p>Tres capas de triángulos forman un pino serrano geométrico. Identidad de montaña.</p></div>
+      <div class="desc-item"><h4>Versatilidad</h4><p>El ícono funciona solo como sello o con texto completo.</p></div>
+      <div class="desc-item"><h4>Paleta</h4><p>Verde oliva primario con acento terracota en la leyenda HOTEL.</p></div>
+    </div>
+  </div>
+
+  <!-- ══════════ OPCIÓN D: MONOGRAMA SJ ══════════ -->
+  <div class="logo-option">
+    <div class="option-label">
+      <div>
+        <span>Opción D</span>
+        <strong>Monograma SJ</strong>
+      </div>
+      <span class="option-concept">Iniciales entrelazadas</span>
+    </div>
+    <div class="logo-previews">
+
+      <div class="preview-tile on-light">
+        <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Monograma SJ entrelazado -->
+          <!-- S -->
+          <path d="M76,28 Q60,28 60,40 Q60,52 76,52 Q92,52 92,64 Q92,76 76,76" stroke="#6B7A4A" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- J -->
+          <line x1="110" y1="28" x2="124" y2="28" stroke="#2A2826" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="117" y1="28" x2="117" y2="66" stroke="#2A2826" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M117,66 Q117,78 106,78 Q98,78 97,70" stroke="#2A2826" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <!-- Punto decorativo -->
+          <circle cx="117" cy="22" r="2" fill="#C4704A"/>
+          <!-- Línea separadora -->
+          <line x1="50" y1="88" x2="150" y2="88" stroke="#E8E3DA" stroke-width="1"/>
+          <text x="100" y="97" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6.5" font-weight="400" letter-spacing="7" fill="#6B7A4A">S A N   J O S É   H O T E L</text>
+        </svg>
+        <span class="tile-label">Fondo claro</span>
+      </div>
+
+      <div class="preview-tile on-dark">
+        <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M76,28 Q60,28 60,40 Q60,52 76,52 Q92,52 92,64 Q92,76 76,76" stroke="#B5C28A" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <line x1="110" y1="28" x2="124" y2="28" stroke="#FDFAF5" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="117" y1="28" x2="117" y2="66" stroke="#FDFAF5" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M117,66 Q117,78 106,78 Q98,78 97,70" stroke="#FDFAF5" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <circle cx="117" cy="22" r="2" fill="#C4704A"/>
+          <line x1="50" y1="88" x2="150" y2="88" stroke="rgba(245,240,232,0.15)" stroke-width="1"/>
+          <text x="100" y="97" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6.5" font-weight="400" letter-spacing="7" fill="#B5C28A">S A N   J O S É   H O T E L</text>
+        </svg>
+        <span class="tile-label">Fondo oscuro</span>
+      </div>
+
+      <div class="preview-tile on-olive">
+        <svg width="200" height="100" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M76,28 Q60,28 60,40 Q60,52 76,52 Q92,52 92,64 Q92,76 76,76" stroke="#FDFAF5" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <line x1="110" y1="28" x2="124" y2="28" stroke="#D4B896" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="117" y1="28" x2="117" y2="66" stroke="#D4B896" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M117,66 Q117,78 106,78 Q98,78 97,70" stroke="#D4B896" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <circle cx="117" cy="22" r="2" fill="#C4704A"/>
+          <line x1="50" y1="88" x2="150" y2="88" stroke="rgba(245,240,232,0.2)" stroke-width="1"/>
+          <text x="100" y="97" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6.5" font-weight="400" letter-spacing="7" fill="#D4B896">S A N   J O S É   H O T E L</text>
+        </svg>
+        <span class="tile-label">Fondo oliva</span>
+      </div>
+
+    </div>
+    <div class="option-desc">
+      <div class="desc-item"><h4>Concepto</h4><p>Las iniciales S y J separadas por color crean una firma de autor distintiva.</p></div>
+      <div class="desc-item"><h4>Uso</h4><p>Ideal para papelería, tarjetas, toallas, vajilla y sellos de lacre.</p></div>
+      <div class="desc-item"><h4>Diferenciación</h4><p>El punto terracota sobre la J actúa como acento visual y de marca.</p></div>
+    </div>
+  </div>
+
+  <!-- ══════════ OPCIÓN E: SELLO CIRCULAR ══════════ -->
+  <div class="logo-option">
+    <div class="option-label">
+      <div>
+        <span>Opción E</span>
+        <strong>Sello Circular</strong>
+      </div>
+      <span class="option-concept">Badge hotelero clásico</span>
+    </div>
+    <div class="logo-previews">
+
+      <div class="preview-tile on-light">
+        <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Anillo exterior -->
+          <circle cx="80" cy="80" r="72" stroke="#6B7A4A" stroke-width="1.2"/>
+          <!-- Anillo interior -->
+          <circle cx="80" cy="80" r="62" stroke="#6B7A4A" stroke-width="0.5" stroke-dasharray="3 4"/>
+          <!-- Pino minimalista interior -->
+          <polygon points="80,30 90,50 70,50" stroke="#6B7A4A" stroke-width="1.1" fill="none"/>
+          <polygon points="80,42 94,62 66,62" stroke="#6B7A4A" stroke-width="1.1" fill="none"/>
+          <line x1="80" y1="62" x2="80" y2="70" stroke="#6B7A4A" stroke-width="1.4"/>
+          <!-- Texto circular superior -->
+          <path id="arcTop" d="M 80,80 m -55,0 a 55,55 0 1,1 110,0" fill="none"/>
+          <text font-family="'Inter',sans-serif" font-size="7" font-weight="400" letter-spacing="5" fill="#2A2826">
+            <textPath href="#arcTop" startOffset="8%">HOTEL · SAN JOSÉ · CARLOS PAZ</textPath>
+          </text>
+          <!-- Estrellas separadoras -->
+          <text x="80" y="118" text-anchor="middle" font-size="6" fill="#C4704A" font-family="serif">✦ ✦ ✦</text>
+          <!-- Texto central -->
+          <text x="80" y="99" text-anchor="middle" font-family="'Playfair Display',serif" font-size="16" font-weight="400" letter-spacing="2" fill="#2A2826">SJ</text>
+          <text x="80" y="110" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" font-weight="300" letter-spacing="5" fill="#6B7A4A">EST. 2024</text>
+        </svg>
+        <span class="tile-label">Fondo claro</span>
+      </div>
+
+      <div class="preview-tile on-dark">
+        <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="80" cy="80" r="72" stroke="#B5C28A" stroke-width="1.2"/>
+          <circle cx="80" cy="80" r="62" stroke="#B5C28A" stroke-width="0.5" stroke-dasharray="3 4"/>
+          <polygon points="80,30 90,50 70,50" stroke="#B5C28A" stroke-width="1.1" fill="none"/>
+          <polygon points="80,42 94,62 66,62" stroke="#B5C28A" stroke-width="1.1" fill="none"/>
+          <line x1="80" y1="62" x2="80" y2="70" stroke="#B5C28A" stroke-width="1.4"/>
+          <path id="arcTop2" d="M 80,80 m -55,0 a 55,55 0 1,1 110,0" fill="none"/>
+          <text font-family="'Inter',sans-serif" font-size="7" font-weight="400" letter-spacing="5" fill="#FDFAF5">
+            <textPath href="#arcTop2" startOffset="8%">HOTEL · SAN JOSÉ · CARLOS PAZ</textPath>
+          </text>
+          <text x="80" y="118" text-anchor="middle" font-size="6" fill="#C4704A" font-family="serif">✦ ✦ ✦</text>
+          <text x="80" y="99" text-anchor="middle" font-family="'Playfair Display',serif" font-size="16" font-weight="400" letter-spacing="2" fill="#FDFAF5">SJ</text>
+          <text x="80" y="110" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" font-weight="300" letter-spacing="5" fill="#B5C28A">EST. 2024</text>
+        </svg>
+        <span class="tile-label">Fondo oscuro</span>
+      </div>
+
+      <div class="preview-tile on-sand">
+        <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="80" cy="80" r="72" stroke="#2A2826" stroke-width="1.2"/>
+          <circle cx="80" cy="80" r="62" stroke="#2A2826" stroke-width="0.5" stroke-dasharray="3 4"/>
+          <polygon points="80,30 90,50 70,50" stroke="#4A5830" stroke-width="1.1" fill="none"/>
+          <polygon points="80,42 94,62 66,62" stroke="#4A5830" stroke-width="1.1" fill="none"/>
+          <line x1="80" y1="62" x2="80" y2="70" stroke="#4A5830" stroke-width="1.4"/>
+          <path id="arcTop3" d="M 80,80 m -55,0 a 55,55 0 1,1 110,0" fill="none"/>
+          <text font-family="'Inter',sans-serif" font-size="7" font-weight="400" letter-spacing="5" fill="#2A2826">
+            <textPath href="#arcTop3" startOffset="8%">HOTEL · SAN JOSÉ · CARLOS PAZ</textPath>
+          </text>
+          <text x="80" y="118" text-anchor="middle" font-size="6" fill="#4A5830" font-family="serif">✦ ✦ ✦</text>
+          <text x="80" y="99" text-anchor="middle" font-family="'Playfair Display',serif" font-size="16" font-weight="400" letter-spacing="2" fill="#2A2826">SJ</text>
+          <text x="80" y="110" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" font-weight="300" letter-spacing="5" fill="#4A5830">EST. 2024</text>
+        </svg>
+        <span class="tile-label">Fondo arena</span>
+      </div>
+
+    </div>
+    <div class="option-desc">
+      <div class="desc-item"><h4>Concepto</h4><p>Sello redondo tipo badge de hotel boutique. Autoridad y herencia.</p></div>
+      <div class="desc-item"><h4>Uso</h4><p>Perfecto para amenities, etiquetas de vino, sellos de cera y packaging.</p></div>
+      <div class="desc-item"><h4>Tipografía</h4><p>Texto circular en Inter Light + Playfair para las iniciales centrales.</p></div>
+    </div>
+  </div>
+
+</div><!-- /logos-container -->
+
+
+<!-- ════════════════════════════════════════════════════
+     SECCIÓN: BANNERS VERTICALES
+════════════════════════════════════════════════════ -->
+<div class="banner-section">
+
+  <div class="section-title">
+    <h2>Despliegue Vertical — Banner</h2>
+    <p>Cada logo en formato retrato · ideal para señalética y rollup</p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="banners-grid">
+
+    <!-- Banner A: Horizonte Doble -->
+    <div class="banner-card">
+      <h5>A · Horizonte Doble</h5>
+      <div class="banner-frame bf-dark">
+        <div class="banner-inner">
+          <svg width="120" height="60" viewBox="0 0 240 90" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:18px">
+            <polyline points="20,48 55,18 80,34 105,8 130,30 160,14 185,34 220,48" stroke="#B5C28A" stroke-width="1.6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+            <polyline points="20,56 55,72 80,62 105,82 130,66 160,76 185,62 220,56" stroke="#C4704A" stroke-width="0.9" fill="none" stroke-linejoin="round" stroke-linecap="round" opacity="0.55"/>
+            <line x1="20" y1="52" x2="220" y2="52" stroke="#F5F0E8" stroke-width="0.5" opacity="0.15"/>
+            <text x="120" y="72" text-anchor="middle" font-family="'Playfair Display',serif" font-size="15" font-weight="300" letter-spacing="6" fill="#FDFAF5">SAN JOSÉ</text>
+            <text x="120" y="82" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6.5" font-weight="400" letter-spacing="7" fill="#B5C28A">H O T E L</text>
+          </svg>
+          <svg width="1" height="40" style="margin-bottom:14px"><line x1="0.5" y1="0" x2="0.5" y2="40" stroke="rgba(245,240,232,0.2)" stroke-width="1"/></svg>
+          <svg viewBox="0 0 80 120" width="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="40" y="20" text-anchor="middle" font-family="'Inter',sans-serif" font-size="5" letter-spacing="3" fill="rgba(245,240,232,0.4)">VILLA CARLOS PAZ</text>
+            <text x="40" y="38" text-anchor="middle" font-family="'Playfair Display',serif" font-size="7" font-weight="300" letter-spacing="1" fill="rgba(245,240,232,0.55)">Córdoba · Argentina</text>
+            <text x="40" y="65" text-anchor="middle" font-family="'Inter',sans-serif" font-size="5" letter-spacing="2" fill="rgba(245,240,232,0.3)">sanjose-hotel.com</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner B: Portal Serrano -->
+    <div class="banner-card">
+      <h5>B · Portal Serrano</h5>
+      <div class="banner-frame bf-olive">
+        <div class="banner-inner">
+          <svg width="100" height="80" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:16px">
+            <path d="M55,80 L55,45 Q55,18 100,18 Q145,18 145,45 L145,80" stroke="#E8DFC8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <line x1="40" y1="80" x2="160" y2="80" stroke="#E8DFC8" stroke-width="0.8"/>
+            <circle cx="100" cy="20" r="2.5" fill="#C4704A"/>
+            <text x="100" y="64" text-anchor="middle" font-family="'Playfair Display',serif" font-size="13" font-weight="400" letter-spacing="4" fill="#FDFAF5">SAN JOSÉ</text>
+            <text x="100" y="77" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" font-weight="400" letter-spacing="6.5" fill="#D4B896">H O T E L</text>
+            <line x1="40" y1="80" x2="50" y2="80" stroke="#C4704A" stroke-width="1.5"/>
+            <line x1="150" y1="80" x2="160" y2="80" stroke="#C4704A" stroke-width="1.5"/>
+          </svg>
+          <svg width="1" height="36" style="margin-bottom:12px"><line x1="0.5" y1="0" x2="0.5" y2="36" stroke="rgba(245,240,232,0.2)" stroke-width="1"/></svg>
+          <svg viewBox="0 0 80 80" width="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="40" y="16" text-anchor="middle" font-family="'Inter',sans-serif" font-size="5" letter-spacing="3" fill="rgba(245,240,232,0.4)">VILLA CARLOS PAZ</text>
+            <text x="40" y="32" text-anchor="middle" font-family="'Playfair Display',serif" font-size="7" font-weight="300" fill="rgba(245,240,232,0.55)">Córdoba · Argentina</text>
+            <text x="40" y="54" text-anchor="middle" font-family="'Inter',sans-serif" font-size="5" letter-spacing="2" fill="rgba(245,240,232,0.3)">sanjose-hotel.com</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner C: Pino Geométrico -->
+    <div class="banner-card">
+      <h5>C · Pino Geométrico</h5>
+      <div class="banner-frame bf-light">
+        <div class="banner-inner">
+          <svg width="100" height="90" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:16px">
+            <polygon points="100,8 116,32 84,32" stroke="#6B7A4A" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+            <polygon points="100,22 120,50 80,50" stroke="#6B7A4A" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+            <polygon points="100,36 124,66 76,66" stroke="#6B7A4A" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+            <line x1="100" y1="66" x2="100" y2="76" stroke="#6B7A4A" stroke-width="1.8"/>
+            <text x="100" y="88" text-anchor="middle" font-family="'Playfair Display',serif" font-size="13" font-weight="300" letter-spacing="5" fill="#2A2826">SAN JOSÉ</text>
+            <text x="100" y="97" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" font-weight="400" letter-spacing="6" fill="#C4704A">H O T E L</text>
+          </svg>
+          <svg width="1" height="36" style="margin-bottom:12px"><line x1="0.5" y1="0" x2="0.5" y2="36" stroke="rgba(42,40,38,0.15)" stroke-width="1"/></svg>
+          <svg viewBox="0 0 80 80" width="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="40" y="16" text-anchor="middle" font-family="'Inter',sans-serif" font-size="5" letter-spacing="3" fill="rgba(42,40,38,0.35)">VILLA CARLOS PAZ</text>
+            <text x="40" y="32" text-anchor="middle" font-family="'Playfair Display',serif" font-size="7" font-weight="300" fill="rgba(42,40,38,0.5)">Córdoba · Argentina</text>
+            <text x="40" y="54" text-anchor="middle" font-family="'Inter',sans-serif" font-size="5" letter-spacing="2" fill="rgba(42,40,38,0.28)">sanjose-hotel.com</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner D: Monograma SJ -->
+    <div class="banner-card">
+      <h5>D · Monograma SJ</h5>
+      <div class="banner-frame bf-terra">
+        <div class="banner-inner">
+          <svg width="100" height="80" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:16px">
+            <path d="M76,28 Q60,28 60,40 Q60,52 76,52 Q92,52 92,64 Q92,76 76,76" stroke="#FDFAF5" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <line x1="110" y1="28" x2="124" y2="28" stroke="#F5F0E8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="117" y1="28" x2="117" y2="66" stroke="#F5F0E8" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M117,66 Q117,78 106,78 Q98,78 97,70" stroke="#F5F0E8" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <circle cx="117" cy="22" r="2" fill="#2A2826"/>
+            <line x1="50" y1="88" x2="150" y2="88" stroke="rgba(245,240,232,0.2)" stroke-width="1"/>
+            <text x="100" y="97" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6.5" font-weight="400" letter-spacing="5" fill="rgba(245,240,232,0.7)">S A N   J O S É</text>
+          </svg>
+          <svg width="1" height="36" style="margin-bottom:12px"><line x1="0.5" y1="0" x2="0.5" y2="36" stroke="rgba(245,240,232,0.2)" stroke-width="1"/></svg>
+          <svg viewBox="0 0 80 80" width="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="40" y="16" text-anchor="middle" font-family="'Inter',sans-serif" font-size="5" letter-spacing="3" fill="rgba(245,240,232,0.5)">VILLA CARLOS PAZ</text>
+            <text x="40" y="32" text-anchor="middle" font-family="'Playfair Display',serif" font-size="7" font-weight="300" fill="rgba(245,240,232,0.65)">Córdoba · Argentina</text>
+            <text x="40" y="54" text-anchor="middle" font-family="'Inter',sans-serif" font-size="5" letter-spacing="2" fill="rgba(245,240,232,0.35)">sanjose-hotel.com</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner E: Sello Circular -->
+    <div class="banner-card">
+      <h5>E · Sello Circular</h5>
+      <div class="banner-frame bf-dark">
+        <div class="banner-inner">
+          <svg width="110" height="110" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:14px">
+            <circle cx="80" cy="80" r="72" stroke="#B5C28A" stroke-width="1.2"/>
+            <circle cx="80" cy="80" r="62" stroke="#B5C28A" stroke-width="0.5" stroke-dasharray="3 4"/>
+            <polygon points="80,30 90,50 70,50" stroke="#B5C28A" stroke-width="1.1" fill="none"/>
+            <polygon points="80,42 94,62 66,62" stroke="#B5C28A" stroke-width="1.1" fill="none"/>
+            <line x1="80" y1="62" x2="80" y2="70" stroke="#B5C28A" stroke-width="1.4"/>
+            <path id="arcBan" d="M 80,80 m -55,0 a 55,55 0 1,1 110,0" fill="none"/>
+            <text font-family="'Inter',sans-serif" font-size="7" font-weight="400" letter-spacing="5" fill="#FDFAF5">
+              <textPath href="#arcBan" startOffset="8%">HOTEL · SAN JOSÉ · CARLOS PAZ</textPath>
+            </text>
+            <text x="80" y="118" text-anchor="middle" font-size="6" fill="#C4704A" font-family="serif">✦ ✦ ✦</text>
+            <text x="80" y="99" text-anchor="middle" font-family="'Playfair Display',serif" font-size="16" font-weight="400" letter-spacing="2" fill="#FDFAF5">SJ</text>
+            <text x="80" y="110" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" font-weight="300" letter-spacing="5" fill="#B5C28A">EST. 2024</text>
+          </svg>
+          <svg viewBox="0 0 80 50" width="70" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="40" y="14" text-anchor="middle" font-family="'Inter',sans-serif" font-size="5" letter-spacing="3" fill="rgba(245,240,232,0.4)">VILLA CARLOS PAZ</text>
+            <text x="40" y="28" text-anchor="middle" font-family="'Playfair Display',serif" font-size="7" font-weight="300" fill="rgba(245,240,232,0.55)">Córdoba · Argentina</text>
+            <text x="40" y="44" text-anchor="middle" font-family="'Inter',sans-serif" font-size="5" letter-spacing="2" fill="rgba(245,240,232,0.3)">sanjose-hotel.com</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /banners-grid -->
+
+</div><!-- /banner-section -->
+
+<div class="page-footer">
+  Hotel San José · Villa Carlos Paz · Rebranding 2026 · Ronda 2 de logos
+</div>
+
+</body>
+</html>

@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San José Hotel — Evolución del Logo Original</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@200;300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Inter', sans-serif;
+  background: #F0EBE1;
+  color: #1C1A18;
+}
+
+/* ─── HEADER ─── */
+.site-header {
+  background: #1C1A18;
+  text-align: center;
+  padding: 60px 32px 40px;
+}
+.site-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: #F0EBE1;
+  margin-bottom: 10px;
+}
+.site-header p {
+  font-size: 10px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: rgba(240,235,225,0.4);
+}
+.header-rule {
+  width: 40px;
+  height: 1px;
+  background: #B87333;
+  margin: 18px auto 0;
+}
+
+/* ─── PHILOSOPHY NOTE ─── */
+.philosophy {
+  max-width: 680px;
+  margin: 56px auto 0;
+  padding: 0 32px;
+  text-align: center;
+}
+.philosophy p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #3D3A36;
+  letter-spacing: 0.3px;
+}
+
+/* ─── LOGO SECTION ─── */
+.logos-wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 56px 32px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.logo-card {
+  background: #FDFAF5;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 48px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04);
+}
+
+/* Header strip */
+.card-header {
+  background: #1C1A18;
+  padding: 20px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-header-left span {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(240,235,225,0.38);
+  display: block;
+  margin-bottom: 5px;
+}
+.card-header-left strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #F0EBE1;
+}
+.card-concept {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #B87333;
+}
+
+/* Preview tiles */
+.previews {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  background: #D8D2C8;
+}
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 32px 52px;
+  position: relative;
+  min-height: 280px;
+}
+.tile.light { background: #FDFAF5; }
+.tile.dark  { background: #1C1A18; }
+.tile.olive { background: #3D4E28; }
+.tile.sand  { background: #C8A87A; }
+.tile.terra { background: #A8593A; }
+
+.tile-tag {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.tile.light .tile-tag { color: rgba(28,26,24,0.25); }
+.tile.dark  .tile-tag { color: rgba(240,235,225,0.25); }
+.tile.olive .tile-tag { color: rgba(240,235,225,0.3); }
+.tile.sand  .tile-tag { color: rgba(28,26,24,0.35); }
+.tile.terra .tile-tag { color: rgba(240,235,225,0.35); }
+
+/* Description bar */
+.card-desc {
+  padding: 32px 36px;
+  border-top: 1px solid #EAE5DC;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 28px;
+}
+.desc-col h4 {
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #7A8A50;
+  margin-bottom: 7px;
+}
+.desc-col p {
+  font-size: 13px;
+  color: #5A5550;
+  line-height: 1.7;
+}
+
+/* ─── BANNER SECTION ─── */
+.banner-section {
+  background: #1C1A18;
+  padding: 80px 32px 100px;
+}
+.banner-heading {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.banner-heading h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: #F0EBE1;
+  margin-bottom: 10px;
+}
+.banner-heading p {
+  font-size: 9px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: rgba(240,235,225,0.35);
+}
+.banner-rule {
+  width: 40px;
+  height: 1px;
+  background: #B87333;
+  margin: 18px auto 0;
+}
+
+.banners-row {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.banner-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.banner-unit h5 {
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(240,235,225,0.35);
+  text-align: center;
+}
+.banner-frame {
+  width: 100%;
+  aspect-ratio: 1 / 2.8;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 24px 16px;
+}
+.banner-frame.bf-dark  { background: #1C1A18; border: 1px solid rgba(240,235,225,0.1); }
+.banner-frame.bf-olive { background: #3D4E28; }
+.banner-frame.bf-sand  { background: #C8A87A; }
+.banner-frame.bf-terra { background: #A8593A; }
+.banner-frame.bf-cream { background: #F0EBE1; border: 1px solid rgba(28,26,24,0.1); }
+
+.banner-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(240,235,225,0.15);
+  margin: 10px 0;
+}
+.banner-divider.dark-div {
+  background: rgba(28,26,24,0.15);
+}
+
+.banner-footer-text {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <h1>San José Hotel — Evolución del Logo</h1>
+  <p>Cinco propuestas · Transición formal · Modernización contenida</p>
+  <div class="header-rule"></div>
+</div>
+
+<div class="philosophy">
+  <p>Cada propuesta conserva el monograma circular SJ y la tipografía serif de gran escala — el ADN del logo original — refinando proporciones, trazos y paleta hacia un lenguaje más contemporáneo.</p>
+</div>
+
+<div class="logos-wrap">
+
+  <!-- ══════════════════════════════════════════
+       OPCIÓN 1 · HERENCIA REFINADA
+       Mismo ADN, trazos más delgados, círculo geométrico limpio
+  ══════════════════════════════════════════ -->
+  <div class="logo-card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <span>Opción 01</span>
+        <strong>Herencia Refinada</strong>
+      </div>
+      <span class="card-concept">Evolución directa · trazos finos</span>
+    </div>
+    <div class="previews">
+
+      <!-- Fondo claro -->
+      <div class="tile light">
+        <svg width="200" height="260" viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Círculo fino doble -->
+          <circle cx="100" cy="88" r="72" stroke="#1C1A18" stroke-width="1.2"/>
+          <circle cx="100" cy="88" r="66" stroke="#1C1A18" stroke-width="0.4"/>
+          <!-- S serif estilizada -->
+          <path d="M78,62 Q58,62 58,75 Q58,88 78,88 Q98,88 98,101 Q98,114 78,114" stroke="#1C1A18" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <!-- Remate superior S -->
+          <line x1="68" y1="62" x2="88" y2="62" stroke="#1C1A18" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- Remate inferior S -->
+          <line x1="68" y1="114" x2="88" y2="114" stroke="#1C1A18" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- J con serifa -->
+          <line x1="108" y1="58" x2="136" y2="58" stroke="#1C1A18" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="122" y1="58" x2="122" y2="100" stroke="#1C1A18" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M122,100 Q122,118 108,118 Q97,118 96,109" stroke="#1C1A18" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Punto dorado sobre J -->
+          <circle cx="122" cy="50" r="3" fill="#B87333"/>
+          <!-- Texto principal -->
+          <text x="100" y="186" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="30" font-weight="500" letter-spacing="5" fill="#1C1A18">SAN JOSÉ</text>
+          <!-- Línea ornamental -->
+          <line x1="30" y1="196" x2="170" y2="196" stroke="#1C1A18" stroke-width="0.5"/>
+          <line x1="30" y1="198" x2="170" y2="198" stroke="#B87333" stroke-width="0.5" opacity="0.6"/>
+          <!-- HOTEL -->
+          <text x="100" y="216" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" font-weight="300" letter-spacing="10" fill="#3D4E28">H O T E L</text>
+          <!-- Subtítulo -->
+          <text x="100" y="236" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="11" letter-spacing="2" fill="#7A6A5A">Villa Carlos Paz · Córdoba</text>
+        </svg>
+        <span class="tile-tag">Fondo claro</span>
+      </div>
+
+      <!-- Fondo oscuro -->
+      <div class="tile dark">
+        <svg width="200" height="260" viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="88" r="72" stroke="#F0EBE1" stroke-width="1.2"/>
+          <circle cx="100" cy="88" r="66" stroke="#F0EBE1" stroke-width="0.4"/>
+          <path d="M78,62 Q58,62 58,75 Q58,88 78,88 Q98,88 98,101 Q98,114 78,114" stroke="#F0EBE1" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <line x1="68" y1="62" x2="88" y2="62" stroke="#F0EBE1" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="68" y1="114" x2="88" y2="114" stroke="#F0EBE1" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="108" y1="58" x2="136" y2="58" stroke="#F0EBE1" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="122" y1="58" x2="122" y2="100" stroke="#F0EBE1" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M122,100 Q122,118 108,118 Q97,118 96,109" stroke="#F0EBE1" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="122" cy="50" r="3" fill="#B87333"/>
+          <text x="100" y="186" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="30" font-weight="500" letter-spacing="5" fill="#F0EBE1">SAN JOSÉ</text>
+          <line x1="30" y1="196" x2="170" y2="196" stroke="#F0EBE1" stroke-width="0.5"/>
+          <line x1="30" y1="198" x2="170" y2="198" stroke="#B87333" stroke-width="0.5" opacity="0.7"/>
+          <text x="100" y="216" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" font-weight="300" letter-spacing="10" fill="#9AB870">H O T E L</text>
+          <text x="100" y="236" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="11" letter-spacing="2" fill="rgba(240,235,225,0.5)">Villa Carlos Paz · Córdoba</text>
+        </svg>
+        <span class="tile-tag">Fondo oscuro</span>
+      </div>
+
+      <!-- Fondo oliva -->
+      <div class="tile olive">
+        <svg width="200" height="260" viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="88" r="72" stroke="#E8DFC8" stroke-width="1.2"/>
+          <circle cx="100" cy="88" r="66" stroke="#E8DFC8" stroke-width="0.4"/>
+          <path d="M78,62 Q58,62 58,75 Q58,88 78,88 Q98,88 98,101 Q98,114 78,114" stroke="#E8DFC8" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <line x1="68" y1="62" x2="88" y2="62" stroke="#E8DFC8" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="68" y1="114" x2="88" y2="114" stroke="#E8DFC8" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="108" y1="58" x2="136" y2="58" stroke="#E8DFC8" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="122" y1="58" x2="122" y2="100" stroke="#E8DFC8" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M122,100 Q122,118 108,118 Q97,118 96,109" stroke="#E8DFC8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="122" cy="50" r="3" fill="#B87333"/>
+          <text x="100" y="186" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="30" font-weight="500" letter-spacing="5" fill="#F0EBE1">SAN JOSÉ</text>
+          <line x1="30" y1="196" x2="170" y2="196" stroke="#E8DFC8" stroke-width="0.5"/>
+          <line x1="30" y1="198" x2="170" y2="198" stroke="#B87333" stroke-width="0.5" opacity="0.7"/>
+          <text x="100" y="216" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" font-weight="300" letter-spacing="10" fill="#C8D8A0">H O T E L</text>
+          <text x="100" y="236" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="11" letter-spacing="2" fill="rgba(240,235,225,0.55)">Villa Carlos Paz · Córdoba</text>
+        </svg>
+        <span class="tile-tag">Fondo oliva</span>
+      </div>
+
+    </div>
+    <div class="card-desc">
+      <div class="desc-col"><h4>Cambios respecto al original</h4><p>Misma estructura SJ + círculo. Trazos más delgados y uniformes. Serifa más geométrica.</p></div>
+      <div class="desc-col"><h4>Tipografía</h4><p>Cormorant Garamond: más moderna que el original, misma elegancia serif de gran escala.</p></div>
+      <div class="desc-col"><h4>Novedad</h4><p>Doble círculo, punto de acento dorado-cobre sobre la J. Franja de color bicolor bajo el nombre.</p></div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       OPCIÓN 2 · MEDALLÓN CLÁSICO
+       Círculo con texto corrido + monograma prominente
+  ══════════════════════════════════════════ -->
+  <div class="logo-card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <span>Opción 02</span>
+        <strong>Medallón Clásico</strong>
+      </div>
+      <span class="card-concept">Sello hotelero · texto circular</span>
+    </div>
+    <div class="previews">
+
+      <div class="tile light">
+        <svg width="210" height="280" viewBox="0 0 210 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Anillo grueso exterior -->
+          <circle cx="105" cy="96" r="80" stroke="#1C1A18" stroke-width="2"/>
+          <!-- Anillo interior fino -->
+          <circle cx="105" cy="96" r="68" stroke="#1C1A18" stroke-width="0.6"/>
+          <!-- Texto circular superior -->
+          <path id="arcA" d="M105,96 m -62,0 a 62,62 0 1,1 124,0" fill="none"/>
+          <text font-family="'Inter',sans-serif" font-size="7.5" font-weight="300" letter-spacing="5.5" fill="#1C1A18">
+            <textPath href="#arcA" startOffset="4%">HOTEL · SAN JOSÉ · VILLA CARLOS PAZ</textPath>
+          </text>
+          <!-- Texto circular inferior -->
+          <path id="arcB" d="M105,96 m -62,0 a 62,62 0 0,0 124,0" fill="none"/>
+          <text font-family="'Inter',sans-serif" font-size="6.5" font-weight="300" letter-spacing="4" fill="#3D4E28">
+            <textPath href="#arcB" startOffset="14%">· CÓRDOBA · ARGENTINA · EST. 2024 ·</textPath>
+          </text>
+          <!-- S grande -->
+          <text x="86" y="110" font-family="'Cormorant Garamond',serif" font-size="54" font-weight="600" font-style="italic" fill="#1C1A18">S</text>
+          <!-- J grande -->
+          <text x="106" y="110" font-family="'Cormorant Garamond',serif" font-size="54" font-weight="400" fill="#1C1A18">J</text>
+          <!-- Rombo separador -->
+          <polygon points="105,122 109,127 105,132 101,127" fill="#B87333"/>
+          <!-- Nombre -->
+          <text x="105" y="196" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="32" font-weight="500" letter-spacing="4" fill="#1C1A18">SAN JOSÉ</text>
+          <line x1="28" y1="206" x2="182" y2="206" stroke="#1C1A18" stroke-width="0.6"/>
+          <text x="105" y="224" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" font-weight="200" letter-spacing="11" fill="#3D4E28">H O T E L</text>
+        </svg>
+        <span class="tile-tag">Fondo claro</span>
+      </div>
+
+      <div class="tile dark">
+        <svg width="210" height="280" viewBox="0 0 210 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="105" cy="96" r="80" stroke="#F0EBE1" stroke-width="2"/>
+          <circle cx="105" cy="96" r="68" stroke="#F0EBE1" stroke-width="0.6"/>
+          <path id="arcC" d="M105,96 m -62,0 a 62,62 0 1,1 124,0" fill="none"/>
+          <text font-family="'Inter',sans-serif" font-size="7.5" font-weight="300" letter-spacing="5.5" fill="#F0EBE1">
+            <textPath href="#arcC" startOffset="4%">HOTEL · SAN JOSÉ · VILLA CARLOS PAZ</textPath>
+          </text>
+          <path id="arcD" d="M105,96 m -62,0 a 62,62 0 0,0 124,0" fill="none"/>
+          <text font-family="'Inter',sans-serif" font-size="6.5" font-weight="300" letter-spacing="4" fill="#9AB870">
+            <textPath href="#arcD" startOffset="14%">· CÓRDOBA · ARGENTINA · EST. 2024 ·</textPath>
+          </text>
+          <text x="86" y="110" font-family="'Cormorant Garamond',serif" font-size="54" font-weight="600" font-style="italic" fill="#F0EBE1">S</text>
+          <text x="106" y="110" font-family="'Cormorant Garamond',serif" font-size="54" font-weight="400" fill="#F0EBE1">J</text>
+          <polygon points="105,122 109,127 105,132 101,127" fill="#B87333"/>
+          <text x="105" y="196" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="32" font-weight="500" letter-spacing="4" fill="#F0EBE1">SAN JOSÉ</text>
+          <line x1="28" y1="206" x2="182" y2="206" stroke="#F0EBE1" stroke-width="0.6"/>
+          <text x="105" y="224" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" font-weight="200" letter-spacing="11" fill="#9AB870">H O T E L</text>
+        </svg>
+        <span class="tile-tag">Fondo oscuro</span>
+      </div>
+
+      <div class="tile sand">
+        <svg width="210" height="280" viewBox="0 0 210 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="105" cy="96" r="80" stroke="#1C1A18" stroke-width="2"/>
+          <circle cx="105" cy="96" r="68" stroke="#1C1A18" stroke-width="0.6"/>
+          <path id="arcE" d="M105,96 m -62,0 a 62,62 0 1,1 124,0" fill="none"/>
+          <text font-family="'Inter',sans-serif" font-size="7.5" font-weight="300" letter-spacing="5.5" fill="#1C1A18">
+            <textPath href="#arcE" startOffset="4%">HOTEL · SAN JOSÉ · VILLA CARLOS PAZ</textPath>
+          </text>
+          <path id="arcF" d="M105,96 m -62,0 a 62,62 0 0,0 124,0" fill="none"/>
+          <text font-family="'Inter',sans-serif" font-size="6.5" font-weight="300" letter-spacing="4" fill="#3D4E28">
+            <textPath href="#arcF" startOffset="14%">· CÓRDOBA · ARGENTINA · EST. 2024 ·</textPath>
+          </text>
+          <text x="86" y="110" font-family="'Cormorant Garamond',serif" font-size="54" font-weight="600" font-style="italic" fill="#1C1A18">S</text>
+          <text x="106" y="110" font-family="'Cormorant Garamond',serif" font-size="54" font-weight="400" fill="#1C1A18">J</text>
+          <polygon points="105,122 109,127 105,132 101,127" fill="#3D4E28"/>
+          <text x="105" y="196" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="32" font-weight="500" letter-spacing="4" fill="#1C1A18">SAN JOSÉ</text>
+          <line x1="28" y1="206" x2="182" y2="206" stroke="#1C1A18" stroke-width="0.6"/>
+          <text x="105" y="224" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" font-weight="200" letter-spacing="11" fill="#3D4E28">H O T E L</text>
+        </svg>
+        <span class="tile-tag">Fondo arena</span>
+      </div>
+
+    </div>
+    <div class="card-desc">
+      <div class="desc-col"><h4>Diferencia clave</h4><p>Texto corrido en el anillo exterior identifica hotel, ciudad y año. Autoridad institucional.</p></div>
+      <div class="desc-col"><h4>Monograma</h4><p>S en itálica / J en romano: contraste de peso que genera sofisticación tipográfica.</p></div>
+      <div class="desc-col"><h4>Uso ideal</h4><p>Membrete, tarjetas de presentación, menú del restaurante, señalética de ingreso.</p></div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       OPCIÓN 3 · ART DÉCO SERRANO
+       Geometría déco + líneas ornamentales
+  ══════════════════════════════════════════ -->
+  <div class="logo-card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <span>Opción 03</span>
+        <strong>Art Déco Serrano</strong>
+      </div>
+      <span class="card-concept">Geometría déco · ornamento fino</span>
+    </div>
+    <div class="previews">
+
+      <div class="tile light">
+        <svg width="200" height="280" viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Octágono exterior -->
+          <polygon points="100,16 140,28 164,64 164,116 140,152 100,164 60,152 36,116 36,64 60,28" stroke="#1C1A18" stroke-width="1.4" fill="none"/>
+          <!-- Hexágono interior fino -->
+          <polygon points="100,26 134,36 154,68 154,112 134,144 100,154 66,144 46,112 46,68 66,36" stroke="#1C1A18" stroke-width="0.4" fill="none"/>
+          <!-- S -->
+          <path d="M76,64 Q58,64 58,78 Q58,90 76,90 Q94,90 94,104 Q94,118 76,118" stroke="#1C1A18" stroke-width="2.6" fill="none" stroke-linecap="butt"/>
+          <line x1="66" y1="64" x2="86" y2="64" stroke="#1C1A18" stroke-width="2.2"/>
+          <line x1="66" y1="118" x2="86" y2="118" stroke="#1C1A18" stroke-width="2.2"/>
+          <!-- J -->
+          <line x1="108" y1="60" x2="136" y2="60" stroke="#1C1A18" stroke-width="2.2"/>
+          <line x1="122" y1="60" x2="122" y2="102" stroke="#1C1A18" stroke-width="2.5"/>
+          <path d="M122,102 Q122,120 108,120 Q98,120 97,111" stroke="#1C1A18" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Esquinas déco doradas -->
+          <line x1="36" y1="90" x2="44" y2="90" stroke="#B87333" stroke-width="1.5"/>
+          <line x1="156" y1="90" x2="164" y2="90" stroke="#B87333" stroke-width="1.5"/>
+          <line x1="36" y1="94" x2="44" y2="94" stroke="#B87333" stroke-width="0.6"/>
+          <line x1="156" y1="94" x2="164" y2="94" stroke="#B87333" stroke-width="0.6"/>
+          <!-- Nombre -->
+          <text x="100" y="196" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="30" font-weight="500" letter-spacing="5" fill="#1C1A18">SAN JOSÉ</text>
+          <!-- Ornamento déco -->
+          <line x1="28" y1="203" x2="78" y2="203" stroke="#1C1A18" stroke-width="0.6"/>
+          <polygon points="100,200 104,204 100,208 96,204" fill="#B87333"/>
+          <line x1="122" y1="203" x2="172" y2="203" stroke="#1C1A18" stroke-width="0.6"/>
+          <text x="100" y="222" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" font-weight="300" letter-spacing="11" fill="#3D4E28">H O T E L</text>
+          <text x="100" y="244" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="11" letter-spacing="1.5" fill="#7A6A5A">Villa Carlos Paz · Córdoba</text>
+        </svg>
+        <span class="tile-tag">Fondo claro</span>
+      </div>
+
+      <div class="tile dark">
+        <svg width="200" height="280" viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="100,16 140,28 164,64 164,116 140,152 100,164 60,152 36,116 36,64 60,28" stroke="#F0EBE1" stroke-width="1.4" fill="none"/>
+          <polygon points="100,26 134,36 154,68 154,112 134,144 100,154 66,144 46,112 46,68 66,36" stroke="#F0EBE1" stroke-width="0.4" fill="none"/>
+          <path d="M76,64 Q58,64 58,78 Q58,90 76,90 Q94,90 94,104 Q94,118 76,118" stroke="#F0EBE1" stroke-width="2.6" fill="none" stroke-linecap="butt"/>
+          <line x1="66" y1="64" x2="86" y2="64" stroke="#F0EBE1" stroke-width="2.2"/>
+          <line x1="66" y1="118" x2="86" y2="118" stroke="#F0EBE1" stroke-width="2.2"/>
+          <line x1="108" y1="60" x2="136" y2="60" stroke="#F0EBE1" stroke-width="2.2"/>
+          <line x1="122" y1="60" x2="122" y2="102" stroke="#F0EBE1" stroke-width="2.5"/>
+          <path d="M122,102 Q122,120 108,120 Q98,120 97,111" stroke="#F0EBE1" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <line x1="36" y1="90" x2="44" y2="90" stroke="#B87333" stroke-width="1.5"/>
+          <line x1="156" y1="90" x2="164" y2="90" stroke="#B87333" stroke-width="1.5"/>
+          <line x1="36" y1="94" x2="44" y2="94" stroke="#B87333" stroke-width="0.6"/>
+          <line x1="156" y1="94" x2="164" y2="94" stroke="#B87333" stroke-width="0.6"/>
+          <text x="100" y="196" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="30" font-weight="500" letter-spacing="5" fill="#F0EBE1">SAN JOSÉ</text>
+          <line x1="28" y1="203" x2="78" y2="203" stroke="#F0EBE1" stroke-width="0.6"/>
+          <polygon points="100,200 104,204 100,208 96,204" fill="#B87333"/>
+          <line x1="122" y1="203" x2="172" y2="203" stroke="#F0EBE1" stroke-width="0.6"/>
+          <text x="100" y="222" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" font-weight="300" letter-spacing="11" fill="#9AB870">H O T E L</text>
+          <text x="100" y="244" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="11" letter-spacing="1.5" fill="rgba(240,235,225,0.5)">Villa Carlos Paz · Córdoba</text>
+        </svg>
+        <span class="tile-tag">Fondo oscuro</span>
+      </div>
+
+      <div class="tile terra">
+        <svg width="200" height="280" viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="100,16 140,28 164,64 164,116 140,152 100,164 60,152 36,116 36,64 60,28" stroke="#F0EBE1" stroke-width="1.4" fill="none"/>
+          <polygon points="100,26 134,36 154,68 154,112 134,144 100,154 66,144 46,112 46,68 66,36" stroke="#F0EBE1" stroke-width="0.4" fill="none"/>
+          <path d="M76,64 Q58,64 58,78 Q58,90 76,90 Q94,90 94,104 Q94,118 76,118" stroke="#F0EBE1" stroke-width="2.6" fill="none" stroke-linecap="butt"/>
+          <line x1="66" y1="64" x2="86" y2="64" stroke="#F0EBE1" stroke-width="2.2"/>
+          <line x1="66" y1="118" x2="86" y2="118" stroke="#F0EBE1" stroke-width="2.2"/>
+          <line x1="108" y1="60" x2="136" y2="60" stroke="#F0EBE1" stroke-width="2.2"/>
+          <line x1="122" y1="60" x2="122" y2="102" stroke="#F0EBE1" stroke-width="2.5"/>
+          <path d="M122,102 Q122,120 108,120 Q98,120 97,111" stroke="#F0EBE1" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <line x1="36" y1="90" x2="44" y2="90" stroke="#1C1A18" stroke-width="1.5"/>
+          <line x1="156" y1="90" x2="164" y2="90" stroke="#1C1A18" stroke-width="1.5"/>
+          <line x1="36" y1="94" x2="44" y2="94" stroke="#1C1A18" stroke-width="0.6"/>
+          <line x1="156" y1="94" x2="164" y2="94" stroke="#1C1A18" stroke-width="0.6"/>
+          <text x="100" y="196" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="30" font-weight="500" letter-spacing="5" fill="#F0EBE1">SAN JOSÉ</text>
+          <line x1="28" y1="203" x2="78" y2="203" stroke="#F0EBE1" stroke-width="0.6"/>
+          <polygon points="100,200 104,204 100,208 96,204" fill="#1C1A18"/>
+          <line x1="122" y1="203" x2="172" y2="203" stroke="#F0EBE1" stroke-width="0.6"/>
+          <text x="100" y="222" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" font-weight="300" letter-spacing="11" fill="#F0EBE1">H O T E L</text>
+          <text x="100" y="244" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="11" letter-spacing="1.5" fill="rgba(240,235,225,0.65)">Villa Carlos Paz · Córdoba</text>
+        </svg>
+        <span class="tile-tag">Fondo terracota</span>
+      </div>
+
+    </div>
+    <div class="card-desc">
+      <div class="desc-col"><h4>Marco octagonal</h4><p>Reemplaza el círculo por un octágono, referencia al art déco de los 20s. Sigue siendo contenedor de monograma.</p></div>
+      <div class="desc-col"><h4>Detalle cobre</h4><p>Líneas dobles horizontales en cobre-bronce flanquean el monograma. Elegancia sin exceso.</p></div>
+      <div class="desc-col"><h4>Rombo separador</h4><p>Un pequeño rombo cobre entre el nombre y la línea reemplaza al guión. Detalle que escala bien.</p></div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       OPCIÓN 4 · ESCUDO CONTEMPORÁNEO
+       Escudo simplificado moderno con cuarteles
+  ══════════════════════════════════════════ -->
+  <div class="logo-card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <span>Opción 04</span>
+        <strong>Escudo Contemporáneo</strong>
+      </div>
+      <span class="card-concept">Heráldica simplificada · lujo moderno</span>
+    </div>
+    <div class="previews">
+
+      <div class="tile light">
+        <svg width="200" height="280" viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Escudo moderno -->
+          <path d="M100,14 L158,40 L158,110 Q158,160 100,180 Q42,160 42,110 L42,40 Z" stroke="#1C1A18" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+          <!-- Escudo interior -->
+          <path d="M100,24 L150,46 L150,110 Q150,152 100,168 Q50,152 50,110 L50,46 Z" stroke="#1C1A18" stroke-width="0.4" fill="none" stroke-linejoin="round"/>
+          <!-- Cruz interior muy delgada -->
+          <line x1="100" y1="50" x2="100" y2="152" stroke="#1C1A18" stroke-width="0.4" opacity="0.3"/>
+          <line x1="60" y1="100" x2="140" y2="100" stroke="#1C1A18" stroke-width="0.4" opacity="0.3"/>
+          <!-- S -->
+          <path d="M76,72 Q62,72 62,83 Q62,94 76,94 Q90,94 90,105 Q90,116 76,116" stroke="#1C1A18" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <line x1="67" y1="72" x2="85" y2="72" stroke="#1C1A18" stroke-width="2"/>
+          <line x1="67" y1="116" x2="85" y2="116" stroke="#1C1A18" stroke-width="2"/>
+          <!-- J -->
+          <line x1="106" y1="68" x2="130" y2="68" stroke="#1C1A18" stroke-width="2"/>
+          <line x1="118" y1="68" x2="118" y2="104" stroke="#1C1A18" stroke-width="2.3"/>
+          <path d="M118,104 Q118,120 106,120 Q98,120 97,112" stroke="#1C1A18" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+          <!-- Estrella en la punta del escudo -->
+          <polygon points="100,170 101.8,175.5 107.6,175.5 103,179 104.8,184.5 100,181 95.2,184.5 97,179 92.4,175.5 98.2,175.5" fill="#B87333" transform="scale(0.6) translate(67,115)"/>
+          <!-- Nombre -->
+          <text x="100" y="208" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="30" font-weight="500" letter-spacing="4" fill="#1C1A18">SAN JOSÉ</text>
+          <line x1="30" y1="216" x2="170" y2="216" stroke="#1C1A18" stroke-width="0.6"/>
+          <text x="100" y="234" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" font-weight="200" letter-spacing="11" fill="#3D4E28">H O T E L</text>
+        </svg>
+        <span class="tile-tag">Fondo claro</span>
+      </div>
+
+      <div class="tile dark">
+        <svg width="200" height="280" viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100,14 L158,40 L158,110 Q158,160 100,180 Q42,160 42,110 L42,40 Z" stroke="#F0EBE1" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+          <path d="M100,24 L150,46 L150,110 Q150,152 100,168 Q50,152 50,110 L50,46 Z" stroke="#F0EBE1" stroke-width="0.4" fill="none" stroke-linejoin="round"/>
+          <line x1="100" y1="50" x2="100" y2="152" stroke="#F0EBE1" stroke-width="0.4" opacity="0.2"/>
+          <line x1="60" y1="100" x2="140" y2="100" stroke="#F0EBE1" stroke-width="0.4" opacity="0.2"/>
+          <path d="M76,72 Q62,72 62,83 Q62,94 76,94 Q90,94 90,105 Q90,116 76,116" stroke="#F0EBE1" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <line x1="67" y1="72" x2="85" y2="72" stroke="#F0EBE1" stroke-width="2"/>
+          <line x1="67" y1="116" x2="85" y2="116" stroke="#F0EBE1" stroke-width="2"/>
+          <line x1="106" y1="68" x2="130" y2="68" stroke="#F0EBE1" stroke-width="2"/>
+          <line x1="118" y1="68" x2="118" y2="104" stroke="#F0EBE1" stroke-width="2.3"/>
+          <path d="M118,104 Q118,120 106,120 Q98,120 97,112" stroke="#F0EBE1" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+          <polygon points="100,170 101.8,175.5 107.6,175.5 103,179 104.8,184.5 100,181 95.2,184.5 97,179 92.4,175.5 98.2,175.5" fill="#B87333" transform="scale(0.6) translate(67,115)"/>
+          <text x="100" y="208" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="30" font-weight="500" letter-spacing="4" fill="#F0EBE1">SAN JOSÉ</text>
+          <line x1="30" y1="216" x2="170" y2="216" stroke="#F0EBE1" stroke-width="0.6"/>
+          <text x="100" y="234" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" font-weight="200" letter-spacing="11" fill="#9AB870">H O T E L</text>
+        </svg>
+        <span class="tile-tag">Fondo oscuro</span>
+      </div>
+
+      <div class="tile olive">
+        <svg width="200" height="280" viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100,14 L158,40 L158,110 Q158,160 100,180 Q42,160 42,110 L42,40 Z" stroke="#E8DFC8" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+          <path d="M100,24 L150,46 L150,110 Q150,152 100,168 Q50,152 50,110 L50,46 Z" stroke="#E8DFC8" stroke-width="0.4" fill="none" stroke-linejoin="round"/>
+          <line x1="100" y1="50" x2="100" y2="152" stroke="#E8DFC8" stroke-width="0.4" opacity="0.25"/>
+          <line x1="60" y1="100" x2="140" y2="100" stroke="#E8DFC8" stroke-width="0.4" opacity="0.25"/>
+          <path d="M76,72 Q62,72 62,83 Q62,94 76,94 Q90,94 90,105 Q90,116 76,116" stroke="#E8DFC8" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <line x1="67" y1="72" x2="85" y2="72" stroke="#E8DFC8" stroke-width="2"/>
+          <line x1="67" y1="116" x2="85" y2="116" stroke="#E8DFC8" stroke-width="2"/>
+          <line x1="106" y1="68" x2="130" y2="68" stroke="#E8DFC8" stroke-width="2"/>
+          <line x1="118" y1="68" x2="118" y2="104" stroke="#E8DFC8" stroke-width="2.3"/>
+          <path d="M118,104 Q118,120 106,120 Q98,120 97,112" stroke="#E8DFC8" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+          <polygon points="100,170 101.8,175.5 107.6,175.5 103,179 104.8,184.5 100,181 95.2,184.5 97,179 92.4,175.5 98.2,175.5" fill="#B87333" transform="scale(0.6) translate(67,115)"/>
+          <text x="100" y="208" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="30" font-weight="500" letter-spacing="4" fill="#F0EBE1">SAN JOSÉ</text>
+          <line x1="30" y1="216" x2="170" y2="216" stroke="#E8DFC8" stroke-width="0.6"/>
+          <text x="100" y="234" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" font-weight="200" letter-spacing="11" fill="#C8D8A0">H O T E L</text>
+        </svg>
+        <span class="tile-tag">Fondo oliva</span>
+      </div>
+
+    </div>
+    <div class="card-desc">
+      <div class="desc-col"><h4>Escudo simplificado</h4><p>La forma heráldica da autoridad sin barroquismo. Contiene el monograma SJ con dignidad institucional.</p></div>
+      <div class="desc-col"><h4>Cruz guía interior</h4><p>Líneas cruzadas muy tenues dividen el escudo en cuarteles. Tradición hotelera europea.</p></div>
+      <div class="desc-col"><h4>Transición ideal</h4><p>Mantiene el espíritu formal del logo actual pero actualiza el contenedor de monograma.</p></div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       OPCIÓN 5 · FIRMA EDITORIAL
+       Monograma horizontal + nombre editorial grande
+  ══════════════════════════════════════════ -->
+  <div class="logo-card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <span>Opción 05</span>
+        <strong>Firma Editorial</strong>
+      </div>
+      <span class="card-concept">Composición horizontal · gran tipografía</span>
+    </div>
+    <div class="previews">
+
+      <div class="tile light">
+        <svg width="340" height="200" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Ícono izquierda: círculo con SJ -->
+          <circle cx="60" cy="92" r="50" stroke="#1C1A18" stroke-width="1.4"/>
+          <circle cx="60" cy="92" r="44" stroke="#1C1A18" stroke-width="0.4"/>
+          <!-- S pequeña en círculo -->
+          <path d="M44,76 Q34,76 34,84 Q34,92 44,92 Q54,92 54,100 Q54,108 44,108" stroke="#1C1A18" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <line x1="38" y1="76" x2="50" y2="76" stroke="#1C1A18" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="38" y1="108" x2="50" y2="108" stroke="#1C1A18" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- J pequeña en círculo -->
+          <line x1="62" y1="72" x2="82" y2="72" stroke="#1C1A18" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="72" y1="72" x2="72" y2="100" stroke="#1C1A18" stroke-width="2" stroke-linecap="round"/>
+          <path d="M72,100 Q72,112 63,112 Q57,112 56,105" stroke="#1C1A18" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="72" cy="65" r="2.5" fill="#B87333"/>
+          <!-- Línea divisoria vertical -->
+          <line x1="126" y1="38" x2="126" y2="162" stroke="#1C1A18" stroke-width="0.6"/>
+          <line x1="124" y1="38" x2="124" y2="162" stroke="#B87333" stroke-width="0.4" opacity="0.5"/>
+          <!-- Texto derecha -->
+          <text x="146" y="68" font-family="'Cormorant Garamond',serif" font-size="11" font-weight="400" letter-spacing="6" fill="#3D4E28">HOTEL</text>
+          <text x="144" y="108" font-family="'Cormorant Garamond',serif" font-size="52" font-weight="500" letter-spacing="1" fill="#1C1A18">SAN</text>
+          <text x="144" y="152" font-family="'Cormorant Garamond',serif" font-size="52" font-weight="300" letter-spacing="0" fill="#1C1A18" font-style="italic">José</text>
+          <!-- Línea base -->
+          <line x1="144" y1="162" x2="330" y2="162" stroke="#1C1A18" stroke-width="0.5"/>
+          <text x="144" y="175" font-family="'Inter',sans-serif" font-size="7.5" font-weight="200" letter-spacing="5" fill="#7A6A5A">Villa Carlos Paz · Córdoba</text>
+        </svg>
+        <span class="tile-tag">Fondo claro</span>
+      </div>
+
+      <div class="tile dark">
+        <svg width="340" height="200" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="92" r="50" stroke="#F0EBE1" stroke-width="1.4"/>
+          <circle cx="60" cy="92" r="44" stroke="#F0EBE1" stroke-width="0.4"/>
+          <path d="M44,76 Q34,76 34,84 Q34,92 44,92 Q54,92 54,100 Q54,108 44,108" stroke="#F0EBE1" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <line x1="38" y1="76" x2="50" y2="76" stroke="#F0EBE1" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="38" y1="108" x2="50" y2="108" stroke="#F0EBE1" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="62" y1="72" x2="82" y2="72" stroke="#F0EBE1" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="72" y1="72" x2="72" y2="100" stroke="#F0EBE1" stroke-width="2" stroke-linecap="round"/>
+          <path d="M72,100 Q72,112 63,112 Q57,112 56,105" stroke="#F0EBE1" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="72" cy="65" r="2.5" fill="#B87333"/>
+          <line x1="126" y1="38" x2="126" y2="162" stroke="#F0EBE1" stroke-width="0.6"/>
+          <line x1="124" y1="38" x2="124" y2="162" stroke="#B87333" stroke-width="0.4" opacity="0.5"/>
+          <text x="146" y="68" font-family="'Cormorant Garamond',serif" font-size="11" font-weight="400" letter-spacing="6" fill="#9AB870">HOTEL</text>
+          <text x="144" y="108" font-family="'Cormorant Garamond',serif" font-size="52" font-weight="500" letter-spacing="1" fill="#F0EBE1">SAN</text>
+          <text x="144" y="152" font-family="'Cormorant Garamond',serif" font-size="52" font-weight="300" letter-spacing="0" fill="#F0EBE1" font-style="italic">José</text>
+          <line x1="144" y1="162" x2="330" y2="162" stroke="#F0EBE1" stroke-width="0.5"/>
+          <text x="144" y="175" font-family="'Inter',sans-serif" font-size="7.5" font-weight="200" letter-spacing="5" fill="rgba(240,235,225,0.45)">Villa Carlos Paz · Córdoba</text>
+        </svg>
+        <span class="tile-tag">Fondo oscuro</span>
+      </div>
+
+      <div class="tile olive">
+        <svg width="340" height="200" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="92" r="50" stroke="#E8DFC8" stroke-width="1.4"/>
+          <circle cx="60" cy="92" r="44" stroke="#E8DFC8" stroke-width="0.4"/>
+          <path d="M44,76 Q34,76 34,84 Q34,92 44,92 Q54,92 54,100 Q54,108 44,108" stroke="#E8DFC8" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <line x1="38" y1="76" x2="50" y2="76" stroke="#E8DFC8" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="38" y1="108" x2="50" y2="108" stroke="#E8DFC8" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="62" y1="72" x2="82" y2="72" stroke="#E8DFC8" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="72" y1="72" x2="72" y2="100" stroke="#E8DFC8" stroke-width="2" stroke-linecap="round"/>
+          <path d="M72,100 Q72,112 63,112 Q57,112 56,105" stroke="#E8DFC8" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="72" cy="65" r="2.5" fill="#B87333"/>
+          <line x1="126" y1="38" x2="126" y2="162" stroke="#E8DFC8" stroke-width="0.6"/>
+          <line x1="124" y1="38" x2="124" y2="162" stroke="#B87333" stroke-width="0.4" opacity="0.6"/>
+          <text x="146" y="68" font-family="'Cormorant Garamond',serif" font-size="11" font-weight="400" letter-spacing="6" fill="#C8D8A0">HOTEL</text>
+          <text x="144" y="108" font-family="'Cormorant Garamond',serif" font-size="52" font-weight="500" letter-spacing="1" fill="#F0EBE1">SAN</text>
+          <text x="144" y="152" font-family="'Cormorant Garamond',serif" font-size="52" font-weight="300" letter-spacing="0" fill="#F0EBE1" font-style="italic">José</text>
+          <line x1="144" y1="162" x2="330" y2="162" stroke="#E8DFC8" stroke-width="0.5"/>
+          <text x="144" y="175" font-family="'Inter',sans-serif" font-size="7.5" font-weight="200" letter-spacing="5" fill="rgba(240,235,225,0.5)">Villa Carlos Paz · Córdoba</text>
+        </svg>
+        <span class="tile-tag">Fondo oliva</span>
+      </div>
+
+    </div>
+    <div class="card-desc">
+      <div class="desc-col"><h4>Composición horizontal</h4><p>El círculo SJ actúa como firma mientras "SAN / José" toma protagonismo editorial a la derecha.</p></div>
+      <div class="desc-col"><h4>Contraste tipográfico</h4><p>"SAN" en weight 500 y "José" en itálica weight 300. Tensión elegante entre serif romano e itálico.</p></div>
+      <div class="desc-col"><h4>Aplicaciones</h4><p>Header web, tarjeta A4 apaisada, carpeta de bienvenida, señal exterior horizontal.</p></div>
+    </div>
+  </div>
+
+</div><!-- /logos-wrap -->
+
+
+<!-- ════════════════════════════════════════════════════
+     BANNERS VERTICALES
+════════════════════════════════════════════════════ -->
+<div class="banner-section">
+
+  <div class="banner-heading">
+    <h2>Despliegue Vertical — Rollup & Señalética</h2>
+    <p>Cada opción en formato banner retrato · 1:2.8</p>
+    <div class="banner-rule"></div>
+  </div>
+
+  <div class="banners-row">
+
+    <!-- Banner 1 -->
+    <div class="banner-unit">
+      <h5>01 · Herencia Refinada</h5>
+      <div class="banner-frame bf-dark">
+        <svg width="110" height="155" viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="88" r="72" stroke="#F0EBE1" stroke-width="1.2"/>
+          <circle cx="100" cy="88" r="66" stroke="#F0EBE1" stroke-width="0.4"/>
+          <path d="M78,62 Q58,62 58,75 Q58,88 78,88 Q98,88 98,101 Q98,114 78,114" stroke="#F0EBE1" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <line x1="68" y1="62" x2="88" y2="62" stroke="#F0EBE1" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="68" y1="114" x2="88" y2="114" stroke="#F0EBE1" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="108" y1="58" x2="136" y2="58" stroke="#F0EBE1" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="122" y1="58" x2="122" y2="100" stroke="#F0EBE1" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M122,100 Q122,118 108,118 Q97,118 96,109" stroke="#F0EBE1" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="122" cy="50" r="3" fill="#B87333"/>
+          <text x="100" y="186" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="30" font-weight="500" letter-spacing="5" fill="#F0EBE1">SAN JOSÉ</text>
+          <line x1="30" y1="196" x2="170" y2="196" stroke="#F0EBE1" stroke-width="0.5"/>
+          <line x1="30" y1="198" x2="170" y2="198" stroke="#B87333" stroke-width="0.5" opacity="0.7"/>
+          <text x="100" y="216" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" font-weight="300" letter-spacing="10" fill="#9AB870">H O T E L</text>
+          <text x="100" y="236" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="11" letter-spacing="2" fill="rgba(240,235,225,0.45)">Villa Carlos Paz</text>
+        </svg>
+        <div class="banner-divider"></div>
+        <svg width="80" height="36" viewBox="0 0 160 40" fill="none">
+          <text x="80" y="14" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" letter-spacing="3" fill="rgba(240,235,225,0.35)">CÓRDOBA · ARGENTINA</text>
+          <text x="80" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" letter-spacing="2" fill="rgba(240,235,225,0.25)">sanjose-hotel.com</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Banner 2 -->
+    <div class="banner-unit">
+      <h5>02 · Medallón Clásico</h5>
+      <div class="banner-frame bf-cream">
+        <svg width="118" height="165" viewBox="0 0 210 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="105" cy="96" r="80" stroke="#1C1A18" stroke-width="2"/>
+          <circle cx="105" cy="96" r="68" stroke="#1C1A18" stroke-width="0.6"/>
+          <path id="arcBan1" d="M105,96 m -62,0 a 62,62 0 1,1 124,0" fill="none"/>
+          <text font-family="'Inter',sans-serif" font-size="7.5" font-weight="300" letter-spacing="5.5" fill="#1C1A18">
+            <textPath href="#arcBan1" startOffset="4%">HOTEL · SAN JOSÉ · VILLA CARLOS PAZ</textPath>
+          </text>
+          <path id="arcBan2" d="M105,96 m -62,0 a 62,62 0 0,0 124,0" fill="none"/>
+          <text font-family="'Inter',sans-serif" font-size="6.5" font-weight="300" letter-spacing="4" fill="#3D4E28">
+            <textPath href="#arcBan2" startOffset="14%">· CÓRDOBA · ARGENTINA · EST. 2024 ·</textPath>
+          </text>
+          <text x="86" y="110" font-family="'Cormorant Garamond',serif" font-size="54" font-weight="600" font-style="italic" fill="#1C1A18">S</text>
+          <text x="106" y="110" font-family="'Cormorant Garamond',serif" font-size="54" font-weight="400" fill="#1C1A18">J</text>
+          <polygon points="105,122 109,127 105,132 101,127" fill="#B87333"/>
+          <text x="105" y="196" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="32" font-weight="500" letter-spacing="4" fill="#1C1A18">SAN JOSÉ</text>
+          <line x1="28" y1="206" x2="182" y2="206" stroke="#1C1A18" stroke-width="0.6"/>
+          <text x="105" y="224" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" font-weight="200" letter-spacing="11" fill="#3D4E28">H O T E L</text>
+        </svg>
+        <div class="banner-divider dark-div"></div>
+        <svg width="80" height="36" viewBox="0 0 160 40" fill="none">
+          <text x="80" y="14" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" letter-spacing="3" fill="rgba(28,26,24,0.35)">CÓRDOBA · ARGENTINA</text>
+          <text x="80" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" letter-spacing="2" fill="rgba(28,26,24,0.25)">sanjose-hotel.com</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Banner 3 -->
+    <div class="banner-unit">
+      <h5>03 · Art Déco Serrano</h5>
+      <div class="banner-frame bf-olive">
+        <svg width="110" height="165" viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="100,16 140,28 164,64 164,116 140,152 100,164 60,152 36,116 36,64 60,28" stroke="#F0EBE1" stroke-width="1.4" fill="none"/>
+          <polygon points="100,26 134,36 154,68 154,112 134,144 100,154 66,144 46,112 46,68 66,36" stroke="#F0EBE1" stroke-width="0.4" fill="none"/>
+          <path d="M76,64 Q58,64 58,78 Q58,90 76,90 Q94,90 94,104 Q94,118 76,118" stroke="#F0EBE1" stroke-width="2.6" fill="none" stroke-linecap="butt"/>
+          <line x1="66" y1="64" x2="86" y2="64" stroke="#F0EBE1" stroke-width="2.2"/>
+          <line x1="66" y1="118" x2="86" y2="118" stroke="#F0EBE1" stroke-width="2.2"/>
+          <line x1="108" y1="60" x2="136" y2="60" stroke="#F0EBE1" stroke-width="2.2"/>
+          <line x1="122" y1="60" x2="122" y2="102" stroke="#F0EBE1" stroke-width="2.5"/>
+          <path d="M122,102 Q122,120 108,120 Q98,120 97,111" stroke="#F0EBE1" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <line x1="36" y1="90" x2="44" y2="90" stroke="#B87333" stroke-width="1.5"/>
+          <line x1="156" y1="90" x2="164" y2="90" stroke="#B87333" stroke-width="1.5"/>
+          <text x="100" y="196" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="30" font-weight="500" letter-spacing="5" fill="#F0EBE1">SAN JOSÉ</text>
+          <line x1="28" y1="203" x2="78" y2="203" stroke="#F0EBE1" stroke-width="0.6"/>
+          <polygon points="100,200 104,204 100,208 96,204" fill="#B87333"/>
+          <line x1="122" y1="203" x2="172" y2="203" stroke="#F0EBE1" stroke-width="0.6"/>
+          <text x="100" y="222" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" font-weight="300" letter-spacing="11" fill="#C8D8A0">H O T E L</text>
+          <text x="100" y="244" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="11" letter-spacing="1.5" fill="rgba(240,235,225,0.55)">Villa Carlos Paz</text>
+        </svg>
+        <div class="banner-divider"></div>
+        <svg width="80" height="36" viewBox="0 0 160 40" fill="none">
+          <text x="80" y="14" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" letter-spacing="3" fill="rgba(240,235,225,0.35)">CÓRDOBA · ARGENTINA</text>
+          <text x="80" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" letter-spacing="2" fill="rgba(240,235,225,0.25)">sanjose-hotel.com</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Banner 4 -->
+    <div class="banner-unit">
+      <h5>04 · Escudo Contemporáneo</h5>
+      <div class="banner-frame bf-dark">
+        <svg width="110" height="165" viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100,14 L158,40 L158,110 Q158,160 100,180 Q42,160 42,110 L42,40 Z" stroke="#F0EBE1" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+          <path d="M100,24 L150,46 L150,110 Q150,152 100,168 Q50,152 50,110 L50,46 Z" stroke="#F0EBE1" stroke-width="0.4" fill="none" stroke-linejoin="round"/>
+          <path d="M76,72 Q62,72 62,83 Q62,94 76,94 Q90,94 90,105 Q90,116 76,116" stroke="#F0EBE1" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <line x1="67" y1="72" x2="85" y2="72" stroke="#F0EBE1" stroke-width="2"/>
+          <line x1="67" y1="116" x2="85" y2="116" stroke="#F0EBE1" stroke-width="2"/>
+          <line x1="106" y1="68" x2="130" y2="68" stroke="#F0EBE1" stroke-width="2"/>
+          <line x1="118" y1="68" x2="118" y2="104" stroke="#F0EBE1" stroke-width="2.3"/>
+          <path d="M118,104 Q118,120 106,120 Q98,120 97,112" stroke="#F0EBE1" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+          <polygon points="100,170 101.8,175.5 107.6,175.5 103,179 104.8,184.5 100,181 95.2,184.5 97,179 92.4,175.5 98.2,175.5" fill="#B87333" transform="scale(0.6) translate(67,115)"/>
+          <text x="100" y="208" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="30" font-weight="500" letter-spacing="4" fill="#F0EBE1">SAN JOSÉ</text>
+          <line x1="30" y1="216" x2="170" y2="216" stroke="#F0EBE1" stroke-width="0.6"/>
+          <text x="100" y="234" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8.5" font-weight="200" letter-spacing="11" fill="#9AB870">H O T E L</text>
+        </svg>
+        <div class="banner-divider"></div>
+        <svg width="80" height="36" viewBox="0 0 160 40" fill="none">
+          <text x="80" y="14" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" letter-spacing="3" fill="rgba(240,235,225,0.35)">CÓRDOBA · ARGENTINA</text>
+          <text x="80" y="30" text-anchor="middle" font-family="'Inter',sans-serif" font-size="6" letter-spacing="2" fill="rgba(240,235,225,0.25)">sanjose-hotel.com</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Banner 5 -->
+    <div class="banner-unit">
+      <h5>05 · Firma Editorial</h5>
+      <div class="banner-frame bf-terra">
+        <svg width="110" height="80" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px">
+          <circle cx="60" cy="92" r="50" stroke="#F0EBE1" stroke-width="1.4"/>
+          <circle cx="60" cy="92" r="44" stroke="#F0EBE1" stroke-width="0.4"/>
+          <path d="M44,76 Q34,76 34,84 Q34,92 44,92 Q54,92 54,100 Q54,108 44,108" stroke="#F0EBE1" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <line x1="38" y1="76" x2="50" y2="76" stroke="#F0EBE1" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="38" y1="108" x2="50" y2="108" stroke="#F0EBE1" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="62" y1="72" x2="82" y2="72" stroke="#F0EBE1" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="72" y1="72" x2="72" y2="100" stroke="#F0EBE1" stroke-width="2" stroke-linecap="round"/>
+          <path d="M72,100 Q72,112 63,112 Q57,112 56,105" stroke="#F0EBE1" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="72" cy="65" r="2.5" fill="#1C1A18"/>
+          <line x1="126" y1="38" x2="126" y2="162" stroke="#F0EBE1" stroke-width="0.6"/>
+          <text x="146" y="68" font-family="'Cormorant Garamond',serif" font-size="11" font-weight="400" letter-spacing="6" fill="rgba(240,235,225,0.7)">HOTEL</text>
+          <text x="144" y="108" font-family="'Cormorant Garamond',serif" font-size="52" font-weight="500" letter-spacing="1" fill="#F0EBE1">SAN</text>
+          <text x="144" y="152" font-family="'Cormorant Garamond',serif" font-size="52" font-weight="300" letter-spacing="0" fill="#F0EBE1" font-style="italic">José</text>
+        </svg>
+        <!-- Versión vertical del logo 5 -->
+        <svg width="110" height="100" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="44" r="36" stroke="#F0EBE1" stroke-width="1.2"/>
+          <circle cx="100" cy="44" r="30" stroke="#F0EBE1" stroke-width="0.35"/>
+          <path d="M86,30 Q76,30 76,38 Q76,46 86,46 Q96,46 96,54 Q96,62 86,62" stroke="#F0EBE1" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <line x1="80" y1="30" x2="92" y2="30" stroke="#F0EBE1" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="80" y1="62" x2="92" y2="62" stroke="#F0EBE1" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="104" y1="26" x2="122" y2="26" stroke="#F0EBE1" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="113" y1="26" x2="113" y2="52" stroke="#F0EBE1" stroke-width="1.9" stroke-linecap="round"/>
+          <path d="M113,52 Q113,64 104,64 Q97,64 96,57" stroke="#F0EBE1" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+          <circle cx="113" cy="19" r="2" fill="#1C1A18"/>
+          <text x="100" y="102" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="24" font-weight="500" letter-spacing="3" fill="#F0EBE1">SAN JOSÉ</text>
+          <line x1="30" y1="110" x2="170" y2="110" stroke="rgba(240,235,225,0.3)" stroke-width="0.5"/>
+          <text x="100" y="128" text-anchor="middle" font-family="'Inter',sans-serif" font-size="7" font-weight="200" letter-spacing="9" fill="rgba(240,235,225,0.7)">H O T E L</text>
+          <text x="100" y="148" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="9" fill="rgba(240,235,225,0.5)">Villa Carlos Paz</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div style="text-align:center; padding:48px 32px; background:#F0EBE1; font-size:11px; letter-spacing:1.5px; color:rgba(28,26,24,0.35);">
+  Hotel San José · Villa Carlos Paz · Evolución de marca 2026 · Ronda 3
+</div>
+
+</body>
+</html>
