@@ -13,7 +13,7 @@
   --olive:#5C6B3A;--olive-deep:#3D4A24;--olive-pale:#C8D4A8;--olive-wash:#EFF3E6;
   --terra:#B85C38;--terra-soft:#D4795A;
   --sand:#C8B898;--sand-light:#E8DDD0;--sand-pale:#F5F0E8;
-  --paper:#FDFAF5;--white:#FFFFFF;--rule:rgba(26,25,22,0.1);
+  --paper:#FDFAF5;--white:#FFFFFF;--surface:#F2F6EB;--rule:rgba(26,25,22,0.1);
   --nav-h:68px;--ease:cubic-bezier(.4,0,.2,1);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -88,7 +88,7 @@ section{padding:100px 0;}
 .sec-body{font-size:14.5px;color:#6A6560;line-height:1.9;font-weight:300;margin-top:18px;}
 
 /* EL HOTEL */
-.elhotel{background:var(--white);}
+.elhotel{background:var(--surface);}
 .elhotel-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .elhotel-main{aspect-ratio:4/5;border-radius:1px;overflow:hidden;}
 .elhotel-main img{height:100%;}
@@ -108,7 +108,7 @@ section{padding:100px 0;}
 .habitaciones{background:var(--sand-pale);}
 .hab-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:20px;}
 .hab-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
-.hab-card{background:var(--white);overflow:hidden;position:relative;transition:transform .35s;}
+.hab-card{background:var(--surface);overflow:hidden;position:relative;transition:transform .35s;}
 .hab-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.09);}
 .hab-photo{aspect-ratio:3/2;overflow:hidden;}
 .hab-photo img{height:100%;transition:transform .6s;}
@@ -126,10 +126,10 @@ section{padding:100px 0;}
 .btn-res:hover{background:var(--olive-deep);}
 
 /* SERVICIOS */
-.servicios{background:var(--white);}
+.servicios{background:var(--surface);}
 .servicios-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .srv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:36px;}
-.srv-item{background:var(--white);padding:20px 18px;display:flex;gap:12px;align-items:flex-start;}
+.srv-item{background:var(--surface);padding:20px 18px;display:flex;gap:12px;align-items:flex-start;}
 .srv-ico{font-size:17px;flex-shrink:0;margin-top:1px;}
 .srv-item h4{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:2px;}
 .srv-item p{font-size:11px;color:#8A8880;line-height:1.5;}
@@ -157,10 +157,10 @@ section{padding:100px 0;}
 .teatro-info p{font-size:13.5px;color:#6A6560;line-height:1.85;font-weight:300;margin-bottom:20px;}
 .btn-link{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--olive-deep);border-bottom:1px solid var(--olive-deep);padding-bottom:3px;transition:all .25s;}
 .btn-link:hover{color:var(--terra);border-bottom-color:var(--terra);}
-.info-tip{margin-top:24px;background:var(--white);padding:16px 18px;border-left:3px solid var(--terra);font-size:12px;color:#6A6560;line-height:1.7;}
+.info-tip{margin-top:24px;background:var(--surface);padding:16px 18px;border-left:3px solid var(--terra);font-size:12px;color:#6A6560;line-height:1.7;}
 
 .exc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-.exc-card{background:var(--white);overflow:hidden;transition:transform .3s;}
+.exc-card{background:var(--surface);overflow:hidden;transition:transform .3s;}
 .exc-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.07);}
 .exc-photo{aspect-ratio:3/2;overflow:hidden;}
 .exc-photo img{height:100%;transition:transform .5s;}
@@ -175,13 +175,13 @@ section{padding:100px 0;}
 .exc-note{font-size:10.5px;color:#8A8880;margin-top:18px;font-style:italic;}
 
 .ent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.ent-card{background:var(--white);padding:26px 22px;border-left:3px solid var(--olive);}
+.ent-card{background:var(--surface);padding:26px 22px;border-left:3px solid var(--olive);}
 .ent-card .ent-icon{font-size:22px;margin-bottom:10px;}
 .ent-card h4{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--ink);margin-bottom:8px;}
 .ent-card p{font-size:12.5px;color:#6A6560;line-height:1.75;font-weight:300;}
 
 .gast-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.gast-card{background:var(--white);overflow:hidden;}
+.gast-card{background:var(--surface);overflow:hidden;}
 .gast-photo{aspect-ratio:3/2;overflow:hidden;}
 .gast-photo img{height:100%;transition:transform .5s;}
 .gast-card:hover .gast-photo img{transform:scale(1.05);}
@@ -200,7 +200,16 @@ section{padding:100px 0;}
 .noche-desc{font-size:11px;color:rgba(253,250,245,.5);line-height:1.55;}
 
 .nat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.nat-card{background:var(--white);overflow:hidden;}
+.nat-card{background:var(--surface);overflow:hidden;}
+/* vehículos */
+.veh-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.veh-card{background:var(--surface);padding:32px 28px;border-top:3px solid var(--olive);}
+.veh-icon{font-size:36px;margin-bottom:14px;}
+.veh-card h4{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;margin-bottom:10px;}
+.veh-card p{font-size:13px;color:#6A6560;line-height:1.8;margin-bottom:16px;}
+.veh-features{list-style:none;font-size:12px;color:#8A8880;line-height:2;}
+.veh-features li::before{content:'— ';color:var(--olive);}
+@media(max-width:768px){.veh-grid{grid-template-columns:1fr;}}
 .nat-photo{aspect-ratio:4/3;overflow:hidden;}
 .nat-photo img{height:100%;transition:transform .5s;}
 .nat-card:hover .nat-photo img{transform:scale(1.04);}
@@ -221,7 +230,7 @@ section{padding:100px 0;}
 .gal-item:hover .gal-lbl{opacity:1;}
 
 /* UBICACIÓN */
-.ubicacion{background:var(--white);padding:100px 0;}
+.ubicacion{background:var(--surface);padding:100px 0;}
 .ubi-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
 .mapa-wrap{aspect-ratio:4/3;overflow:hidden;border-radius:1px;box-shadow:0 16px 48px rgba(0,0,0,.11);}
 .mapa-wrap iframe{width:100%;height:100%;border:none;}
@@ -555,6 +564,7 @@ section{padding:100px 0;}
       <button class="act-tab" onclick="showTab('gastronomia',this)">🍽️ Gastronomía</button>
       <button class="act-tab" onclick="showTab('nocturna',this)">🌙 Vida nocturna</button>
       <button class="act-tab" onclick="showTab('naturaleza',this)">🏔️ Naturaleza</button>
+      <button class="act-tab" onclick="showTab('vehiculos',this)">🚲 Alquiler de vehículos</button>
     </div>
 
     <div class="act-panel active" id="tab-teatro">
@@ -624,6 +634,52 @@ section{padding:100px 0;}
         <div class="nat-card"><div class="nat-photo"><img src="fotos/costanera 2.jpeg" alt="Costanera"></div><div class="nat-body"><h4>Paseo costanero</h4><p>El paseo peatonal a orillas del lago San Roque. Ideal para caminatas, bicicleta y disfrutar el ambiente serrano al atardecer.</p></div></div>
       </div>
     </div>
+
+    <div class="act-panel" id="tab-vehiculos">
+      <div class="veh-intro" style="max-width:620px;margin-bottom:36px;">
+        <p style="font-size:14px;color:#6A6560;line-height:1.8;">Recorré Villa Carlos Paz y sus alrededores a tu ritmo. En convenio con operadores locales, el hotel puede gestionar el alquiler de bicicletas, monopatines eléctricos y automóviles para que aproveches cada rincón de las sierras.</p>
+      </div>
+      <div class="veh-grid">
+        <div class="veh-card">
+          <div class="veh-icon">🚲</div>
+          <h4>Bicicletas</h4>
+          <p>Rodados urbanos y de montaña para recorrer la costanera, el centro y los cerros serranos. Ideales para salidas familiares o aventuras en solitario.</p>
+          <ul class="veh-features">
+            <li>Bicicletas urbanas y MTB</li>
+            <li>Cascos incluidos</li>
+            <li>Alquiler por hora o día completo</li>
+            <li>Mapa de circuitos sugeridos</li>
+          </ul>
+          <a href="https://wa.me/543541372428?text=Hola%2C%20quisiera%20información%20sobre%20alquiler%20de%20bicicletas." target="_blank" class="btn-res" style="display:inline-block;padding:10px 24px;width:auto;margin-top:18px;">Consultar disponibilidad</a>
+        </div>
+        <div class="veh-card">
+          <div class="veh-icon">🛴</div>
+          <h4>Monopatines eléctricos</h4>
+          <p>La forma más ágil y divertida de moverse por la ciudad. Cero emisiones, silenciosos y perfectos para recorrer la zona de teatros, el lago y el centro comercial.</p>
+          <ul class="veh-features">
+            <li>Monopatines de última generación</li>
+            <li>Autonomía de hasta 40 km</li>
+            <li>Casco y guantes incluidos</li>
+            <li>Alquiler por hora o medio día</li>
+          </ul>
+          <a href="https://wa.me/543541372428?text=Hola%2C%20quisiera%20información%20sobre%20alquiler%20de%20monopatines%20eléctricos." target="_blank" class="btn-res" style="display:inline-block;padding:10px 24px;width:auto;margin-top:18px;">Consultar disponibilidad</a>
+        </div>
+        <div class="veh-card">
+          <div class="veh-icon">🚗</div>
+          <h4>Automóviles</h4>
+          <p>Para explorar los pueblos y paisajes de las sierras cordobesas con total libertad. Desde Villa Carlos Paz podés llegar a La Cumbrecita, Mina Clavero, Capilla del Monte y más.</p>
+          <ul class="veh-features">
+            <li>Vehículos 0 km y seminuevos</li>
+            <li>Seguro incluido</li>
+            <li>Entrega y devolución en el hotel</li>
+            <li>Alquiler por día o fin de semana</li>
+          </ul>
+          <a href="https://wa.me/543541372428?text=Hola%2C%20quisiera%20información%20sobre%20alquiler%20de%20autos." target="_blank" class="btn-res" style="display:inline-block;padding:10px 24px;width:auto;margin-top:18px;">Consultar disponibilidad</a>
+        </div>
+      </div>
+      <div class="info-tip">📍 <strong>Coordinación sin cargo:</strong> Consultá en recepción con anticipación y nos encargamos de reservar el vehículo que necesitás para tu estadía.</div>
+    </div>
+
   </div>
 </section>
 
@@ -700,6 +756,12 @@ section{padding:100px 0;}
     </div>
   </div>
 </footer>
+
+<!-- MÚSICA AMBIENTE -->
+<audio id="bgMusic" src="COOLING MASTER FINAL.wav" loop preload="auto"></audio>
+<button id="musicBtn" onclick="toggleMusic()" aria-label="Música" title="Música ambiente" style="position:fixed;bottom:88px;right:26px;z-index:300;width:44px;height:44px;border-radius:50%;background:rgba(61,74,36,0.92);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.25);transition:transform .2s,background .2s;">
+  <span id="musicIcon" style="font-size:18px;">🔇</span>
+</button>
 
 <a class="wa-float" href="https://wa.me/543541372428?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20disponibilidad%20en%20el%20Hotel%20San%20Jos%C3%A9" target="_blank" aria-label="WhatsApp">
   <div class="wa-tip">Escribinos por WhatsApp</div>
@@ -789,6 +851,21 @@ section{padding:100px 0;}
 </div>
 
 <script>
+/* ── MÚSICA AMBIENTE ── */
+const music=document.getElementById('bgMusic');
+const musicIcon=document.getElementById('musicIcon');
+let playing=false;
+music.volume=0.35;
+function toggleMusic(){
+  if(playing){music.pause();musicIcon.textContent='🔇';playing=false;}
+  else{music.play().then(()=>{musicIcon.textContent='🔊';playing=true;}).catch(()=>{});}
+}
+// arranca al primer click en cualquier lugar (política de autoplay de browsers)
+document.addEventListener('click',function startOnce(){
+  if(!playing){music.play().then(()=>{musicIcon.textContent='🔊';playing=true;}).catch(()=>{});}
+  document.removeEventListener('click',startOnce);
+},{once:true});
+
 /* ── HERO SLIDESHOW ── */
 (function(){
   const slides=document.querySelectorAll('.hero-slide');
