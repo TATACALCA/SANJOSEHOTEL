@@ -201,6 +201,49 @@ section{padding:100px 0;}
 
 .nat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .nat-card{background:var(--surface);overflow:hidden;}
+/* ── GRUPOS ── */
+.grupos{background:var(--ink);padding:100px 0;}
+.grupos .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.grupos-text{}
+.grupos-text .sec-label{color:var(--sand);}
+.grupos-text .sec-hed{color:var(--paper);}
+.grupos-text .sec-hed em{color:var(--sand);}
+.grupos-lead{font-size:15px;color:rgba(253,250,245,0.65);line-height:1.9;margin:24px 0 36px;}
+.grupos-beneficios{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px;}
+.grp-ben{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:20px 18px;}
+.grp-ben-icon{font-size:22px;margin-bottom:8px;}
+.grp-ben h5{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;color:var(--paper);margin-bottom:5px;}
+.grp-ben p{font-size:11.5px;color:rgba(253,250,245,0.45);line-height:1.7;}
+.grupos-fotos{}
+.grp-foto-main{width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:12px;}
+.grp-foto-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.grp-foto-strip img{width:100%;aspect-ratio:1;object-fit:cover;cursor:pointer;transition:opacity .25s;}
+.grp-foto-strip img:hover{opacity:.8;}
+/* lightbox grupos */
+.grp-lb{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.92);align-items:center;justify-content:center;}
+.grp-lb.open{display:flex;}
+.grp-lb img{max-width:90vw;max-height:88vh;object-fit:contain;}
+.grp-lb-x{position:absolute;top:22px;right:28px;font-size:28px;color:var(--paper);cursor:pointer;line-height:1;}
+.grp-lb-prev,.grp-lb-next{position:absolute;top:50%;transform:translateY(-50%);font-size:36px;color:var(--paper);cursor:pointer;padding:12px;opacity:.6;transition:opacity .2s;}
+.grp-lb-prev:hover,.grp-lb-next:hover{opacity:1;}
+.grp-lb-prev{left:20px;}.grp-lb-next{right:20px;}
+@media(max-width:900px){.grupos .wrap{grid-template-columns:1fr;gap:40px;}.grupos-beneficios{grid-template-columns:1fr;}}
+
+/* ── POPUP GRUPOS ── */
+.popup-bg{position:fixed;inset:0;z-index:600;background:rgba(26,25,22,0.7);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s;}
+.popup-bg.show{opacity:1;pointer-events:all;}
+.popup-box{background:var(--ink);max-width:480px;width:90%;position:relative;overflow:hidden;transform:translateY(24px) scale(.97);transition:transform .4s;}
+.popup-bg.show .popup-box{transform:none;}
+.popup-photo{width:100%;height:200px;object-fit:cover;object-position:center 30%;}
+.popup-body{padding:36px 36px 32px;}
+.popup-eyebrow{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--terra);margin-bottom:14px;}
+.popup-hed{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;color:var(--paper);line-height:1.2;margin-bottom:10px;}
+.popup-hed em{font-style:italic;color:var(--sand);}
+.popup-sub{font-size:13px;color:rgba(253,250,245,0.55);line-height:1.7;margin-bottom:26px;}
+.popup-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.popup-x{position:absolute;top:14px;right:18px;font-size:20px;color:rgba(253,250,245,0.4);cursor:pointer;z-index:2;line-height:1;transition:color .2s;}
+.popup-x:hover{color:var(--paper);}
+
 /* vehículos */
 .veh-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .veh-card{background:var(--surface);padding:32px 28px;border-top:3px solid var(--olive);}
@@ -384,6 +427,7 @@ section{padding:100px 0;}
   <ul class="nav-links">
     <li><a href="#elhotel">El hotel</a></li>
     <li><a href="#habitaciones">Habitaciones</a></li>
+    <li><a href="#grupos">Grupos</a></li>
     <li><a href="#actividades">Actividades</a></li>
     <li><a href="#ubicacion">Ubicación</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -395,6 +439,7 @@ section{padding:100px 0;}
 <div class="mob-menu" id="mobMenu">
   <a href="#elhotel" onclick="toggleMob()">El hotel</a>
   <a href="#habitaciones" onclick="toggleMob()">Habitaciones</a>
+  <a href="#grupos" onclick="toggleMob()">Grupos</a>
   <a href="#actividades" onclick="toggleMob()">Actividades</a>
   <a href="#ubicacion" onclick="toggleMob()">Ubicación</a>
   <a href="#contacto" onclick="toggleMob()">Contacto</a>
@@ -549,6 +594,90 @@ section{padding:100px 0;}
     </div>
   </div>
 </section>
+
+<!-- ════════════════ GRUPOS ════════════════ -->
+<section class="grupos" id="grupos">
+  <div class="wrap">
+    <div class="grupos-text">
+      <span class="sec-label">Grupos &amp; Eventos</span>
+      <h2 class="sec-hed">Tu grupo,<br><em>en buenas manos</em></h2>
+      <p class="grupos-lead">El Hotel San José tiene larga experiencia recibiendo grupos: excursiones escolares, retiros corporativos, viajes de egresados, encuentros de bomberos, grupos religiosos, clubes y más. Coordinamos cada detalle para que la estadía grupal sea cómoda, organizada y memorable.</p>
+      <div class="grupos-beneficios">
+        <div class="grp-ben">
+          <div class="grp-ben-icon">🏷️</div>
+          <h5>Tarifas especiales</h5>
+          <p>Descuentos progresivos según el tamaño del grupo. A mayor cantidad de habitaciones, mejor precio por persona.</p>
+        </div>
+        <div class="grp-ben">
+          <div class="grp-ben-icon">🍳</div>
+          <h5>Desayuno grupal</h5>
+          <p>Servicio de desayuno coordinado para grupos grandes, con horarios flexibles adaptados al itinerario del grupo.</p>
+        </div>
+        <div class="grp-ben">
+          <div class="grp-ben-icon">🗝️</div>
+          <h5>Check-in coordinado</h5>
+          <p>Ingreso y egreso organizado con anticipación. Asignamos habitaciones contiguas para facilitar la coordinación interna.</p>
+        </div>
+        <div class="grp-ben">
+          <div class="grp-ben-icon">🚌</div>
+          <h5>Excursiones grupales</h5>
+          <p>Coordinamos excursiones, traslados y actividades con operadores locales directamente desde el hotel.</p>
+        </div>
+        <div class="grp-ben">
+          <div class="grp-ben-icon">📋</div>
+          <h5>Facturación unificada</h5>
+          <p>Una sola factura para toda la estadía. Facilitamos la gestión administrativa de instituciones, empresas y clubes.</p>
+        </div>
+        <div class="grp-ben">
+          <div class="grp-ben-icon">🛋️</div>
+          <h5>Espacios comunes</h5>
+          <p>Living, sala de juegos y áreas de reunión disponibles para uso exclusivo del grupo durante su estadía.</p>
+        </div>
+      </div>
+      <a href="https://wa.me/543541372428?text=Hola%2C%20somos%20un%20grupo%20y%20quisiera%20consultar%20tarifas%20y%20disponibilidad." target="_blank" class="btn-solid">Consultar para grupos →</a>
+    </div>
+    <div class="grupos-fotos">
+      <img class="grp-foto-main" src="fotos/grupo 1.jpeg" alt="Grupos en Hotel San José" onclick="openLb(0)">
+      <div class="grp-foto-strip">
+        <img src="fotos/grupo 2.jpeg" alt="Grupo" onclick="openLb(1)">
+        <img src="fotos/grupo 3.jpeg" alt="Grupo" onclick="openLb(2)">
+        <img src="fotos/grupo 4.jpeg" alt="Grupo" onclick="openLb(3)">
+        <img src="fotos/grupo 5.jpeg" alt="Grupo" onclick="openLb(4)">
+        <img src="fotos/grupo 6.jpeg" alt="Grupo" onclick="openLb(5)">
+        <img src="fotos/grupo 7.jpeg" alt="Grupo" onclick="openLb(6)">
+        <img src="fotos/grupo 8.jpeg" alt="Grupo" onclick="openLb(7)">
+        <img src="fotos/grupo 10.jpeg" alt="Grupo" onclick="openLb(8)">
+        <img src="fotos/grupo bomberos.jpeg" alt="Grupo Bomberos" onclick="openLb(9)">
+        <img src="fotos/grupo bomberos 2.jpeg" alt="Grupo Bomberos" onclick="openLb(10)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox grupos -->
+<div class="grp-lb" id="grpLb">
+  <span class="grp-lb-x" onclick="closeLb()">✕</span>
+  <span class="grp-lb-prev" onclick="lbNav(-1)">&#8249;</span>
+  <img id="grpLbImg" src="" alt="">
+  <span class="grp-lb-next" onclick="lbNav(1)">&#8250;</span>
+</div>
+
+<!-- ════════════════ POPUP GRUPOS ════════════════ -->
+<div class="popup-bg" id="popupBg">
+  <div class="popup-box">
+    <span class="popup-x" onclick="closePopup()">✕</span>
+    <img class="popup-photo" src="fotos/grupo 4.jpeg" alt="Grupos Hotel San José">
+    <div class="popup-body">
+      <div class="popup-eyebrow">Beneficio exclusivo</div>
+      <h2 class="popup-hed">¿Viajás en grupo<br>por <em>eventos?</em></h2>
+      <p class="popup-sub">¡Obtené tus beneficios! Tarifas especiales, check-in coordinado, desayuno grupal y más. Armamos el paquete a medida para tu grupo.</p>
+      <div class="popup-actions">
+        <a href="https://wa.me/543541372428?text=Hola%2C%20somos%20un%20grupo%20y%20quisiera%20consultar%20tarifas%20y%20disponibilidad." target="_blank" class="btn-solid" onclick="closePopup()">Consultar ahora →</a>
+        <a href="#grupos" class="btn-ghost" onclick="closePopup()">Ver beneficios</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <section class="actividades" id="actividades">
   <div class="wrap">
@@ -851,6 +980,19 @@ section{padding:100px 0;}
 </div>
 
 <script>
+/* ── POPUP GRUPOS ── */
+const LB_IMGS=['fotos/grupo 1.jpeg','fotos/grupo 2.jpeg','fotos/grupo 3.jpeg','fotos/grupo 4.jpeg','fotos/grupo 5.jpeg','fotos/grupo 6.jpeg','fotos/grupo 7.jpeg','fotos/grupo 8.jpeg','fotos/grupo 10.jpeg','fotos/grupo bomberos.jpeg','fotos/grupo bomberos 2.jpeg'];
+let lbIdx=0;
+function openLb(i){lbIdx=i;document.getElementById('grpLbImg').src=LB_IMGS[i];document.getElementById('grpLb').classList.add('open');}
+function closeLb(){document.getElementById('grpLb').classList.remove('open');}
+function lbNav(d){lbIdx=(lbIdx+d+LB_IMGS.length)%LB_IMGS.length;document.getElementById('grpLbImg').src=LB_IMGS[lbIdx];}
+document.getElementById('grpLb').addEventListener('click',function(e){if(e.target===this)closeLb();});
+
+function closePopup(){document.getElementById('popupBg').classList.remove('show');}
+// mostrar popup 2.5s después de cargar
+setTimeout(()=>document.getElementById('popupBg').classList.add('show'),2500);
+document.getElementById('popupBg').addEventListener('click',function(e){if(e.target===this)closePopup();});
+
 /* ── MÚSICA AMBIENTE ── */
 const music=document.getElementById('bgMusic');
 const musicIcon=document.getElementById('musicIcon');

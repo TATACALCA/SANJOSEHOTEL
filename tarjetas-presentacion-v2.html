@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel San José — Tarjetas v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #E4DFD6;
+  color: #1C1A18;
+}
+
+.masthead {
+  background: #1C1A18;
+  padding: 60px 56px 48px;
+  text-align: center;
+}
+.masthead .eyebrow {
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(232,224,200,0.32);
+  margin-bottom: 16px;
+}
+.masthead h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: #E8E0C8;
+}
+.masthead .sub {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(232,224,200,0.22);
+  margin-top: 12px;
+}
+
+/* ─── CARD SET ─── */
+.set {
+  padding: 80px 56px 88px;
+  border-bottom: 1px solid rgba(28,26,24,0.07);
+}
+.set:nth-child(even) { background: #E4DFD6; }
+.set:nth-child(odd)  { background: #EDEAE3; }
+
+.set-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.set-num   { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(28,26,24,0.25); }
+.set-name  { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 24px; letter-spacing: 2px; }
+.set-note  { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(28,26,24,0.32); margin-left: 2px; }
+
+.cards-row {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.card-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.cu-label { font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: rgba(28,26,24,0.3); }
+.cu-note  { font-size: 8px; letter-spacing: 1.5px; color: rgba(28,26,24,0.22); }
+
+/* Card shell — 85mm × 55mm @ 4px/mm */
+.card {
+  width: 340px;
+  height: 220px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.08),
+    0 6px 24px rgba(0,0,0,0.10),
+    0 16px 48px rgba(0,0,0,0.06);
+  flex-shrink: 0;
+}
+
+.c-olive  { background: #3A4A22; }
+.c-cream  { background: #F6F2EA; }
+.c-ink    { background: #1C1A18; }
+.c-white  { background: #FEFCF8; }
+.c-forest { background: #2A3818; }
+
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="eyebrow">Hotel San José · Villa Carlos Paz · Sierra Editorial</div>
+  <h1>Tarjetas de Presentación</h1>
+  <div class="sub">Tres propuestas seleccionadas · 85 × 55 mm · Frente + Reverso</div>
+  <svg width="440" height="20" viewBox="0 0 440 20" fill="none" style="display:block;margin:28px auto 0">
+    <path d="M0,13 C32,13 40,3 66,7 C92,11 98,1 124,4 C150,7 158,13 184,9 C210,5 218,12 244,8 C270,4 278,13 304,9 C330,5 338,13 364,10 C390,7 398,1 424,5 C432,6 438,10 440,10" stroke="#E8E0C8" stroke-width="0.72" fill="none" stroke-linecap="round"/>
+    <path d="M0,18 C32,18 40,8 66,12 C92,16 98,6 124,9 C150,12 158,18 184,14 C210,10 218,17 244,13 C270,9 278,18 304,14 C330,10 338,18 364,15 C390,12 398,6 424,10 C432,11 438,15 440,15" stroke="#E8E0C8" stroke-width="0.28" fill="none" stroke-linecap="round" opacity="0.28"/>
+  </svg>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     01 · SIERRA PURA
+     Frente oliva · Reverso crema claro
+═══════════════════════════════════ -->
+<div class="set">
+  <div class="set-header">
+    <span class="set-num">— 01</span>
+    <span class="set-name">Sierra Pura</span>
+    <span class="set-note">· Frente oliva · reverso crema</span>
+  </div>
+
+  <div class="cards-row">
+
+    <!-- FRENTE -->
+    <div class="card-unit">
+      <div class="card c-olive">
+        <svg width="340" height="220" viewBox="0 0 340 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+          <path d="M22,82 C54,82 64,58 96,64 C128,70 138,48 170,54 C202,60 214,80 246,74 C266,70 282,64 298,58" stroke="#E8E0C8" stroke-width="0.82" fill="none" stroke-linecap="round"/>
+          <path d="M22,94 C54,94 64,70 96,76 C128,82 138,60 170,66 C202,72 214,92 246,86 C266,82 282,76 298,70" stroke="#E8E0C8" stroke-width="0.36" fill="none" stroke-linecap="round" opacity="0.28"/>
+          <text x="170" y="136" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="30" letter-spacing="10" fill="#E8E0C8">SAN JOSÉ</text>
+          <line x1="58" y1="147" x2="282" y2="147" stroke="#E8E0C8" stroke-width="0.32" opacity="0.22"/>
+          <text x="170" y="166" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="7" letter-spacing="13" fill="#E8E0C8" opacity="0.42">H O T E L</text>
+          <!-- Localidad -->
+          <text x="170" y="196" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="6.5" letter-spacing="3.5" fill="#E8E0C8" opacity="0.32">VILLA CARLOS PAZ · CÓRDOBA · ARGENTINA</text>
+        </svg>
+      </div>
+      <span class="cu-label">Frente</span>
+    </div>
+
+    <!-- REVERSO -->
+    <div class="card-unit">
+      <div class="card c-cream">
+        <svg width="340" height="220" viewBox="0 0 340 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+
+          <!-- Sierra sutil arriba izq -->
+          <path d="M20,22 C36,22 42,13 56,16 C70,19 74,10 88,12 C102,14 108,22 122,18" stroke="#3A4A22" stroke-width="0.45" fill="none" stroke-linecap="round" opacity="0.18"/>
+
+          <!-- LOGO compacto arriba izquierda -->
+          <text x="22" y="46" font-family="'Cormorant Garamond',serif" font-weight="400" font-size="13" letter-spacing="4" fill="#1C1A18">SAN JOSÉ</text>
+          <text x="22" y="58" font-family="'Inter',sans-serif" font-weight="200" font-size="6" letter-spacing="6.5" fill="#3A4A22">H O T E L</text>
+
+          <!-- Línea separadora -->
+          <line x1="22" y1="68" x2="318" y2="68" stroke="#1C1A18" stroke-width="0.5" opacity="0.12"/>
+
+          <!-- TELÉFONOS -->
+          <text x="22" y="88" font-family="'Inter',sans-serif" font-weight="300" font-size="9" letter-spacing="1" fill="#1C1A18">03541 · 494712</text>
+          <text x="22" y="104" font-family="'Inter',sans-serif" font-weight="200" font-size="8.5" letter-spacing="0.8" fill="#1C1A18" opacity="0.65">WA · 0351 157645037</text>
+          <text x="22" y="118" font-family="'Inter',sans-serif" font-weight="200" font-size="8.5" letter-spacing="0.8" fill="#1C1A18" opacity="0.65">WA · 3541 372428</text>
+
+          <!-- Línea -->
+          <line x1="22" y1="130" x2="318" y2="130" stroke="#1C1A18" stroke-width="0.5" opacity="0.1"/>
+
+          <!-- EMAIL Y WEB en oliva para jerarquía visual -->
+          <text x="22" y="148" font-family="'Inter',sans-serif" font-weight="300" font-size="8.5" letter-spacing="0.5" fill="#3A4A22">sanjosehotelvcp@gmail.com</text>
+          <text x="22" y="163" font-family="'Inter',sans-serif" font-weight="200" font-size="8.5" letter-spacing="0.5" fill="#3A4A22" opacity="0.75">www.sanjose-hotel.com.ar</text>
+
+          <!-- Línea -->
+          <line x1="22" y1="175" x2="318" y2="175" stroke="#1C1A18" stroke-width="0.5" opacity="0.1"/>
+
+          <!-- DIRECCIÓN -->
+          <text x="22" y="191" font-family="'Inter',sans-serif" font-weight="200" font-size="8" letter-spacing="0.5" fill="#1C1A18" opacity="0.5">Alvear 195 · Villa Carlos Paz · Córdoba</text>
+          <text x="22" y="205" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="9.5" letter-spacing="0.5" fill="#1C1A18" opacity="0.32">100 m de la peatonal · 70 m de la terminal</text>
+
+        </svg>
+      </div>
+      <span class="cu-label">Reverso</span>
+      <span class="cu-note">85 × 55 mm · offset 2 tintas</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     03 · COMPOSICIÓN ABIERTA
+     Frente crema + nombre dominante
+     Reverso oliva con datos centrados
+═══════════════════════════════════ -->
+<div class="set">
+  <div class="set-header">
+    <span class="set-num">— 03</span>
+    <span class="set-name">Composición Abierta</span>
+    <span class="set-note">· Nombre en gran escala · reversión cromática</span>
+  </div>
+
+  <div class="cards-row">
+
+    <!-- FRENTE -->
+    <div class="card-unit">
+      <div class="card c-cream">
+        <svg width="340" height="220" viewBox="0 0 340 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+          <path d="M22,44 C50,44 58,26 86,31 C114,36 120,20 148,24 C176,28 184,42 212,36 C232,32 248,26 264,22 C280,18 296,16 318,12" stroke="#3A4A22" stroke-width="0.78" fill="none" stroke-linecap="round"/>
+          <path d="M22,54 C50,54 58,36 86,41 C114,46 120,30 148,34 C176,38 184,52 212,46 C232,42 248,36 264,32 C280,28 296,26 318,22" stroke="#3A4A22" stroke-width="0.32" fill="none" stroke-linecap="round" opacity="0.26"/>
+          <text x="22" y="148" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="48" letter-spacing="2" fill="#1C1A18">SAN JOSÉ</text>
+          <line x1="22" y1="160" x2="318" y2="160" stroke="#1C1A18" stroke-width="0.35" opacity="0.14"/>
+          <text x="22" y="178" font-family="'Inter',sans-serif" font-weight="200" font-size="7" letter-spacing="12" fill="#3A4A22" opacity="0.6">H O T E L</text>
+          <!-- Localidad -->
+          <text x="22" y="200" font-family="'Inter',sans-serif" font-weight="200" font-size="6.5" letter-spacing="3" fill="#3A4A22" opacity="0.45">VILLA CARLOS PAZ · CÓRDOBA · ARGENTINA</text>
+        </svg>
+      </div>
+      <span class="cu-label">Frente</span>
+    </div>
+
+    <!-- REVERSO -->
+    <div class="card-unit">
+      <div class="card c-olive">
+        <svg width="340" height="220" viewBox="0 0 340 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+
+          <!-- Logo arriba centrado -->
+          <text x="170" y="36" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="12" letter-spacing="6" fill="#E8E0C8" opacity="0.65">SAN JOSÉ · HOTEL</text>
+          <line x1="22" y1="46" x2="318" y2="46" stroke="#E8E0C8" stroke-width="0.5" opacity="0.15"/>
+
+          <!-- TELÉFONOS centrados -->
+          <text x="170" y="68" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="300" font-size="9" letter-spacing="1" fill="#E8E0C8">03541 · 494712</text>
+          <text x="170" y="84" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="8.5" letter-spacing="0.6" fill="#E8E0C8" opacity="0.65">WA · 0351 157645037</text>
+          <text x="170" y="99" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="8.5" letter-spacing="0.6" fill="#E8E0C8" opacity="0.65">WA · 3541 372428</text>
+
+          <line x1="60" y1="111" x2="280" y2="111" stroke="#E8E0C8" stroke-width="0.5" opacity="0.13"/>
+
+          <!-- EMAIL Y WEB -->
+          <text x="170" y="129" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="300" font-size="8.5" letter-spacing="0.3" fill="#E8E0C8">sanjosehotelvcp@gmail.com</text>
+          <text x="170" y="145" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="8.5" letter-spacing="0.5" fill="#E8E0C8" opacity="0.7">www.sanjose-hotel.com.ar</text>
+
+          <line x1="60" y1="157" x2="280" y2="157" stroke="#E8E0C8" stroke-width="0.5" opacity="0.13"/>
+
+          <!-- DIRECCIÓN -->
+          <text x="170" y="174" text-anchor="middle" font-family="'Inter',sans-serif" font-weight="200" font-size="8" letter-spacing="0.5" fill="#E8E0C8" opacity="0.5">Alvear 195 · Villa Carlos Paz · Córdoba</text>
+          <text x="170" y="189" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="9.5" fill="#E8E0C8" opacity="0.3">100 m peatonal · 70 m terminal</text>
+
+          <!-- Sierra al pie -->
+          <path d="M22,208 C50,208 56,200 74,203 C92,206 96,198 114,200 C132,202 138,208 156,205 C174,202 180,197 200,199 C220,201 228,207 248,204 C268,201 284,197 318,194" stroke="#E8E0C8" stroke-width="0.38" fill="none" stroke-linecap="round" opacity="0.15"/>
+
+        </svg>
+      </div>
+      <span class="cu-label">Reverso</span>
+      <span class="cu-note">85 × 55 mm · offset 2 tintas</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     04 · ESTRUCTURA EDITORIAL
+     Frente verde bosque · Reverso crema
+     con grid de dos columnas
+═══════════════════════════════════ -->
+<div class="set">
+  <div class="set-header">
+    <span class="set-num">— 04</span>
+    <span class="set-name">Estructura Editorial</span>
+    <span class="set-note">· Grid de secciones · máxima legibilidad</span>
+  </div>
+
+  <div class="cards-row">
+
+    <!-- FRENTE -->
+    <div class="card-unit">
+      <div class="card c-forest">
+        <svg width="340" height="220" viewBox="0 0 340 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+          <path d="M20,74 C46,74 54,50 82,56 C110,62 116,40 144,46 C172,52 180,72 208,64 C228,58 244,50 262,42 C282,34 302,32 320,26" stroke="#E8E0C8" stroke-width="0.92" fill="none" stroke-linecap="round"/>
+          <path d="M20,86 C46,86 54,62 82,68 C110,74 116,52 144,58 C172,64 180,84 208,76 C228,70 244,62 262,54 C282,46 302,44 320,38" stroke="#E8E0C8" stroke-width="0.38" fill="none" stroke-linecap="round" opacity="0.27"/>
+          <text x="22" y="140" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="34" letter-spacing="8" fill="#E8E0C8">SAN JOSÉ</text>
+          <line x1="22" y1="152" x2="292" y2="152" stroke="#E8E0C8" stroke-width="0.32" opacity="0.2"/>
+          <text x="22" y="170" font-family="'Inter',sans-serif" font-weight="200" font-size="7" letter-spacing="11" fill="#E8E0C8" opacity="0.38">H O T E L</text>
+          <text x="318" y="196" text-anchor="end" font-family="'Inter',sans-serif" font-weight="200" font-size="7" letter-spacing="0.5" fill="#E8E0C8" opacity="0.22">sanjose-hotel.com.ar</text>
+        </svg>
+      </div>
+      <span class="cu-label">Frente</span>
+    </div>
+
+    <!-- REVERSO con grid de dos columnas -->
+    <div class="card-unit">
+      <div class="card c-white">
+        <svg width="340" height="220" viewBox="0 0 340 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+
+          <!-- Franja verde izquierda muy fina — referencia al frente -->
+          <rect x="0" y="0" width="3" height="220" fill="#3A4A22"/>
+
+          <!-- ── COLUMNA IZQUIERDA: teléfonos ── -->
+          <text x="20" y="30" font-family="'Inter',sans-serif" font-weight="300" font-size="7" letter-spacing="3.5" fill="#3A4A22" opacity="0.55">TELÉFONO</text>
+          <line x1="20" y1="38" x2="156" y2="38" stroke="#3A4A22" stroke-width="0.5" opacity="0.18"/>
+          <text x="20" y="55" font-family="'Inter',sans-serif" font-weight="400" font-size="9" letter-spacing="0.5" fill="#1C1A18">03541 · 494712</text>
+          <text x="20" y="70" font-family="'Inter',sans-serif" font-weight="200" font-size="8.5" letter-spacing="0.3" fill="#1C1A18" opacity="0.6">WA 0351 157645037</text>
+          <text x="20" y="84" font-family="'Inter',sans-serif" font-weight="200" font-size="8.5" letter-spacing="0.3" fill="#1C1A18" opacity="0.6">WA 3541 372428</text>
+
+          <!-- ── COLUMNA DERECHA: dirección ── -->
+          <text x="178" y="30" font-family="'Inter',sans-serif" font-weight="300" font-size="7" letter-spacing="3.5" fill="#3A4A22" opacity="0.55">UBICACIÓN</text>
+          <line x1="178" y1="38" x2="318" y2="38" stroke="#3A4A22" stroke-width="0.5" opacity="0.18"/>
+          <text x="178" y="55" font-family="'Inter',sans-serif" font-weight="400" font-size="9" letter-spacing="0.5" fill="#1C1A18">Alvear 195</text>
+          <text x="178" y="70" font-family="'Inter',sans-serif" font-weight="200" font-size="8.5" letter-spacing="0.3" fill="#1C1A18" opacity="0.6">Villa Carlos Paz</text>
+          <text x="178" y="84" font-family="'Inter',sans-serif" font-weight="200" font-size="8.5" letter-spacing="0.3" fill="#1C1A18" opacity="0.6">Córdoba</text>
+
+          <!-- Divisoria horizontal central -->
+          <line x1="20" y1="100" x2="318" y2="100" stroke="#1C1A18" stroke-width="0.5" opacity="0.09"/>
+
+          <!-- ── SECCIÓN DIGITAL ── -->
+          <text x="20" y="117" font-family="'Inter',sans-serif" font-weight="300" font-size="7" letter-spacing="3.5" fill="#3A4A22" opacity="0.55">DIGITAL</text>
+          <line x1="20" y1="125" x2="200" y2="125" stroke="#3A4A22" stroke-width="0.5" opacity="0.18"/>
+          <text x="20" y="142" font-family="'Inter',sans-serif" font-weight="400" font-size="9" letter-spacing="0.3" fill="#3A4A22">sanjosehotelvcp@gmail.com</text>
+          <text x="20" y="157" font-family="'Inter',sans-serif" font-weight="200" font-size="8.5" letter-spacing="0.3" fill="#3A4A22" opacity="0.7">www.sanjose-hotel.com.ar</text>
+
+          <!-- Divisoria -->
+          <line x1="20" y1="170" x2="318" y2="170" stroke="#1C1A18" stroke-width="0.5" opacity="0.09"/>
+
+          <!-- Nota de ubicación -->
+          <text x="20" y="187" font-family="'Cormorant Garamond',serif" font-style="italic" font-weight="300" font-size="10" letter-spacing="0.5" fill="#1C1A18" opacity="0.35">100 m de la peatonal · 70 m de la terminal</text>
+
+          <!-- Logo esquina inferior derecha, muy discreto -->
+          <text x="318" y="207" text-anchor="end" font-family="'Cormorant Garamond',serif" font-weight="300" font-size="9" letter-spacing="3" fill="#1C1A18" opacity="0.18">SAN JOSÉ</text>
+
+        </svg>
+      </div>
+      <span class="cu-label">Reverso</span>
+      <span class="cu-note">85 × 55 mm · offset 2 tintas</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div style="background:#1C1A18;padding:48px 56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
+  <div>
+    <p style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(232,224,200,0.25);margin-bottom:8px">Hotel San José</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:17px;letter-spacing:3px;color:#E8E0C8">Sierra Editorial · Tarjetas v2</p>
+  </div>
+  <svg width="220" height="18" viewBox="0 0 440 18" fill="none">
+    <path d="M0,11 C32,11 40,2 66,6 C92,10 98,1 124,4 C150,7 158,11 184,7 C210,3 218,10 244,6 C270,2 278,11 304,7 C330,3 338,11 364,8 C390,5 398,0 424,4 C432,5 438,9 440,9" stroke="#E8E0C8" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+  </svg>
+  <p style="font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(232,224,200,0.18)">Alvear 195 · VCP · Córdoba</p>
+</div>
+
+</body>
+</html>

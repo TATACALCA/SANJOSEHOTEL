@@ -29,8 +29,8 @@
  * ═══════════════════════════════════════════════════════════════════════
  */
 
-const SPREADSHEET_ID = 'TU_SPREADSHEET_ID_AQUI';
-const HOTEL_EMAIL    = 'info@sanjose-hotel.com.ar';
+const SPREADSHEET_ID = '1HA5t9FQghgJN3zcgpUjRD9Hzhk-S-zbYoe80_tFtMEY';
+const HOTEL_EMAIL    = 'sanjosehotelvcp@gmail.com';
 const HOTEL_NAME     = 'San José Hotel';
 const HOTEL_ADDRESS  = 'Alvear 195, Villa Carlos Paz, Córdoba';
 const HOTEL_WHATSAPP = '3541 372428';
