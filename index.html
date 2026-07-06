@@ -116,6 +116,23 @@ section{padding:100px 0;}
 .hab-badge{position:absolute;top:12px;left:12px;background:var(--ink);color:var(--sand);font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;}
 .hab-body{padding:20px 18px 22px;}
 .hab-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--ink);margin-bottom:3px;}
+/* PROMOS */
+.promos-strip{margin-bottom:52px;border:1px solid var(--olive-pale);padding:32px 36px;background:linear-gradient(135deg,var(--olive-wash) 0%,var(--surface) 100%);}
+.promo-badge-jul{display:inline-block;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--olive-deep);background:var(--olive-pale);padding:5px 14px;margin-bottom:24px;font-weight:500;}
+.promos-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:18px;}
+.promo-card{background:var(--paper);padding:24px 28px;display:flex;gap:20px;align-items:flex-start;position:relative;border-left:3px solid var(--olive);}
+.promo-card--featured{border-left-color:var(--terra);background:var(--ink);}
+.promo-pct{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:300;line-height:1;color:var(--olive);flex-shrink:0;}
+.promo-pct span{font-size:28px;}
+.promo-card--featured .promo-pct{color:var(--terra);}
+.promo-info strong{font-size:14px;font-weight:500;color:var(--ink);display:block;margin-bottom:6px;}
+.promo-card--featured .promo-info strong{color:var(--paper);}
+.promo-info p{font-size:12.5px;color:#6A6560;line-height:1.7;margin:0;}
+.promo-card--featured .promo-info p{color:rgba(253,250,245,0.55);}
+.promo-tag{position:absolute;top:14px;right:14px;font-size:8px;letter-spacing:2px;text-transform:uppercase;background:var(--terra);color:var(--white);padding:4px 10px;}
+.promo-disclaimer{font-size:11px;color:#8A8880;font-style:italic;margin:0;}
+@media(max-width:640px){.promos-cards{grid-template-columns:1fr;}.promos-strip{padding:24px 20px;}}
+
 .hab-cap{font-size:11px;color:#8A8880;margin-bottom:8px;}
 .hab-price{font-size:11px;color:#8A8880;margin-bottom:11px;letter-spacing:.3px;}
 .hab-price strong{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--ink);}
@@ -520,6 +537,30 @@ section{padding:100px 0;}
       <div><span class="sec-label">Habitaciones</span><h2 class="sec-hed">Tu espacio,<br><em>a tu medida</em></h2></div>
       <button class="btn-solid" onclick="openModal()">Consultar disponibilidad</button>
     </div>
+
+    <!-- PROMOS JULIO -->
+    <div class="promos-strip">
+      <div class="promo-badge-jul">🌿 Vacaciones de Julio</div>
+      <div class="promos-cards">
+        <div class="promo-card">
+          <div class="promo-pct">15<span>%</span></div>
+          <div class="promo-info">
+            <strong>3 noches</strong>
+            <p>Reservá 3 noches y obtené un 15% de descuento sobre la tarifa publicada. Válido para todas las habitaciones.</p>
+          </div>
+        </div>
+        <div class="promo-card promo-card--featured">
+          <div class="promo-pct">20<span>%</span></div>
+          <div class="promo-info">
+            <strong>4 noches o más</strong>
+            <p>Estadías de 4 noches en adelante con 20% de descuento. La mejor opción para disfrutar la temporada de invierno.</p>
+          </div>
+          <div class="promo-tag">Mejor oferta</div>
+        </div>
+      </div>
+      <p class="promo-disclaimer">* Descuentos aplicables al momento de reservar. Consultá disponibilidad y coordiná el pago de la seña por WhatsApp.</p>
+    </div>
+
     <div class="hab-grid">
       <div class="hab-card">
         <div class="hab-photo"><img src="fotos/habitacion individual.jpeg" alt="Habitación Individual"></div>
@@ -538,7 +579,7 @@ section{padding:100px 0;}
         <div class="hab-body">
           <div class="hab-name">Habitación Doble</div>
           <div class="hab-cap">👥 2 personas</div>
-          <div class="hab-price">desde <strong>$69.000</strong> <span>/ noche</span></div>
+          <div class="hab-price">desde <strong>$79.000</strong> <span>/ noche</span></div>
           <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Desayuno</span></div>
           <button class="btn-res" onclick="openModal('Doble Standard')">Consultar y reservar</button>
         </div>
@@ -549,7 +590,7 @@ section{padding:100px 0;}
         <div class="hab-body">
           <div class="hab-name">Habitación Triple</div>
           <div class="hab-cap">👥 3 personas</div>
-          <div class="hab-price">desde <strong>$89.000</strong> <span>/ noche</span></div>
+          <div class="hab-price">desde <strong>$95.000</strong> <span>/ noche</span></div>
           <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Desayuno</span></div>
           <button class="btn-res" onclick="openModal('Triple')">Consultar y reservar</button>
         </div>
@@ -560,7 +601,7 @@ section{padding:100px 0;}
         <div class="hab-body">
           <div class="hab-name">Suite Familiar</div>
           <div class="hab-cap">👨‍👩‍👧‍👦 Hasta 5 personas</div>
-          <div class="hab-price">desde <strong>$119.000</strong> <span>/ noche</span></div>
+          <div class="hab-price">desde <strong>$150.000</strong> <span>/ noche</span></div>
           <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Desayuno</span><span class="pill">Cochera</span></div>
           <button class="btn-res" onclick="openModal('Familiar')">Consultar y reservar</button>
         </div>
