@@ -13,19 +13,24 @@
   --olive:#5C6B3A;--olive-deep:#3D4A24;--olive-pale:#C8D4A8;--olive-wash:#EFF3E6;
   --terra:#B85C38;--terra-soft:#D4795A;
   --sand:#C8B898;--sand-light:#E8DDD0;--sand-pale:#F5F0E8;
-  --paper:#FDFAF5;--white:#FFFFFF;--surface:#F2F6EB;--rule:rgba(26,25,22,0.1);
+  --amber:#C4833A;                          /* acento cálido */
+  --paper:#FDFAF5;--white:#FFFFFF;--surface:#F2F6EB;
+  --warm-bg:#FBF7F0;                        /* fondo ligeramente cálido */
+  --rule:rgba(26,25,22,0.1);
   --nav-h:68px;--ease:cubic-bezier(.4,0,.2,1);
+  --radius-card:18px;                       /* bordes redondeados */
+  --radius-btn:50px;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;line-height:1.6;}
+body{font-family:'Inter',sans-serif;background:var(--warm-bg);color:var(--ink);overflow-x:hidden;line-height:1.6;}
 img{display:block;width:100%;object-fit:cover;}
 a{text-decoration:none;color:inherit;}
 button{cursor:pointer;border:none;background:none;font-family:inherit;color:inherit;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 56px;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(61,74,36,0.97);transition:background .4s,border-color .4s;}
-nav.scrolled{background:rgba(45,56,26,0.99);border-bottom-color:rgba(255,255,255,.06);}
+/* NAV — ③ glassmorphism */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 56px;border-bottom:1px solid rgba(255,255,255,.10);background:rgba(61,74,36,0.78);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);transition:background .4s,border-color .4s;}
+nav.scrolled{background:rgba(45,56,26,0.90);border-bottom-color:rgba(255,255,255,.08);}
 .nav-wordmark{display:flex;align-items:center;gap:0;color:var(--paper);transition:color .4s;}
 .nav-wordmark svg{overflow:visible;}
 .nav-wordmark text{transition:fill .4s;}
@@ -33,8 +38,8 @@ nav.scrolled{background:rgba(45,56,26,0.99);border-bottom-color:rgba(255,255,255
 .nav-links a{font-size:10.5px;font-weight:400;letter-spacing:1.8px;text-transform:uppercase;color:rgba(253,250,245,0.55);transition:color .3s;}
 .nav-links a:hover{color:var(--sand);}
 nav.scrolled .nav-links a{color:rgba(253,250,245,0.5);}
-.nav-cta{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:9px 22px;border:1px solid rgba(253,250,245,0.35);color:rgba(253,250,245,0.75);transition:all .25s;border-radius:1px;}
-.nav-cta:hover,.nav-cta:focus{background:var(--terra);border-color:var(--terra);color:var(--white);}
+.nav-cta{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:9px 22px;border:1px solid rgba(253,250,245,0.35);color:rgba(253,250,245,0.75);transition:all .25s;border-radius:var(--radius-btn);}
+.nav-cta:hover,.nav-cta:focus{background:var(--amber);border-color:var(--amber);color:var(--white);}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:8px;}
 .hamburger span{width:22px;height:1px;background:var(--paper);display:block;transition:all .3s;}
 .mob-menu{display:none;position:fixed;inset:0;z-index:190;background:var(--ink);flex-direction:column;align-items:center;justify-content:center;gap:28px;}
@@ -42,7 +47,7 @@ nav.scrolled .nav-links a{color:rgba(253,250,245,0.5);}
 .mob-menu a{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;color:var(--paper);}
 .mob-menu a:hover{color:var(--sand);}
 
-/* HERO */
+/* HERO — ① tipografía audaz  ⑤ fotos protagonismo */
 .hero{height:100vh;min-height:620px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;}
 .hero-photo{position:absolute;inset:0;}
 .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease;animation:hz 22s ease-in-out infinite alternate;}
@@ -52,20 +57,22 @@ nav.scrolled .nav-links a{color:rgba(253,250,245,0.5);}
 .hero-dots{position:absolute;bottom:36px;left:64px;z-index:3;display:flex;gap:8px;}
 .hero-dot{width:20px;height:2px;background:rgba(253,250,245,0.25);border:none;padding:0;cursor:pointer;transition:background .3s,width .3s;}
 .hero-dot.active{background:var(--sand);width:32px;}
-.hero-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,25,22,.88) 0%,rgba(26,25,22,.2) 50%,rgba(26,25,22,.55) 100%);}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,25,22,.90) 0%,rgba(26,25,22,.25) 55%,rgba(26,25,22,.55) 100%);}
 .hero-content{position:relative;z-index:2;padding:0 64px 80px;}
 .hero-label{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--sand);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
 .hero-label::before{content:'';width:28px;height:1px;background:var(--terra);}
-.hero-hed{font-family:'Playfair Display',serif;font-size:clamp(60px,9vw,110px);font-weight:400;line-height:.92;letter-spacing:-2px;color:var(--white);margin-bottom:10px;}
-.hero-hed em{font-style:italic;color:var(--sand);}
-.hero-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(14px,1.8vw,19px);color:rgba(253,250,245,0.82);margin-bottom:38px;}
-.hero-rule{width:40px;height:1px;background:var(--terra);margin-bottom:26px;}
+/* ① tipografía MÁS AUDAZ */
+.hero-hed{font-family:'Cormorant Garamond',serif;font-size:clamp(72px,10vw,128px);font-weight:600;line-height:.88;letter-spacing:-3px;color:var(--white);margin-bottom:10px;}
+.hero-hed em{font-style:italic;font-weight:300;color:var(--sand);}
+.hero-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(14px,1.8vw,20px);color:rgba(253,250,245,0.82);margin-bottom:38px;}
+.hero-rule{width:40px;height:1px;background:var(--amber);margin-bottom:26px;}
 .hero-desc{font-size:13.5px;color:rgba(253,250,245,0.78);line-height:1.9;max-width:440px;font-weight:300;}
 .hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
-.btn-solid{font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;padding:13px 32px;background:var(--terra);color:var(--white);border-radius:1px;border:1px solid var(--terra);transition:all .25s;display:inline-block;}
-.btn-solid:hover{background:var(--terra-soft);border-color:var(--terra-soft);}
-.btn-ghost{font-size:10px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;padding:13px 28px;border:1px solid rgba(253,250,245,.25);border-radius:1px;color:rgba(253,250,245,.6);transition:all .25s;display:inline-block;}
-.btn-ghost:hover{border-color:var(--sand);color:var(--sand);}
+/* ② botones redondeados  ⑥ acento cálido */
+.btn-solid{font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;padding:13px 32px;background:linear-gradient(135deg,var(--terra),var(--amber));color:var(--white);border-radius:var(--radius-btn);border:none;transition:all .25s;display:inline-block;box-shadow:0 4px 16px rgba(184,92,56,.25);}
+.btn-solid:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 8px 24px rgba(196,131,58,.3);}
+.btn-ghost{font-size:10px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;padding:13px 28px;border:1px solid rgba(253,250,245,.3);border-radius:var(--radius-btn);color:rgba(253,250,245,.7);transition:all .25s;display:inline-block;}
+.btn-ghost:hover{border-color:var(--sand);color:var(--sand);background:rgba(255,255,255,0.06);}
 .hero-scroll{position:absolute;bottom:36px;right:64px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;}
 .hero-scroll span{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(253,250,245,.25);}
 .scroll-bar{width:1px;height:44px;background:linear-gradient(to bottom,var(--sand),transparent);animation:sb 2.2s ease-in-out infinite;}
@@ -83,12 +90,13 @@ section{padding:100px 0;}
 .wrap{max-width:1200px;margin:0 auto;padding:0 64px;}
 .sec-label{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--terra);display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;font-weight:500;}
 .sec-label::after{content:'';width:16px;height:1px;background:var(--terra);}
-.sec-hed{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,54px);font-weight:400;line-height:1.06;letter-spacing:-.5px;color:var(--ink);}
-.sec-hed em{font-style:italic;color:var(--olive);}
+/* ① section headings más audaces */
+.sec-hed{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,60px);font-weight:500;line-height:1.04;letter-spacing:-.5px;color:var(--ink);}
+.sec-hed em{font-style:italic;font-weight:300;color:var(--olive);}
 .sec-body{font-size:14.5px;color:#6A6560;line-height:1.9;font-weight:300;margin-top:18px;}
 
 /* EL HOTEL */
-.elhotel{background:var(--surface);}
+.elhotel{background:var(--warm-bg);}
 .elhotel-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .elhotel-main{aspect-ratio:4/5;border-radius:1px;overflow:hidden;}
 .elhotel-main img{height:100%;}
@@ -104,16 +112,19 @@ section{padding:100px 0;}
 .valor-icon{font-size:15px;}
 .valor-label{font-size:11.5px;font-weight:500;color:var(--ink-soft);transition:color .3s;}
 
-/* HABITACIONES */
-.habitaciones{background:var(--sand-pale);}
+/* HABITACIONES — ② redondeadas  ⑤ fotos más grandes */
+.habitaciones{background:var(--warm-bg);}
 .hab-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:20px;}
-.hab-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
-.hab-card{background:var(--surface);overflow:hidden;position:relative;transition:transform .35s;}
-.hab-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.09);}
-.hab-photo{aspect-ratio:3/2;overflow:hidden;}
+.hab-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
+.hab-min{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--terra);background:rgba(184,92,56,.08);border:1px solid rgba(184,92,56,.2);padding:8px 18px;display:inline-block;margin-bottom:28px;border-radius:var(--radius-btn);}
+@media(max-width:1100px){.hab-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:700px){.hab-grid{grid-template-columns:repeat(2,1fr);}}
+.hab-card{background:var(--white);overflow:hidden;position:relative;transition:transform .35s,box-shadow .35s;border-radius:var(--radius-card);box-shadow:0 2px 16px rgba(26,25,22,.06);}
+.hab-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.12);}
+.hab-photo{aspect-ratio:4/3;overflow:hidden;}
 .hab-photo img{height:100%;transition:transform .6s;}
-.hab-card:hover .hab-photo img{transform:scale(1.04);}
-.hab-badge{position:absolute;top:12px;left:12px;background:var(--ink);color:var(--sand);font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;}
+.hab-card:hover .hab-photo img{transform:scale(1.05);}
+.hab-badge{position:absolute;top:12px;left:12px;background:var(--ink);color:var(--sand);font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:5px 11px;border-radius:20px;}
 .hab-body{padding:20px 18px 22px;}
 .hab-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--ink);margin-bottom:3px;}
 /* PROMOS */
@@ -139,11 +150,11 @@ section{padding:100px 0;}
 .hab-price span{font-size:10px;}
 .hab-pills{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px;}
 .pill{font-size:9px;letter-spacing:.5px;padding:3px 8px;border:1px solid var(--sand-light);color:var(--olive-deep);}
-.btn-res{display:block;width:100%;padding:11px;text-align:center;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;background:var(--ink);color:var(--paper);transition:background .25s;}
-.btn-res:hover{background:var(--olive-deep);}
+.btn-res{display:block;width:100%;padding:11px;text-align:center;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;background:var(--olive-deep);color:var(--paper);transition:all .25s;border-radius:var(--radius-btn);}
+.btn-res:hover{background:var(--amber);}
 
 /* SERVICIOS */
-.servicios{background:var(--surface);}
+.servicios{background:var(--warm-bg);}
 .servicios-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .srv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:36px;}
 .srv-item{background:var(--surface);padding:20px 18px;display:flex;gap:12px;align-items:flex-start;}
@@ -157,7 +168,7 @@ section{padding:100px 0;}
 .srv-photo-cap span{font-size:9.5px;letter-spacing:2px;color:var(--sand);}
 
 /* ACTIVIDADES */
-.actividades{background:var(--sand-pale);}
+.actividades{background:var(--surface);}
 .act-tabs{display:flex;border-bottom:1px solid var(--rule);margin-bottom:44px;overflow-x:auto;scrollbar-width:none;}
 .act-tabs::-webkit-scrollbar{display:none;}
 .act-tab{font-size:10px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;padding:13px 22px;color:#8A8880;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .25s;cursor:pointer;}
@@ -177,8 +188,8 @@ section{padding:100px 0;}
 .info-tip{margin-top:24px;background:var(--surface);padding:16px 18px;border-left:3px solid var(--terra);font-size:12px;color:#6A6560;line-height:1.7;}
 
 .exc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-.exc-card{background:var(--surface);overflow:hidden;transition:transform .3s;}
-.exc-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.07);}
+.exc-card{background:var(--white);overflow:hidden;transition:transform .3s,box-shadow .3s;border-radius:var(--radius-card);box-shadow:0 2px 14px rgba(26,25,22,.05);}
+.exc-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.10);}
 .exc-photo{aspect-ratio:3/2;overflow:hidden;}
 .exc-photo img{height:100%;transition:transform .5s;}
 .exc-card:hover .exc-photo img{transform:scale(1.05);}
@@ -192,13 +203,13 @@ section{padding:100px 0;}
 .exc-note{font-size:10.5px;color:#8A8880;margin-top:18px;font-style:italic;}
 
 .ent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.ent-card{background:var(--surface);padding:26px 22px;border-left:3px solid var(--olive);}
+.ent-card{background:var(--white);padding:26px 22px;border-left:3px solid var(--olive);border-radius:var(--radius-card);box-shadow:0 2px 14px rgba(26,25,22,.05);}
 .ent-card .ent-icon{font-size:22px;margin-bottom:10px;}
 .ent-card h4{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--ink);margin-bottom:8px;}
 .ent-card p{font-size:12.5px;color:#6A6560;line-height:1.75;font-weight:300;}
 
 .gast-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.gast-card{background:var(--surface);overflow:hidden;}
+.gast-card{background:var(--white);overflow:hidden;border-radius:var(--radius-card);box-shadow:0 2px 14px rgba(26,25,22,.05);}
 .gast-photo{aspect-ratio:3/2;overflow:hidden;}
 .gast-photo img{height:100%;transition:transform .5s;}
 .gast-card:hover .gast-photo img{transform:scale(1.05);}
@@ -217,7 +228,38 @@ section{padding:100px 0;}
 .noche-desc{font-size:11px;color:rgba(253,250,245,.5);line-height:1.55;}
 
 .nat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.nat-card{background:var(--surface);overflow:hidden;}
+.nat-card{background:var(--white);overflow:hidden;border-radius:var(--radius-card);box-shadow:0 2px 14px rgba(26,25,22,.05);}
+/* ── CHATBOT ── */
+.chat-btn{position:fixed;bottom:26px;left:26px;z-index:300;width:52px;height:52px;border-radius:50%;background:var(--olive-deep);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(61,74,36,.45);transition:transform .25s,box-shadow .25s;border:none;cursor:pointer;}
+.chat-btn:hover{transform:scale(1.08);box-shadow:0 8px 28px rgba(61,74,36,.55);}
+.chat-btn svg{width:24px;height:24px;fill:#fff;}
+.chat-badge{position:absolute;top:-2px;right:-2px;width:14px;height:14px;border-radius:50%;background:var(--terra);border:2px solid var(--paper);display:none;}
+.chat-badge.show{display:block;}
+.chat-window{position:fixed;bottom:90px;left:26px;z-index:400;width:340px;max-height:520px;background:var(--paper);border-radius:2px;box-shadow:0 16px 56px rgba(0,0,0,.22);display:flex;flex-direction:column;transform:translateY(16px) scale(.97);opacity:0;pointer-events:none;transition:all .3s var(--ease);overflow:hidden;}
+.chat-window.open{transform:none;opacity:1;pointer-events:all;}
+.chat-hd{background:var(--olive-deep);padding:16px 18px;display:flex;align-items:center;gap:12px;}
+.chat-hd-avatar{width:36px;height:36px;border-radius:50%;background:var(--olive);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.chat-hd-info{}
+.chat-hd-name{font-size:13px;font-weight:500;color:var(--paper);letter-spacing:.3px;}
+.chat-hd-status{font-size:10px;color:rgba(253,250,245,.5);letter-spacing:.5px;}
+.chat-hd-x{margin-left:auto;font-size:18px;color:rgba(253,250,245,.4);cursor:pointer;line-height:1;transition:color .2s;background:none;border:none;}
+.chat-hd-x:hover{color:var(--paper);}
+.chat-msgs{flex:1;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:12px;scrollbar-width:thin;}
+.chat-msg{max-width:85%;font-size:13px;line-height:1.6;padding:10px 13px;border-radius:2px;}
+.chat-msg.bot{background:var(--surface);color:var(--ink);align-self:flex-start;border-left:2px solid var(--olive);}
+.chat-msg.user{background:var(--olive-deep);color:var(--paper);align-self:flex-end;}
+.chat-chips{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 14px;}
+.chat-chip{font-size:11px;padding:6px 13px;border:1px solid var(--olive-pale);color:var(--olive-deep);cursor:pointer;border-radius:1px;background:var(--surface);transition:all .2s;white-space:nowrap;}
+.chat-chip:hover{background:var(--olive-deep);color:var(--paper);border-color:var(--olive-deep);}
+.chat-inp{border-top:1px solid var(--rule);display:flex;align-items:center;padding:10px 14px;gap:8px;}
+.chat-inp input{flex:1;border:none;background:none;font-size:13px;font-family:'Inter',sans-serif;color:var(--ink);outline:none;}
+.chat-inp input::placeholder{color:#B0ADA8;}
+.chat-send{width:30px;height:30px;border-radius:50%;background:var(--olive-deep);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0;}
+.chat-send:hover{background:var(--olive);}
+.chat-send svg{width:13px;height:13px;fill:#fff;}
+.chat-typing{font-size:11px;color:#B0ADA8;padding:4px 16px;font-style:italic;}
+@media(max-width:480px){.chat-window{width:calc(100vw - 32px);left:16px;}}
+
 /* ── GRUPOS ── */
 .grupos{background:var(--ink);padding:100px 0;}
 .grupos .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
@@ -227,7 +269,8 @@ section{padding:100px 0;}
 .grupos-text .sec-hed em{color:var(--sand);}
 .grupos-lead{font-size:15px;color:rgba(253,250,245,0.65);line-height:1.9;margin:24px 0 36px;}
 .grupos-beneficios{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px;}
-.grp-ben{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);padding:20px 18px;}
+.grp-ben{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);padding:20px 18px;border-radius:14px;transition:background .3s;}
+.grp-ben:hover{background:rgba(255,255,255,0.10);}
 .grp-ben-icon{font-size:22px;margin-bottom:8px;}
 .grp-ben h5{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;color:var(--paper);margin-bottom:5px;}
 .grp-ben p{font-size:11.5px;color:rgba(253,250,245,0.45);line-height:1.7;}
@@ -263,7 +306,7 @@ section{padding:100px 0;}
 
 /* vehículos */
 .veh-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.veh-card{background:var(--surface);padding:32px 28px;border-top:3px solid var(--olive);}
+.veh-card{background:var(--white);padding:32px 28px;border-top:3px solid var(--olive);border-radius:var(--radius-card);box-shadow:0 2px 14px rgba(26,25,22,.05);}
 .veh-icon{font-size:36px;margin-bottom:14px;}
 .veh-card h4{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;margin-bottom:10px;}
 .veh-card p{font-size:13px;color:#6A6560;line-height:1.8;margin-bottom:16px;}
@@ -290,12 +333,12 @@ section{padding:100px 0;}
 .gal-item:hover .gal-lbl{opacity:1;}
 
 /* UBICACIÓN */
-.ubicacion{background:var(--surface);padding:100px 0;}
+.ubicacion{background:var(--warm-bg);padding:100px 0;}
 .ubi-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
 .mapa-wrap{aspect-ratio:4/3;overflow:hidden;border-radius:1px;box-shadow:0 16px 48px rgba(0,0,0,.11);}
 .mapa-wrap iframe{width:100%;height:100%;border:none;}
 .ubi-items{display:flex;flex-direction:column;gap:12px;margin:24px 0 30px;}
-.ubi-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--sand-pale);border-left:3px solid var(--olive);}
+.ubi-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--white);border-left:3px solid var(--olive);border-radius:10px;box-shadow:0 1px 8px rgba(26,25,22,.05);}
 .ubi-icon{font-size:15px;flex-shrink:0;margin-top:1px;}
 .ubi-text h5{font-size:11.5px;font-weight:600;color:var(--ink);margin-bottom:2px;}
 .ubi-text p{font-size:11.5px;color:#6A6560;line-height:1.5;}
@@ -400,6 +443,41 @@ section{padding:100px 0;}
 .mbtn-wa{padding:11px 26px;background:#25D366;color:#fff;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:8px;transition:background .2s;}
 .mbtn-wa:hover{background:#1DB954;}
 
+/* ⑤ GALERÍA EDITORIAL — strip de fotos nuevas */
+.editorial-strip{display:grid;grid-template-columns:1.2fr 1fr 1fr 0.9fr;gap:3px;height:380px;background:var(--ink);}
+.editorial-strip .es-item{overflow:hidden;position:relative;}
+.editorial-strip .es-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .3s;filter:brightness(.88) saturate(1.1);}
+.editorial-strip .es-item:hover img{transform:scale(1.05);filter:brightness(1) saturate(1.2);}
+.editorial-caption{background:var(--ink);padding:32px 64px;display:flex;align-items:center;justify-content:space-between;gap:32px;}
+.editorial-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:22px;color:rgba(253,250,245,.75);line-height:1.5;max-width:480px;}
+.editorial-detail{font-family:'Inter',sans-serif;font-size:10px;font-weight:200;letter-spacing:3px;text-transform:uppercase;color:rgba(253,250,245,.25);text-align:right;line-height:2.2;}
+
+/* ④ ANIMACIONES SCROLL */
+.fade-up{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease;}
+.fade-up.visible{opacity:1;transform:none;}
+
+/* ⑦ FOOTER RENOVADO — 4 columnas */
+.contacto{background:var(--ink);padding:80px 0 0;}
+.footer-grid-new{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px;}
+.footer-brand-logo{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:30px;letter-spacing:4px;text-transform:uppercase;color:var(--white);margin-bottom:6px;}
+.footer-brand-sub{font-family:'Inter',sans-serif;font-size:9px;font-weight:200;letter-spacing:3px;text-transform:uppercase;color:rgba(253,250,245,.28);margin-bottom:18px;}
+.footer-brand-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:rgba(253,250,245,.48);line-height:1.6;margin-bottom:24px;max-width:260px;}
+.footer-social-row{display:flex;gap:10px;}
+.footer-social-btn{font-size:10px;letter-spacing:.5px;color:rgba(253,250,245,.3);border:1px solid rgba(255,255,255,.1);padding:7px 13px;transition:all .25s;border-radius:var(--radius-btn);text-decoration:none;}
+.footer-social-btn:hover{color:var(--sand);border-color:rgba(253,250,245,.3);}
+.footer-col-new h5{font-size:8.5px;letter-spacing:4px;text-transform:uppercase;color:rgba(253,250,245,.2);margin-bottom:18px;}
+.footer-col-new ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col-new ul li{font-size:13px;color:rgba(253,250,245,.4);display:flex;align-items:flex-start;gap:9px;line-height:1.5;}
+.footer-col-new ul li a{color:rgba(253,250,245,.4);transition:color .25s;text-decoration:none;}
+.footer-col-new ul li a:hover{color:var(--sand);}
+.footer-bottom-new{border-top:1px solid rgba(255,255,255,.05);padding:22px 0 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-bottom-new span{font-size:10px;color:rgba(253,250,245,.14);}
+.footer-bottom-links{display:flex;gap:18px;}
+.footer-bottom-links a{font-size:10px;color:rgba(253,250,245,.14);transition:color .25s;text-decoration:none;}
+.footer-bottom-links a:hover{color:var(--sand);}
+@media(max-width:900px){.footer-grid-new{grid-template-columns:1fr 1fr;gap:32px;}.editorial-strip{grid-template-columns:1fr 1fr;height:auto;}.editorial-strip .es-item{height:200px;}.editorial-caption{padding:24px;flex-direction:column;align-items:flex-start;}}
+@media(max-width:640px){.footer-grid-new{grid-template-columns:1fr;}}
+
 /* RESPONSIVE */
 @media(max-width:1024px){
   .wrap{padding:0 40px;}nav{padding:0 40px;}
@@ -467,7 +545,7 @@ section{padding:100px 0;}
   <div class="hero-photo">
     <div class="hero-slide active" style="background-image:url('fotos/frente floral.jpeg');background-position:center 35%;"></div>
     <div class="hero-slide" style="background-image:url('fotos/costanera 2.jpeg');background-position:center 50%;"></div>
-    <div class="hero-slide" style="background-image:url('fotos/equipo de trabajo.jpeg');background-position:center 40%;"></div>
+    <div class="hero-slide" style="background-image:url('fotos/exterior-nuevo.jpeg');background-position:center 45%;"></div>
     <div class="hero-slide" style="background-image:url('fotos/frente.jpeg');background-position:center 35%;"></div>
     <div class="hero-slide" style="background-image:url('fotos/peatonal temporada.jpeg');background-position:center 45%;"></div>
     <div class="hero-slide" style="background-image:url('fotos/lago san roque.jpeg');background-position:center 50%;"></div>
@@ -487,6 +565,22 @@ section{padding:100px 0;}
   </div>
   <div class="hero-scroll"><span>Scroll</span><div class="scroll-bar"></div></div>
 </section>
+
+<!-- ⑤ GALERÍA EDITORIAL — nuevas fotos con protagonismo -->
+<div class="editorial-strip">
+  <div class="es-item"><img src="fotos/salon-verde.jpeg" alt="Salón San José"></div>
+  <div class="es-item"><img src="fotos/comedor-nuevo.jpeg" alt="Desayunador"></div>
+  <div class="es-item"><img src="fotos/hab-verde.jpeg" alt="Habitación"></div>
+  <div class="es-item"><img src="fotos/llavero.jpeg" alt="Hotel San José"></div>
+</div>
+<div class="editorial-caption">
+  <p class="editorial-quote">"Un hotel donde cada detalle fue pensado para que te sientas como en casa."</p>
+  <div class="editorial-detail">
+    Alvear 195 · Villa Carlos Paz<br>
+    Check-in 13hs · Check-out 11hs<br>
+    Mínimo 3 noches
+  </div>
+</div>
 
 <div class="ticker"><div class="ticker-inner" id="tick">
   <span class="ticker-item"><span class="ticker-dot"></span>Alvear 195 · Villa Carlos Paz</span>
@@ -511,8 +605,8 @@ section{padding:100px 0;}
   <div class="wrap">
     <div class="elhotel-grid">
       <div class="elhotel-photos">
-        <div class="elhotel-main"><img src="fotos/desayunador y living.jpeg" alt="Living San José Hotel"></div>
-        <div class="elhotel-float"><img src="fotos/desayuno.jpeg" alt="Desayuno San José Hotel"></div>
+        <div class="elhotel-main"><img src="fotos/salon-verde.jpeg" alt="Salón San José Hotel"></div>
+        <div class="elhotel-float"><img src="fotos/desayuno-frutas.jpeg" alt="Desayuno San José Hotel"></div>
       </div>
       <div class="elhotel-text">
         <span class="sec-label">El hotel</span>
@@ -538,74 +632,79 @@ section{padding:100px 0;}
       <button class="btn-solid" onclick="openModal()">Consultar disponibilidad</button>
     </div>
 
-    <!-- PROMOS JULIO -->
-    <div class="promos-strip">
-      <div class="promo-badge-jul">🌿 Vacaciones de Julio</div>
-      <div class="promos-cards">
-        <div class="promo-card">
-          <div class="promo-pct">15<span>%</span></div>
-          <div class="promo-info">
-            <strong>4 noches</strong>
-            <p>Reservá 4 noches y obtené un 15% de descuento sobre la tarifa publicada. Válido para todas las habitaciones.</p>
-          </div>
-        </div>
-        <div class="promo-card promo-card--featured">
-          <div class="promo-pct">20<span>%</span></div>
-          <div class="promo-info">
-            <strong>5 noches o más — última noche gratis</strong>
-            <p>Estadías de 5 noches en adelante con 20% de descuento. ¡La última noche no la pagás!</p>
-          </div>
-          <div class="promo-tag">Mejor oferta</div>
-        </div>
-      </div>
-      <p class="promo-disclaimer">* Descuentos aplicables al momento de reservar. Consultá disponibilidad y coordiná el pago de la seña por WhatsApp.</p>
-    </div>
+    <div class="hab-min">⭐ Estadía mínima: 3 noches</div>
 
     <div class="hab-grid">
       <div class="hab-card">
         <div class="hab-photo"><img src="fotos/habitacion individual.jpeg" alt="Habitación Individual"></div>
         <div class="hab-badge">Individual</div>
         <div class="hab-body">
-          <div class="hab-name">Habitación Individual</div>
+          <div class="hab-name">Individual</div>
           <div class="hab-cap">👤 1 persona</div>
-          <div class="hab-price">desde <strong>$45.000</strong> <span>/ noche</span></div>
+          <div class="hab-price">desde <strong>$55.000</strong> <span>/ noche</span></div>
           <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Baño privado</span></div>
           <button class="btn-res" onclick="openModal('Individual')">Consultar y reservar</button>
         </div>
       </div>
       <div class="hab-card">
-        <div class="hab-photo"><img src="fotos/doble standard.jpeg" alt="Habitación Doble Standard"></div>
-        <div class="hab-badge">Doble Standard</div>
+        <div class="hab-photo"><img src="fotos/doble standard.jpeg" alt="Habitación Doble"></div>
+        <div class="hab-badge">Doble</div>
         <div class="hab-body">
-          <div class="hab-name">Habitación Doble</div>
+          <div class="hab-name">Doble Estándar</div>
           <div class="hab-cap">👥 2 personas</div>
-          <div class="hab-price">desde <strong>$79.000</strong> <span>/ noche</span></div>
+          <div class="hab-price">desde <strong>$95.000</strong> <span>/ noche</span></div>
           <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Desayuno</span></div>
-          <button class="btn-res" onclick="openModal('Doble Standard')">Consultar y reservar</button>
+          <button class="btn-res" onclick="openModal('Doble Estándar')">Consultar y reservar</button>
         </div>
       </div>
       <div class="hab-card">
         <div class="hab-photo"><img src="fotos/triple 1.jpeg" alt="Habitación Triple"></div>
         <div class="hab-badge">Triple</div>
         <div class="hab-body">
-          <div class="hab-name">Habitación Triple</div>
+          <div class="hab-name">Triple</div>
           <div class="hab-cap">👥 3 personas</div>
-          <div class="hab-price">desde <strong>$95.000</strong> <span>/ noche</span></div>
+          <div class="hab-price">desde <strong>$115.000</strong> <span>/ noche</span></div>
           <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Desayuno</span></div>
           <button class="btn-res" onclick="openModal('Triple')">Consultar y reservar</button>
         </div>
       </div>
       <div class="hab-card">
-        <div class="hab-photo"><img src="fotos/familiar 1.jpeg" alt="Suite Familiar"></div>
-        <div class="hab-badge">Familiar</div>
+        <div class="hab-photo"><img src="fotos/familiar 1.jpeg" alt="Habitación Cuádruple"></div>
+        <div class="hab-badge">Cuádruple</div>
         <div class="hab-body">
-          <div class="hab-name">Suite Familiar</div>
-          <div class="hab-cap">👨‍👩‍👧‍👦 Hasta 5 personas</div>
-          <div class="hab-price">desde <strong>$150.000</strong> <span>/ noche</span></div>
-          <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Desayuno</span><span class="pill">Cochera</span></div>
-          <button class="btn-res" onclick="openModal('Familiar')">Consultar y reservar</button>
+          <div class="hab-name">Cuádruple</div>
+          <div class="hab-cap">👨‍👩‍👧‍👦 4 personas</div>
+          <div class="hab-price">desde <strong>$140.000</strong> <span>/ noche</span></div>
+          <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Desayuno</span></div>
+          <button class="btn-res" onclick="openModal('Cuádruple')">Consultar y reservar</button>
         </div>
       </div>
+      <div class="hab-card">
+        <div class="hab-photo"><img src="fotos/familiar 2.jpeg" alt="Habitación Quíntuple"></div>
+        <div class="hab-badge">Quíntuple</div>
+        <div class="hab-body">
+          <div class="hab-name">Quíntuple</div>
+          <div class="hab-cap">👨‍👩‍👧‍👦 5 personas</div>
+          <div class="hab-price">desde <strong>$155.000</strong> <span>/ noche</span></div>
+          <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Desayuno</span></div>
+          <button class="btn-res" onclick="openModal('Quíntuple')">Consultar y reservar</button>
+        </div>
+      </div>
+      <div class="hab-card">
+        <div class="hab-photo"><img src="fotos/familiar 4.jpeg" alt="Habitación Séxtuple"></div>
+        <div class="hab-badge">Séxtuple</div>
+        <div class="hab-body">
+          <div class="hab-name">Séxtuple</div>
+          <div class="hab-cap">👨‍👩‍👧‍👦 6 personas</div>
+          <div class="hab-price">desde <strong>$170.000</strong> <span>/ noche</span></div>
+          <div class="hab-pills"><span class="pill">AC</span><span class="pill">WiFi</span><span class="pill">TV LED</span><span class="pill">Desayuno</span></div>
+          <button class="btn-res" onclick="openModal('Séxtuple')">Consultar y reservar</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;padding:16px 20px;background:var(--surface);border-left:3px solid var(--olive);font-size:12.5px;color:#6A6560;line-height:1.8;">
+      🚗 <strong style="color:var(--ink);">Estacionamiento exclusivo para huéspedes:</strong> contamos con estacionamiento gratuito no techado sujeto a disponibilidad, y cocheras techadas con costo adicional, también sujetas a disponibilidad. Consultá al momento de la reserva.
     </div>
   </div>
 </section>
@@ -678,8 +777,9 @@ section{padding:100px 0;}
       <a href="https://wa.me/543541372428?text=Hola%2C%20somos%20un%20grupo%20y%20quisiera%20consultar%20tarifas%20y%20disponibilidad." target="_blank" class="btn-solid">Consultar para grupos →</a>
     </div>
     <div class="grupos-fotos">
-      <img class="grp-foto-main" src="fotos/grupo 1.jpeg" alt="Grupos en Hotel San José" onclick="openLb(0)">
+      <img class="grp-foto-main" src="fotos/grupo-nuevo.jpeg" alt="Grupos en Hotel San José" onclick="openLb(11)">
       <div class="grp-foto-strip">
+        <img src="fotos/grupo 1.jpeg" alt="Grupo" onclick="openLb(0)">
         <img src="fotos/grupo 2.jpeg" alt="Grupo" onclick="openLb(1)">
         <img src="fotos/grupo 3.jpeg" alt="Grupo" onclick="openLb(2)">
         <img src="fotos/grupo 4.jpeg" alt="Grupo" onclick="openLb(3)">
@@ -690,6 +790,7 @@ section{padding:100px 0;}
         <img src="fotos/grupo 10.jpeg" alt="Grupo" onclick="openLb(8)">
         <img src="fotos/grupo bomberos.jpeg" alt="Grupo Bomberos" onclick="openLb(9)">
         <img src="fotos/grupo bomberos 2.jpeg" alt="Grupo Bomberos" onclick="openLb(10)">
+        <img src="fotos/grupo-nuevo-2.jpeg" alt="Grupo" onclick="openLb(12)">
       </div>
     </div>
   </div>
@@ -858,11 +959,12 @@ section{padding:100px 0;}
     <div><span class="sec-label" style="color:var(--sand);">Galería</span><h2 class="sec-hed" style="color:var(--paper);">El hotel en <em style="color:var(--sand)">imágenes</em></h2></div>
   </div>
   <div class="gal-strip">
-    <div class="gal-item"><img src="fotos/pasillo.jpeg" alt="Pasillo"><div class="gal-lbl">Pasillo</div></div>
-    <div class="gal-item"><img src="fotos/desayunador.jpeg" alt="Desayunador"><div class="gal-lbl">Desayunador</div></div>
-    <div class="gal-item"><img src="fotos/Living 1.jpeg" alt="Living"><div class="gal-lbl">Living</div></div>
-    <div class="gal-item"><img src="fotos/doble standard 2.jpeg" alt="Habitación Doble"><div class="gal-lbl">Habitación Doble</div></div>
-    <div class="gal-item"><img src="fotos/frente floral.jpeg" alt="Frente del Hotel"><div class="gal-lbl">Frente del hotel</div></div>
+    <div class="gal-item"><img src="fotos/salon-verde.jpeg" alt="Salón"><div class="gal-lbl">Salón</div></div>
+    <div class="gal-item"><img src="fotos/comedor-nuevo.jpeg" alt="Desayunador"><div class="gal-lbl">Desayunador</div></div>
+    <div class="gal-item"><img src="fotos/hab-verde.jpeg" alt="Habitación"><div class="gal-lbl">Habitación</div></div>
+    <div class="gal-item"><img src="fotos/cama-lampara.jpeg" alt="Habitación doble"><div class="gal-lbl">Habitación</div></div>
+    <div class="gal-item"><img src="fotos/exterior-nuevo.jpeg" alt="Frente del Hotel"><div class="gal-lbl">Frente del hotel</div></div>
+    <div class="gal-item"><img src="fotos/desayuno-frutas.jpeg" alt="Desayuno"><div class="gal-lbl">Desayuno</div></div>
   </div>
 </section>
 
@@ -889,43 +991,92 @@ section{padding:100px 0;}
 
 <footer class="contacto" id="contacto">
   <div class="wrap">
-    <div class="contacto-grid">
+    <div class="footer-grid-new">
+
+      <!-- Columna 1: Marca -->
       <div>
-        <div class="foot-logo">San <span>José</span> Hotel</div>
-        <div class="foot-tag">"Alma de sierra y amor de familia."</div>
-        <p class="foot-desc">Hotel céntrico en Villa Carlos Paz, Córdoba. A metros de la peatonal, la zona de teatros y el Lago San Roque.</p>
-        <div class="foot-social">
-          <a href="https://instagram.com/sanjosehotelvcp" target="_blank">📸 Instagram</a>
-          <a href="https://wa.me/543541372428" target="_blank">💬 WhatsApp</a>
+        <div class="footer-brand-logo">San José</div>
+        <div class="footer-brand-sub">Hotel · Villa Carlos Paz · Córdoba</div>
+        <p class="footer-brand-tagline">"Alma de sierra y amor de familia."</p>
+        <div class="footer-social-row">
+          <a class="footer-social-btn" href="https://instagram.com/sanjosehotelvcp" target="_blank">📸 Instagram</a>
+          <a class="footer-social-btn" href="https://wa.me/543541372428" target="_blank">💬 WhatsApp</a>
         </div>
       </div>
-      <div class="foot-col">
+
+      <!-- Columna 2: El hotel -->
+      <div class="footer-col-new">
+        <h5>El hotel</h5>
+        <ul>
+          <li><a href="#elhotel">Sobre nosotros</a></li>
+          <li><a href="#habitaciones">Habitaciones</a></li>
+          <li><a href="#grupos">Grupos y eventos</a></li>
+          <li><a href="#actividades">Actividades</a></li>
+          <li><a href="#galeria">Galería</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Información -->
+      <div class="footer-col-new">
+        <h5>Información</h5>
+        <ul>
+          <li>🕑 Check-in: 13:00 hs</li>
+          <li>🕙 Check-out: 11:00 hs</li>
+          <li>☕ Desayuno: 8:30–10:30 hs</li>
+          <li>🐾 Mascotas bienvenidas</li>
+          <li>🚗 Estacionamiento disponible</li>
+          <li>🕐 Recepción 24 hs</li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Contacto -->
+      <div class="footer-col-new">
         <h5>Contacto</h5>
         <ul>
+          <li>📍 Alvear 195, Villa Carlos Paz</li>
           <li>📞 <a href="tel:+543541494712">3541 494712</a></li>
           <li>💬 <a href="https://wa.me/543541372428" target="_blank">WA: 3541 372428</a></li>
           <li>💬 <a href="https://wa.me/543517645037" target="_blank">WA: 3517 645037</a></li>
           <li>✉️ <a href="mailto:sanjosehotelvcp@gmail.com">sanjosehotelvcp@gmail.com</a></li>
-          <li>📸 <a href="https://instagram.com/sanjosehotelvcp" target="_blank">@sanjosehotelvcp</a></li>
         </ul>
       </div>
-      <div class="foot-col">
-        <h5>Ubicación</h5>
-        <ul>
-          <li>📍 Alvear 195, Villa Carlos Paz, Córdoba</li>
-          <li>🚶 A 100m de la peatonal</li>
-          <li>🎭 Zona de teatros</li>
-          <li>🌊 Cerca del Lago San Roque</li>
-          <li>🕐 Recepción 24hs</li>
-        </ul>
-      </div>
+
     </div>
-    <div class="foot-bottom">
-      <span>© 2026 San José Hotel · Villa Carlos Paz · Todos los derechos reservados</span>
-      <div class="foot-links"><a href="#">Política de privacidad</a><a href="#">Términos de reserva</a></div>
+    <div class="footer-bottom-new">
+      <span>© 2027 San José Hotel · Villa Carlos Paz · Todos los derechos reservados</span>
+      <div class="footer-bottom-links">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos de reserva</a>
+      </div>
     </div>
   </div>
 </footer>
+
+<!-- CHATBOT -->
+<button class="chat-btn" onclick="toggleChat()" aria-label="Consultas">
+  <div class="chat-badge" id="chatBadge"></div>
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+</button>
+
+<div class="chat-window" id="chatWindow">
+  <div class="chat-hd">
+    <div class="chat-hd-avatar">🏨</div>
+    <div class="chat-hd-info">
+      <div class="chat-hd-name">San José Hotel</div>
+      <div class="chat-hd-status">Respuesta inmediata</div>
+    </div>
+    <button class="chat-hd-x" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs"></div>
+  <div class="chat-typing" id="chatTyping" style="display:none">Escribiendo...</div>
+  <div class="chat-chips" id="chatChips"></div>
+  <div class="chat-inp">
+    <input type="text" id="chatInput" placeholder="Escribí tu consulta..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button class="chat-send" onclick="sendChat()">
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>
+</div>
 
 <!-- MÚSICA AMBIENTE -->
 <audio id="bgMusic" src="COOLING MASTER FINAL.wav" loop preload="auto"></audio>
@@ -1021,8 +1172,19 @@ section{padding:100px 0;}
 </div>
 
 <script>
+/* ④ ANIMACIONES SCROLL — IntersectionObserver */
+(function(){
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.10,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.hab-card,.grp-ben,.exc-card,.ent-card,.gast-card,.nat-card,.veh-card,.srv-item,.valor,.ubi-item').forEach(el=>{
+    el.classList.add('fade-up');
+    io.observe(el);
+  });
+})();
+
 /* ── POPUP GRUPOS ── */
-const LB_IMGS=['fotos/grupo 1.jpeg','fotos/grupo 2.jpeg','fotos/grupo 3.jpeg','fotos/grupo 4.jpeg','fotos/grupo 5.jpeg','fotos/grupo 6.jpeg','fotos/grupo 7.jpeg','fotos/grupo 8.jpeg','fotos/grupo 10.jpeg','fotos/grupo bomberos.jpeg','fotos/grupo bomberos 2.jpeg'];
+const LB_IMGS=['fotos/grupo 1.jpeg','fotos/grupo 2.jpeg','fotos/grupo 3.jpeg','fotos/grupo 4.jpeg','fotos/grupo 5.jpeg','fotos/grupo 6.jpeg','fotos/grupo 7.jpeg','fotos/grupo 8.jpeg','fotos/grupo 10.jpeg','fotos/grupo bomberos.jpeg','fotos/grupo bomberos 2.jpeg','fotos/grupo-nuevo.jpeg','fotos/grupo-nuevo-2.jpeg'];
 let lbIdx=0;
 function openLb(i){lbIdx=i;document.getElementById('grpLbImg').src=LB_IMGS[i];document.getElementById('grpLb').classList.add('open');}
 function closeLb(){document.getElementById('grpLb').classList.remove('open');}
@@ -1248,6 +1410,149 @@ function fmt(d){if(!d)return'—';return`${d.getDate()} de ${MES[d.getMonth()]} 
 function nts(){if(!dIn||!dOut)return 0;return Math.round((dOut-dIn)/864e5);}
 function g(id){return document.getElementById(id).value.trim();}
 document.addEventListener('DOMContentLoaded',()=>{initCal('in');initCal('out');renderCal('calIn','in');renderCal('calOut','out');});
+
+/* ══════════════════════════════════════
+   CHATBOT — San José Hotel
+══════════════════════════════════════ */
+const FAQ=[
+  {k:['precio','costo','vale','tarifa','cuanto','cuánto','value'],
+   r:'💰 Tarifas temporada 2027 (mínimo 3 noches):\n• Individual: $55.000 / noche\n• Doble Estándar: $95.000 / noche\n• Triple: $115.000 / noche\n• Cuádruple: $140.000 / noche\n• Quíntuple: $155.000 / noche\n• Séxtuple: $170.000 / noche',
+   chips:['¿Cómo reservo?','¿Qué incluye el precio?']},
+  {k:['reserva','reservar','disponibilidad','disponible','booking'],
+   r:'📅 Para reservar: seleccioná tus fechas en nuestra web, completá tus datos y te vamos a contactar por WhatsApp para coordinar la seña.\n\nTambién podés escribirnos directamente por WhatsApp al 3541 372428.',
+   chips:['¿Cuánto es la seña?','Ver precios']},
+  {k:['seña','señ','adelanto','deposito','depósito','cuanto es la seña','monto seña'],
+   r:'💳 La seña es del 20% del total de la reserva. Se coordina por WhatsApp una vez que completás el formulario. Aceptamos transferencia bancaria.',
+   chips:['¿Cómo reservo?','¿Aceptan tarjeta?']},
+  {k:['checkin','check in','check-in','ingreso','llego','llegada','horario entrada'],
+   r:'🕑 El check-in es a partir de las 13:00 hs.\n\nSi llegás antes, podemos guardar tu equipaje sin problema. Para llegadas tardías coordinamos con anticipación.',
+   chips:['¿Y el checkout?','¿Pueden guardar mis valijas?']},
+  {k:['checkout','check out','check-out','salida','horario salida'],
+   r:'🕙 El checkout es hasta las 11:00 hs.\n\nSi necesitás salida tardía, consultanos disponibilidad — hacemos lo posible para acomodarte.',
+   chips:['¿Y el check-in?','¿Tienen cochera?']},
+  {k:['desayuno','breakfast','incluye','incluido','horario desayuno'],
+   r:'☕ El desayuno se sirve de 8:30 a 10:30 hs en nuestro desayunador.\n\nEstá incluido en las habitaciones Doble, Triple y Suite Familiar.',
+   chips:['¿Qué servicios tienen?','Ver habitaciones']},
+  {k:['wifi','internet','conexion','conexión'],
+   r:'📶 Sí, tenemos WiFi gratuito en todas las habitaciones y áreas comunes del hotel.',
+   chips:['¿Qué otros servicios tienen?']},
+  {k:['cochera','estacionamiento','auto','coche','parking'],
+   r:'🚗 Contamos con estacionamiento exclusivo para huéspedes:\n• Estacionamiento gratuito no techado — sujeto a disponibilidad\n• Cocheras techadas con costo adicional — sujetas a disponibilidad\n\nConsultá al momento de hacer tu reserva.',
+   chips:['¿Cómo reservo?','¿Dónde están ubicados?']},
+  {k:['mascota','perro','gato','animal','pet','pets','friendly'],
+   r:'🐾 ¡Somos pet friendly! Cobramos un pequeño cargo adicional por la estadía de tu mascota.\nTe recomendamos no dejarla sola en el hotel — suelen desconocer el ambiente y pasarla mal. Coordinamos los detalles al momento de la reserva.',
+   chips:['¿Cómo reservo?','¿Cuáles son los precios?']},
+  {k:['pileta','piscina','natacion','nadar','pool'],
+   r:'🏊 No contamos con pileta propia, pero estamos a pasos de hermosos espejos de agua.\nAdemás, tenemos un kit de reposeras a disposición de nuestros huéspedes para que disfruten al máximo.',
+   chips:['¿Qué actividades hay cerca?','¿Dónde están?']},
+  {k:['tarjeta','credito','crédito','debito','débito','cuota','cuotas','pago','efectivo'],
+   r:'💳 Aceptamos tarjeta de crédito con un recargo del 18% y hasta 3 cuotas sin interés.\nTambién podés pagar en efectivo o por transferencia bancaria.',
+   chips:['¿Cuánto es la seña?','¿Cómo reservo?']},
+  {k:['valija','equipaje','maleta','guardar','dejar','antes de entrar','antes del check'],
+   r:'🧳 ¡Sí! Podés dejar tus valijas y pertenencias en el hotel desde que llegás, sin necesidad de esperar el check-in. Te las guardamos con seguridad hasta el momento del ingreso a la habitación.',
+   chips:['¿A qué hora es el check-in?']},
+  {k:['cuna','bebe','bebé','niño','niña','chico','chica','hijo','hija','baby'],
+   r:'👶 Sí, contamos con cuna disponible. Es importante solicitarla al momento de hacer la reserva para asegurarnos de tenerla lista para tu llegada.',
+   chips:['¿Cómo reservo?','¿Tienen descuento para familias?']},
+  {k:['fumar','fuma','cigarro','cigarrillo','tabaco','humo','smoke'],
+   r:'🚭 El hotel es 100% libre de humo — está prohibido fumar en todas las instalaciones.\nLa multa por fumar dentro del hotel es de $50.000.',
+   chips:['¿Qué servicios tienen?']},
+  {k:['grupo','grupos','egresados','empresa','corporativo','colonia','bombero','retiro'],
+   r:'👥 ¡Trabajamos mucho con grupos! Ofrecemos:\n• Tarifas especiales según cantidad\n• Check-in coordinado\n• Desayuno grupal\n• Facturación unificada\n• Coordinación de excursiones\n\nConsultanos por WhatsApp para armar tu presupuesto.',
+   chips:['Consultar por WhatsApp','Ver precios']},
+  {k:['ubicacion','ubicación','donde','dónde','dirección','direccion','llegar','mapa'],
+   r:'📍 Estamos en Alvear 195, Villa Carlos Paz, Córdoba.\n\nA pasos de la peatonal San Martín y la zona de teatros. A 5 min del lago San Roque.',
+   chips:['¿Cómo llego?','¿Tienen estacionamiento?']},
+  {k:['teatro','obra','espectaculo','espectáculo','show','cartelera'],
+   r:'🎭 Villa Carlos Paz es la capital teatral de temporada. El hotel está a metros de los principales teatros.\n\nConsultá la cartelera actualizada en nuestra sección Actividades.',
+   chips:['¿Qué otras actividades hay?','Ver precios']},
+  {k:['excursion','excursión','paseo','tour','sierras','actividad','visita'],
+   r:'🚌 Organizamos excursiones desde el hotel:\n• Cabalgata serrana\n• Altas Cumbres\n• La Cumbrecita\n• Mina Clavero\n• City Tour y más\n\nConsultá precios en la sección Actividades de la web.',
+   chips:['¿Cómo reservo excursión?','Ver precios']},
+  {k:['telefono','teléfono','llamar','numero','número','contacto','whatsapp','wsp','ws'],
+   r:'📞 Podés contactarnos por:\n• Teléfono fijo: (03541) 494712\n• WhatsApp: 3541 372428 / 3517 645037\n• Email: sanjosehotelvcp@gmail.com\n\n¡Te respondemos rápido!',
+   chips:['¿Cómo reservo?']},
+  {k:['servicio','servicios','amenities','comodidad','include','incluye'],
+   r:'✨ Nuestros servicios incluyen:\n• WiFi gratuito\n• Desayuno (según habitación)\n• Aire acondicionado\n• TV LED\n• Sala de juegos\n• Cochera disponible\n• Recepción 24 hs',
+   chips:['Ver precios','¿Cómo reservo?']},
+];
+
+const CHIPS_INIT=['¿Cuáles son los precios?','¿Cómo reservo?','Check-in / checkout','¿Dónde están?','Servicios incluidos'];
+const CHIP_MAP={'¿Cuáles son los precios?':'precios','¿Cómo reservo?':'reservar','Check-in / checkout':'checkin','¿Dónde están?':'ubicacion','Servicios incluidos':'servicios','¿Qué servicios tienen?':'servicios','¿Qué otros servicios tienen?':'servicios','Ver habitaciones':'precio','Ver precios':'precio','¿Y el checkout?':'checkout','¿Y el check-in?':'checkin','¿Tienen estacionamiento?':'cochera','¿Tienen cochera?':'cochera','¿Tienen checkout flexible?':'checkout','¿Qué incluye el precio?':'incluye','¿Cómo llego?':'ubicacion','Consultar por WhatsApp':'wa','¿Cuánto es la seña?':'seña','¿Qué actividades hay?':'excursion','¿Cómo reservo excursión?':'reservar'};
+
+let chatOpen=false,chatStarted=false;
+
+function toggleChat(){
+  chatOpen=!chatOpen;
+  document.getElementById('chatWindow').classList.toggle('open',chatOpen);
+  document.getElementById('chatBadge').classList.remove('show');
+  if(chatOpen&&!chatStarted){chatStarted=true;setTimeout(()=>botMsg('¡Hola! 👋 Soy el asistente del Hotel San José. ¿En qué puedo ayudarte?',CHIPS_INIT),400);}
+  if(chatOpen)document.getElementById('chatInput').focus();
+}
+
+function botMsg(text,chips=[]){
+  const el=document.createElement('div');
+  el.className='chat-msg bot';
+  el.style.whiteSpace='pre-line';
+  el.textContent=text;
+  document.getElementById('chatMsgs').appendChild(el);
+  renderChips(chips);
+  scrollChat();
+}
+function userMsg(text){
+  const el=document.createElement('div');
+  el.className='chat-msg user';
+  el.textContent=text;
+  document.getElementById('chatMsgs').appendChild(el);
+  renderChips([]);
+  scrollChat();
+}
+function renderChips(chips){
+  const c=document.getElementById('chatChips');
+  c.innerHTML='';
+  chips.forEach(ch=>{
+    const b=document.createElement('button');
+    b.className='chat-chip';b.textContent=ch;
+    b.onclick=()=>handleChip(ch);
+    c.appendChild(b);
+  });
+}
+function scrollChat(){const m=document.getElementById('chatMsgs');m.scrollTop=m.scrollHeight;}
+
+function handleChip(ch){
+  if(ch==='Consultar por WhatsApp'){window.open('https://wa.me/543541372428','_blank');return;}
+  userMsg(ch);
+  const kw=CHIP_MAP[ch]||ch.toLowerCase();
+  setTimeout(()=>respond(kw),600);
+}
+
+function sendChat(){
+  const inp=document.getElementById('chatInput');
+  const txt=inp.value.trim();if(!txt)return;
+  inp.value='';
+  userMsg(txt);
+  const t=document.getElementById('chatTyping');
+  t.style.display='block';scrollChat();
+  setTimeout(()=>{t.style.display='none';respond(txt.toLowerCase());},700);
+}
+
+function respond(txt){
+  for(const f of FAQ){
+    if(f.k.some(k=>txt.includes(k))){botMsg(f.r,f.chips||[]);return;}
+  }
+  // fallback
+  botMsg('No encontré esa información exacta, pero podés consultarnos directamente:\n📱 WhatsApp: 3541 372428\n📞 Tel: (03541) 494712\n\n¡Te respondemos enseguida!',[]);
+  setTimeout(()=>{
+    const b=document.createElement('a');
+    b.href='https://wa.me/543541372428?text=Hola%2C%20tengo%20una%20consulta%20sobre%20el%20hotel.';
+    b.target='_blank';b.className='chat-chip';b.textContent='Ir a WhatsApp →';
+    b.style.display='inline-block';b.style.margin='0 16px 12px';
+    document.getElementById('chatChips').appendChild(b);
+  },200);
+}
+
+// badge al cargar
+setTimeout(()=>{if(!chatOpen)document.getElementById('chatBadge').classList.add('show');},5000);
 </script>
 </body>
 </html>

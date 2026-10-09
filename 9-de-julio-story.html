@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9 de Julio — Story — Hotel San José</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:100%; height:100%; background:#1A1916; display:flex; align-items:center; justify-content:center; }
+
+.flyer {
+  width: 1080px;
+  height: 1920px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.flyer-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('fotos/frente floral.jpeg');
+  background-size: cover;
+  background-position: center 20%;
+}
+
+.flyer-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10,10,20,0.45) 0%,
+    rgba(10,10,20,0.25) 35%,
+    rgba(10,10,20,0.55) 70%,
+    rgba(10,10,20,0.88) 100%
+  );
+}
+
+/* FRANJAS */
+.stripe-top {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 7px;
+  background: #74ACDF;
+}
+.stripe-bot {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 7px;
+  background: #74ACDF;
+}
+
+/* CONTENIDO */
+.flyer-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 100px 100px;
+}
+
+/* ARRIBA: logo del hotel */
+.top-logo {
+  text-align: center;
+  margin-bottom: auto;
+}
+.top-logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+}
+.top-logo-sub {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(116,172,223,0.6);
+  margin-top: 6px;
+}
+
+/* CENTRO: fecha grande */
+.center-block {
+  text-align: center;
+  margin-bottom: auto;
+}
+.center-date-small {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 11px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: #74ACDF;
+  margin-bottom: 20px;
+}
+.center-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 240px;
+  line-height: 0.85;
+  color: #FFFFFF;
+  letter-spacing: -4px;
+}
+.center-de {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin: 14px 0;
+}
+.center-julio {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 96px;
+  line-height: 1;
+  color: #74ACDF;
+  letter-spacing: 4px;
+}
+
+/* REGLA */
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 60px auto;
+}
+.rule-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(116,172,223,0.3);
+}
+.rule-flag { font-size: 28px; }
+
+/* BLOQUE INFERIOR */
+.bottom-block {
+  text-align: center;
+  width: 100%;
+}
+.bottom-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 11px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 30px;
+}
+.bottom-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 26px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 36px;
+}
+.bottom-body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 2;
+  color: rgba(255,255,255,0.45);
+  max-width: 720px;
+  margin: 0 auto 44px;
+}
+.bottom-saludo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: #74ACDF;
+  margin-bottom: 48px;
+}
+
+/* PIE */
+.footer-line {
+  width: 48px;
+  height: 1px;
+  background: rgba(116,172,223,0.3);
+  margin: 0 auto 24px;
+}
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 8px;
+}
+.footer-city {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  margin-bottom: 4px;
+}
+.footer-address {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(116,172,223,0.4);
+}
+</style>
+</head>
+<body>
+<div class="flyer">
+  <div class="flyer-bg"></div>
+  <div class="flyer-veil"></div>
+  <div class="stripe-top"></div>
+  <div class="stripe-bot"></div>
+
+  <div class="flyer-content">
+
+    <!-- Logo arriba -->
+    <div class="top-logo">
+      <div class="top-logo-name">San José Hotel</div>
+      <div class="top-logo-sub">Villa Carlos Paz · Córdoba</div>
+    </div>
+
+    <!-- Número grande centro -->
+    <div class="center-block">
+      <div class="center-date-small">9 de Julio de 1816</div>
+      <div class="center-number">9</div>
+      <div class="center-de">D E</div>
+      <div class="center-julio">Julio</div>
+    </div>
+
+    <!-- Bloque inferior -->
+    <div class="bottom-block">
+      <div class="rule">
+        <div class="rule-line"></div>
+        <div class="rule-flag">🇦🇷</div>
+        <div class="rule-line"></div>
+      </div>
+      <div class="bottom-subtitle">Día de la Independencia Argentina</div>
+      <div class="bottom-quote">
+        "La independencia no es un regalo,<br>es una construcción que se honra cada día."
+      </div>
+      <div class="bottom-body">
+        Hace más de 200 años, un grupo de argentinos soñó con un país libre
+        y decidió dar un paso que cambiaría nuestra historia para siempre.<br><br>
+        Hoy, ese mismo espíritu nos inspira a seguir construyendo, con trabajo,
+        compromiso y hospitalidad, un lugar donde cada huésped se sienta como en casa.<br><br>
+        En este 9 de Julio, celebramos el orgullo de ser argentinos y agradecemos
+        la confianza de quienes nos eligen para formar parte de sus viajes.
+      </div>
+      <div class="bottom-saludo">¡Feliz Día de la Independencia!</div>
+      <div class="footer-line"></div>
+      <div class="footer-name">Hotel San José</div>
+      <div class="footer-city">Villa Carlos Paz · Córdoba · Argentina</div>
+      <div class="footer-address">Alvear 195</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

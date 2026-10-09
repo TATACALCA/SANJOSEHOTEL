@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9 de Julio — Hotel San José</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:100%; height:100%; background:#1A1916; display:flex; align-items:center; justify-content:center; }
+
+.flyer {
+  width: 1080px;
+  height: 1080px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* FONDO */
+.flyer-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('fotos/frente floral.jpeg');
+  background-size: cover;
+  background-position: center 30%;
+}
+
+/* CAPAS DE OVERLAY */
+.flyer-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(10,10,20,0.38) 0%,
+    rgba(10,10,20,0.28) 45%,
+    rgba(10,10,20,0.42) 100%
+  );
+}
+
+/* FRANJA CELESTE SUPERIOR */
+.flyer-stripe-top {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #74ACDF 20%, #74ACDF 80%, transparent);
+}
+
+/* FRANJA CELESTE INFERIOR */
+.flyer-stripe-bot {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #74ACDF 20%, #74ACDF 80%, transparent);
+}
+
+/* CONTENIDO */
+.flyer-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 100px;
+  text-align: center;
+}
+
+/* FECHA */
+.flyer-date {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 11px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: #74ACDF;
+  margin-bottom: 18px;
+}
+
+/* TÍTULO */
+.flyer-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 112px;
+  letter-spacing: 10px;
+  line-height: 0.9;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+/* SUBTÍTULO */
+.flyer-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 13px;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 44px;
+}
+
+/* LÍNEA DECORATIVA */
+.flyer-rule {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 44px;
+  width: 100%;
+  max-width: 560px;
+}
+.flyer-rule-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(116,172,223,0.5));
+}
+.flyer-rule-line:last-child {
+  background: linear-gradient(90deg, rgba(116,172,223,0.5), transparent);
+}
+.flyer-rule-escudo {
+  font-size: 22px;
+  opacity: 0.8;
+}
+
+/* CITA */
+.flyer-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+  margin-bottom: 32px;
+  max-width: 620px;
+}
+
+/* TEXTO CUERPO */
+.flyer-body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.52);
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+
+/* SALUDO */
+.flyer-saludo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: #74ACDF;
+  letter-spacing: 1px;
+  margin-bottom: 52px;
+}
+
+/* SEPARADOR PIE */
+.flyer-div {
+  width: 40px;
+  height: 1px;
+  background: rgba(116,172,223,0.4);
+  margin: 0 auto 28px;
+}
+
+/* PIE */
+.flyer-footer {
+  text-align: center;
+}
+.flyer-footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 26px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 6px;
+}
+.flyer-footer-city {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 3px;
+}
+.flyer-footer-address {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(116,172,223,0.5);
+}
+
+/* ESTRELLAS DECORATIVAS */
+.stars {
+  position: absolute;
+  top: 52px;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.star {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #74ACDF;
+  opacity: 0.4;
+}
+.star.big { width: 6px; height: 6px; opacity: 0.6; }
+</style>
+</head>
+<body>
+
+<div class="flyer">
+  <div class="flyer-bg"></div>
+  <div class="flyer-veil"></div>
+  <div class="flyer-stripe-top"></div>
+  <div class="flyer-stripe-bot"></div>
+
+  <!-- Puntos decorativos celeste -->
+  <div class="stars">
+    <div class="star"></div>
+    <div class="star big"></div>
+    <div class="star"></div>
+    <div class="star big"></div>
+    <div class="star"></div>
+  </div>
+
+  <div class="flyer-content">
+
+    <div class="flyer-date">9 de Julio de 1816</div>
+
+    <div class="flyer-title">9 DE<br>JULIO</div>
+    <div class="flyer-subtitle">Día de la Independencia Argentina</div>
+
+    <div class="flyer-rule">
+      <div class="flyer-rule-line"></div>
+      <div class="flyer-rule-escudo">🇦🇷</div>
+      <div class="flyer-rule-line"></div>
+    </div>
+
+    <div class="flyer-quote">
+      "La independencia no es un regalo,<br>es una construcción que se honra cada día."
+    </div>
+
+    <div class="flyer-body">
+      Hace más de 200 años, un grupo de argentinos soñó con un país libre y decidió dar un paso
+      que cambiaría nuestra historia para siempre.<br><br>
+      Hoy, ese mismo espíritu nos inspira a seguir construyendo, con trabajo, compromiso
+      y hospitalidad, un lugar donde cada huésped se sienta como en casa.<br><br>
+      En este 9 de Julio, celebramos el orgullo de ser argentinos y agradecemos
+      la confianza de quienes nos eligen para formar parte de sus viajes.
+    </div>
+
+    <div class="flyer-saludo">¡Feliz Día de la Independencia!</div>
+
+    <div class="flyer-div"></div>
+
+    <div class="flyer-footer">
+      <div class="flyer-footer-name">Hotel San José</div>
+      <div class="flyer-footer-city">Villa Carlos Paz · Córdoba · Argentina</div>
+      <div class="flyer-footer-address">Alvear 195</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
