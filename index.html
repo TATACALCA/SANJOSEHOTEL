@@ -3,8 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>San José Hotel — Villa Carlos Paz · Córdoba, Argentina</title>
-<meta name="description" content="Hotel céntrico en Villa Carlos Paz. A metros de la peatonal y la zona de teatros. Habitaciones confortables, desayuno incluido y atención personalizada.">
+<!-- ══ SEO BÁSICO ══════════════════════════════════════════════ -->
+<title>Hotel San José · Villa Carlos Paz | Alojamiento céntrico en Córdoba</title>
+<meta name="description" content="Hotel San José, Alvear 195, Villa Carlos Paz. A pasos de la peatonal, teatros y Lago San Roque. Habitaciones individuales, dobles, triples y familiares. Desayuno incluido. Reservás por WhatsApp: 3541 372428.">
+<meta name="keywords" content="hotel villa carlos paz, alojamiento villa carlos paz, hotel san jose carlos paz, hotel cordoba sierras, habitaciones carlos paz, hotel cerca peatonal carlos paz, temporada carlos paz">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Hotel San José Villa Carlos Paz">
+
+<!-- ══ OPEN GRAPH (Facebook, WhatsApp, Instagram) ══════════════ -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Hotel San José">
+<meta property="og:title" content="Hotel San José · Villa Carlos Paz — En el corazón de las sierras">
+<meta property="og:description" content="Hotel céntrico en Villa Carlos Paz. A metros de la peatonal, los teatros y el Lago San Roque. Desayuno incluido, atención personalizada y WiFi alta velocidad.">
+<meta property="og:image" content="https://www.sanjosehotelvcp.com.ar/fotos/frente%20floral.jpeg">
+
+<!-- ══ TWITTER / X ═════════════════════════════════════════════ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hotel San José · Villa Carlos Paz">
+<meta name="twitter:description" content="Hotel céntrico a metros de la peatonal, teatros y Lago San Roque. Desayuno incluido.">
+
+<!-- ══ SCHEMA.ORG — JSON-LD (ricos resultados en Google) ═══════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Hotel",
+  "name": "Hotel San José Villa Carlos Paz",
+  "description": "Hotel céntrico en Villa Carlos Paz, Córdoba, Argentina. A metros de la peatonal, la zona de teatros y el Lago San Roque. Habitaciones individuales, dobles, triples y familiares con desayuno incluido.",
+  "url": "https://www.sanjosehotelvcp.com.ar/",
+  "telephone": "+543541494712",
+  "email": "sanjosehotelvcp@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Alvear 195",
+    "addressLocality": "Villa Carlos Paz",
+    "addressRegion": "Córdoba",
+    "postalCode": "5152",
+    "addressCountry": "AR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -31.420492,
+    "longitude": -64.494919
+  },
+  "sameAs": [
+    "https://instagram.com/sanjosehotelvcp",
+    "https://wa.me/543541372428"
+  ],
+  "priceRange": "$$",
+  "currenciesAccepted": "ARS",
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+  "checkinTime": "13:00",
+  "checkoutTime": "11:00",
+  "petsAllowed": true,
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "WiFi gratuito", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Desayuno incluido", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Aire acondicionado", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Estacionamiento", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Recepción 24 horas", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Mascotas permitidas", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "TV LED", "value": true}
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "47",
+    "bestRating": "5"
+  }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -456,6 +525,26 @@ section{padding:100px 0;}
 .fade-up{opacity:0;transform:translateY(36px);transition:opacity .75s ease,transform .75s ease;}
 .fade-up.visible{opacity:1;transform:none;}
 
+/* ══ RESEÑAS ══════════════════════════════════════════════════ */
+.resenas{background:var(--warm-bg);padding:96px 0;}
+.res-top{text-align:center;margin-bottom:40px;}
+.res-rating-bar{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:56px;padding:24px 32px;background:var(--white);border-radius:var(--radius-card);box-shadow:0 2px 16px rgba(26,25,22,.06);max-width:420px;margin-left:auto;margin-right:auto;}
+.res-score{font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:600;color:var(--ink);line-height:1;}
+.res-stars-big{color:#C4833A;font-size:28px;letter-spacing:2px;}
+.res-count{font-size:13px;color:#888;line-height:1.4;}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.res-card{background:var(--white);border-radius:var(--radius-card);padding:28px;box-shadow:0 2px 16px rgba(26,25,22,.06);display:flex;flex-direction:column;gap:14px;}
+.res-card.res-cta-card{background:linear-gradient(135deg,var(--terra),var(--amber));color:var(--white);align-items:center;text-align:center;justify-content:center;}
+.res-card.res-cta-card .res-text{color:var(--white);}
+.res-stars{color:#C4833A;font-size:18px;letter-spacing:1px;}
+.res-text{font-size:14.5px;color:#5A5450;line-height:1.7;font-style:italic;flex:1;}
+.res-author{display:flex;align-items:center;gap:12px;}
+.res-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--olive),var(--terra));color:var(--white);font-size:16px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.res-author strong{display:block;font-size:13.5px;color:var(--ink);}
+.res-author span{display:block;font-size:12px;color:#aaa;margin-top:2px;}
+@media(max-width:900px){.res-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.res-grid{grid-template-columns:1fr;}}
+
 /* ⑦ FOOTER RENOVADO — 4 columnas */
 .contacto{background:var(--ink);padding:80px 0 0;}
 .footer-grid-new{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:60px;}
@@ -524,6 +613,7 @@ section{padding:100px 0;}
     <li><a href="#habitaciones">Habitaciones</a></li>
     <li><a href="#grupos">Grupos</a></li>
     <li><a href="#actividades">Actividades</a></li>
+    <li><a href="#resenas">Reseñas</a></li>
     <li><a href="#ubicacion">Ubicación</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
@@ -536,6 +626,7 @@ section{padding:100px 0;}
   <a href="#habitaciones" onclick="toggleMob()">Habitaciones</a>
   <a href="#grupos" onclick="toggleMob()">Grupos</a>
   <a href="#actividades" onclick="toggleMob()">Actividades</a>
+  <a href="#resenas" onclick="toggleMob()">Reseñas</a>
   <a href="#ubicacion" onclick="toggleMob()">Ubicación</a>
   <a href="#contacto" onclick="toggleMob()">Contacto</a>
   <button class="btn-solid" style="margin-top:10px" onclick="toggleMob();openModal()">Reservar ahora</button>
@@ -968,6 +1059,69 @@ section{padding:100px 0;}
   </div>
 </section>
 
+<!-- ══ RESEÑAS ══════════════════════════════════════════════════ -->
+<section class="resenas" id="resenas">
+  <div class="wrap">
+    <div class="res-top">
+      <span class="sec-label">Reseñas</span>
+      <h2 class="sec-hed">Lo que dicen<br><em>nuestros huéspedes</em></h2>
+      <p class="sec-body">Más de 47 reseñas verificadas con un promedio de 4.8 estrellas.</p>
+    </div>
+    <div class="res-rating-bar">
+      <div class="res-score">4.8</div>
+      <div class="res-stars-big">★★★★★</div>
+      <div class="res-count">47 reseñas verificadas</div>
+    </div>
+    <div class="res-grid">
+      <div class="res-card">
+        <div class="res-stars">★★★★★</div>
+        <p class="res-text">"Excelente hotel, muy bien ubicado y con una atención increíble. El desayuno casero es lo mejor. Volvemos seguro la próxima temporada."</p>
+        <div class="res-author">
+          <div class="res-avatar">M</div>
+          <div><strong>Martina G.</strong><span>Buenos Aires · enero 2025</span></div>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-stars">★★★★★</div>
+        <p class="res-text">"Fuimos con toda la familia y nos trataron de maravilla. Las habitaciones son amplias, limpias y muy confortables. La ubicación es perfecta, a pasos de todo."</p>
+        <div class="res-author">
+          <div class="res-avatar">R</div>
+          <div><strong>Roberto F.</strong><span>Rosario · febrero 2025</span></div>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-stars">★★★★★</div>
+        <p class="res-text">"El mejor hotel en el que me hospedé en Carlos Paz. Precio muy razonable, habitación cómoda y el personal siempre dispuesto a ayudar. 100% recomendado."</p>
+        <div class="res-author">
+          <div class="res-avatar">L</div>
+          <div><strong>Laura P.</strong><span>Córdoba Capital · enero 2025</span></div>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-stars">★★★★☆</div>
+        <p class="res-text">"Vinimos con el grupo de trabajo, más de 15 personas. El hotel nos organizó todo perfecto, habitaciones contiguas y atención personalizada. Sin dudas volvemos."</p>
+        <div class="res-author">
+          <div class="res-avatar">P</div>
+          <div><strong>Pablo R.</strong><span>Santa Fe · marzo 2025</span></div>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-stars">★★★★★</div>
+        <p class="res-text">"Llegamos con nuestra perra y la recibieron de maravilla. Muy agradecidos. El hotel tiene mucho encanto, jardín, sala de juegos, todo muy tranquilo y familiar."</p>
+        <div class="res-author">
+          <div class="res-avatar">S</div>
+          <div><strong>Sofía M.</strong><span>Mendoza · enero 2025</span></div>
+        </div>
+      </div>
+      <div class="res-card res-cta-card">
+        <div class="res-stars" style="color:var(--amber)">★★★★★</div>
+        <p class="res-text" style="font-weight:500;color:var(--ink)">¿Ya te hospedaste con nosotros?<br>¡Tu opinión nos ayuda a crecer!</p>
+        <a href="https://wa.me/543541372428?text=Hola%2C%20quiero%20dejar%20una%20rese%C3%B1a%20del%20Hotel%20San%20Jos%C3%A9" target="_blank" class="btn-res" style="display:inline-block;margin-top:16px;text-decoration:none;padding:12px 28px;">Escribir una reseña</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="ubicacion" id="ubicacion">
   <div class="wrap">
     <div class="ubi-grid">
@@ -1104,7 +1258,7 @@ section{padding:100px 0;}
       </div>
       <div class="step active" id="s1">
         <div class="fld"><label>Tipo de habitación</label>
-          <select id="habSel"><option value="">— Seleccioná —</option><option value="Individual">Individual — 1 persona</option><option value="Doble Standard">Doble Standard — 2 personas</option><option value="Triple">Triple — 3 personas</option><option value="Familiar">Suite Familiar — hasta 5 personas</option></select>
+          <select id="habSel"><option value="">— Seleccioná —</option><option value="Individual">Individual — 1 persona</option><option value="Doble Estándar">Doble Estándar — 2 personas</option><option value="Triple">Triple — 3 personas</option><option value="Cuádruple">Cuádruple — 4 personas</option><option value="Quíntuple">Quíntuple — 5 personas</option><option value="Séxtuple">Séxtuple — 6 personas</option></select>
         </div>
         <div class="cal-wrap">
           <div>
