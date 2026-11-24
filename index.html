@@ -75,11 +75,11 @@
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@200;300;400;500;600&family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
 :root {
   --ink:#1A1916;--ink-soft:#3A3835;
-  --olive:#5C6B3A;--olive-deep:#3D4A24;--olive-pale:#C8D4A8;--olive-wash:#EFF3E6;
+  --olive:#5C6B3A;--olive-deep:#6B7D42;--olive-pale:#C8D4A8;--olive-wash:#EFF3E6;
   --terra:#B85C38;--terra-soft:#D4795A;
   --sand:#C8B898;--sand-light:#E8DDD0;--sand-pale:#F5F0E8;
   --amber:#C4833A;                          /* acento cálido */
@@ -591,6 +591,138 @@ section{padding:100px 0;}
   .modal-hd,.modal-bd,.modal-ft{padding-left:18px;padding-right:18px;}
   .cal-wrap,.form-row{grid-template-columns:1fr;}
   .act-tab{padding:11px 14px;}
+}
+
+/* ══ SOBRE INTERACTIVO CON TARJETA PROMOCIONAL ══════════════════ */
+#promo-env-wrap{
+  position:fixed;top:84px;right:20px;z-index:8500;
+  width:min(46vw,390px);
+}
+
+/* ── Tarjeta siempre visible ─── */
+#promo-card-container{
+  position:relative;
+}
+.env-card{
+  display:none;position:relative;
+  background:rgba(235,237,232,0.55);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-radius:14px;
+  padding:28px 24px 22px;
+  box-shadow:0 8px 28px rgba(0,0,0,.1);
+}
+.env-card.ec-visible{display:block;animation:env-bob 6s ease-in-out infinite;}
+
+.env-close{
+  position:absolute;top:14px;right:14px;
+  width:28px;height:28px;border-radius:50%;
+  background:rgba(42,35,24,.08);border:none;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;color:rgba(42,35,24,.45);cursor:pointer;
+  transition:background .2s;
+}
+.env-close:hover{background:rgba(42,35,24,.15);}
+
+.env-promo-tag{
+  font-family:'Inter',sans-serif;
+  font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  color:#3D4A24;margin-bottom:13px;
+  text-shadow:0 1px 6px rgba(255,255,255,.7);
+}
+.env-offer-num{
+  font-family:'Poppins',sans-serif;
+  font-size:clamp(60px,8.5vw,76px);font-weight:900;line-height:.9;
+  color:#1E2A10;letter-spacing:-2px;margin-bottom:7px;
+  text-shadow:0 2px 8px rgba(255,255,255,.6);
+}
+.env-offer-desc{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:500;font-style:italic;
+  color:#3A3220;margin-bottom:18px;letter-spacing:.02em;
+  text-shadow:0 1px 6px rgba(255,255,255,.65);
+}
+.env-promo-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:27px;font-weight:600;color:#1E2A10;line-height:1.3;margin-bottom:10px;
+  text-shadow:0 1px 8px rgba(255,255,255,.65);
+}
+.env-promo-text{
+  font-family:'Inter',sans-serif;
+  font-size:16px;font-weight:400;line-height:1.65;
+  color:#2A2318;margin:0 0 4px;
+  text-shadow:0 1px 5px rgba(255,255,255,.55);
+}
+.env-promo-text strong{font-weight:700;color:#1E2A10;}
+.env-promo-note{
+  font-family:'Inter',sans-serif;font-size:13.5px;
+  color:#4A4030;font-style:italic;margin-bottom:8px;
+  text-shadow:0 1px 5px rgba(255,255,255,.55);
+}
+.env-divider{height:1px;background:rgba(42,35,24,.09);margin:16px 0;}
+.env-wa-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 26px;border-radius:50px;
+  background:#6B7D42;color:#FDF9F3;
+  font-family:'Inter',sans-serif;font-size:15px;font-weight:600;
+  letter-spacing:.03em;text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
+  box-shadow:0 4px 14px rgba(61,74,36,.3);
+}
+.env-wa-btn:hover{transform:translateY(-2px);box-shadow:0 7px 20px rgba(61,74,36,.46);}
+.env-wa-btn svg{flex-shrink:0;width:17px;height:17px;}
+
+/* Dots de navegación */
+.promo-dots{display:flex;justify-content:center;gap:7px;padding:16px 0 2px;}
+.promo-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:rgba(42,35,24,.14);cursor:pointer;
+  transition:all .3s;border:none;padding:0;
+}
+.promo-dot.active{width:20px;border-radius:3px;background:rgba(42,35,24,.5);}
+
+@keyframes env-bob{
+  0%,100%{transform:translateY(0);box-shadow:0 8px 28px rgba(0,0,0,.12);}
+  50%    {transform:translateY(-5px);box-shadow:0 14px 32px rgba(0,0,0,.16);}
+}
+
+/* ── Pill minimizado ───────────────────────────── */
+#promo-pill{
+  display:none;
+  position:fixed;top:84px;right:20px;z-index:8500;
+  align-items:center;gap:9px;
+  background:#6B7D42;
+  border-radius:50px;
+  padding:11px 18px 11px 12px;
+  cursor:pointer;
+  box-shadow:0 6px 20px rgba(61,74,36,.35);
+  animation:env-bob 4s ease-in-out infinite;
+  transition:box-shadow .2s;
+}
+#promo-pill:hover{box-shadow:0 10px 26px rgba(61,74,36,.48);}
+#promo-pill.pill-visible{display:flex;}
+.pill-monogram{
+  width:30px;height:30px;border-radius:50%;
+  border:1px solid rgba(196,162,106,.4);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px;font-style:italic;color:#C4A26A;flex-shrink:0;
+}
+#promo-pill span{
+  font-family:'Inter',sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;
+  color:rgba(255,255,255,.8);
+}
+
+/* Click en la tarjeta la encoge */
+.env-card{ cursor:pointer; }
+.env-wa-btn,.promo-dot,.env-close{ cursor:pointer; }
+
+@media(max-width:900px){#promo-env-wrap{width:min(62vw,340px);top:80px;right:14px;}}
+@media(max-width:600px){
+  #promo-env-wrap{width:min(88vw,310px);top:72px;right:10px;}
+  .env-offer-num{font-size:44px;}
+  .env-promo-title{font-size:20px;}
 }
 </style>
 </head>
@@ -1433,7 +1565,10 @@ function closeLb(){document.getElementById('grpLb').classList.remove('open');}
 function lbNav(d){lbIdx=(lbIdx+d+LB_IMGS.length)%LB_IMGS.length;document.getElementById('grpLbImg').src=LB_IMGS[lbIdx];}
 document.getElementById('grpLb').addEventListener('click',function(e){if(e.target===this)closeLb();});
 
-function closePopup(){document.getElementById('popupBg').classList.remove('show');}
+function closePopup(){
+  document.getElementById('popupBg').classList.remove('show');
+  setTimeout(openPromos, 800); // lanza las nubes cuando se cierra el popup de grupos
+}
 // mostrar popup 2.5s después de cargar
 setTimeout(()=>document.getElementById('popupBg').classList.add('show'),2500);
 document.getElementById('popupBg').addEventListener('click',function(e){if(e.target===this)closePopup();});
@@ -1795,6 +1930,182 @@ function respond(txt){
 
 // badge al cargar
 setTimeout(()=>{if(!chatOpen)document.getElementById('chatBadge').classList.add('show');},5000);
+</script>
+
+<!-- ══ SOBRE INTERACTIVO CON PROMOCIONES ════════════════════════ -->
+<div id="promo-env-wrap">
+
+  <!-- Tarjetas que emergen al abrir el sobre -->
+  <div id="promo-card-container">
+
+    <!-- TARJETA 1: 6+1 noches -->
+    <div class="env-card ec-visible" id="promo-0" onclick="minimizePromo()">
+      <button class="env-close" onclick="event.stopPropagation();minimizePromo()" title="Cerrar">✕</button>
+      <div class="env-promo-tag">Hotel San José · Temporada 2027</div>
+      <div style="display:flex;align-items:flex-end;gap:10px;">
+        <div class="env-offer-num">6+1</div>
+        <svg style="margin-bottom:8px;opacity:.55;flex-shrink:0;" width="34" height="34" viewBox="0 0 64 64" fill="#6B7D42" xmlns="http://www.w3.org/2000/svg">
+          <!-- lazo -->
+          <ellipse cx="22" cy="14" rx="10" ry="6" transform="rotate(-20 22 14)"/>
+          <ellipse cx="42" cy="14" rx="10" ry="6" transform="rotate(20 42 14)"/>
+          <!-- nudo central -->
+          <circle cx="32" cy="16" r="5"/>
+          <!-- tapa -->
+          <rect x="14" y="20" width="36" height="7" rx="3"/>
+          <!-- caja -->
+          <rect x="16" y="27" width="32" height="22" rx="3"/>
+          <!-- cinta vertical -->
+          <rect x="29" y="20" width="6" height="29" rx="2" fill="#FDF9F3" opacity=".35"/>
+        </svg>
+      </div>
+      <div class="env-offer-desc">noches — la última, de regalo</div>
+      <div class="env-promo-title">Una noche de regalo</div>
+      <p class="env-promo-text">Quedate <strong>6 noches</strong> y la séptima es nuestra. Más sierras, más descanso, mismo presupuesto.</p>
+      <div class="env-divider"></div>
+      <a class="env-wa-btn"
+         href="https://wa.me/543517645037?text=Hola!%20Quisiera%20consultar%20por%20la%20promoci%C3%B3n%207%20noches%20al%20precio%20de%206."
+         target="_blank" rel="noopener" onclick="event.stopPropagation()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Consultá por WhatsApp
+      </a>
+      <div class="promo-dots" onclick="event.stopPropagation()">
+        <button class="promo-dot active" onclick="promoGo(0)"></button>
+        <button class="promo-dot" onclick="promoGo(1)"></button>
+        <button class="promo-dot" onclick="promoGo(2)"></button>
+      </div>
+    </div>
+
+    <!-- TARJETA 2: 4+1 Marzo 2027 -->
+    <div class="env-card" id="promo-1" onclick="minimizePromo()">
+      <button class="env-close" onclick="event.stopPropagation();minimizePromo()" title="Cerrar">✕</button>
+      <div class="env-promo-tag">Hotel San José · Marzo 2027</div>
+      <div style="display:flex;align-items:flex-end;gap:10px;">
+        <div class="env-offer-num">4+1</div>
+        <svg style="margin-bottom:8px;opacity:.55;flex-shrink:0;" width="30" height="34" viewBox="0 0 50 60" fill="#6B7D42" xmlns="http://www.w3.org/2000/svg">
+          <!-- luna creciente -->
+          <path d="M38 10 C20 12 8 25 10 42 C12 56 26 64 40 58 C28 56 18 46 18 32 C18 18 28 10 38 10Z"/>
+        </svg>
+      </div>
+      <div class="env-offer-desc">noches — la quinta, gratis</div>
+      <div class="env-promo-title">La quinta noche, gratis</div>
+      <p class="env-promo-text">Reservá <strong>4 noches</strong> en marzo y te obsequiamos la quinta. Más descanso, mismo presupuesto.</p>
+      <p class="env-promo-note">Válido exclusivamente durante marzo de 2027.</p>
+      <div class="env-divider"></div>
+      <a class="env-wa-btn"
+         href="https://wa.me/543517645037?text=Hola!%20Quisiera%20consultar%20por%20la%20promoci%C3%B3n%20de%20marzo%3A%204%20noches%20y%20la%205%C2%AA%20gratis."
+         target="_blank" rel="noopener" onclick="event.stopPropagation()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Consultá por WhatsApp
+      </a>
+      <div class="promo-dots" onclick="event.stopPropagation()">
+        <button class="promo-dot" onclick="promoGo(0)"></button>
+        <button class="promo-dot active" onclick="promoGo(1)"></button>
+        <button class="promo-dot" onclick="promoGo(2)"></button>
+      </div>
+    </div>
+
+    <!-- TARJETA 3: Pet Friendly -->
+    <div class="env-card" id="promo-2" onclick="minimizePromo()">
+      <button class="env-close" onclick="event.stopPropagation();minimizePromo()" title="Cerrar">✕</button>
+      <div class="env-promo-tag">Hotel San José · Pet Friendly</div>
+      <div style="display:flex;align-items:flex-end;gap:10px;">
+        <div class="env-offer-num">FREE</div>
+        <svg style="margin-bottom:8px;opacity:.55;flex-shrink:0;" width="36" height="36" viewBox="0 0 64 64" fill="#6B7D42" xmlns="http://www.w3.org/2000/svg">
+          <!-- almohadilla principal -->
+          <ellipse cx="32" cy="44" rx="13" ry="10"/>
+          <!-- dedos -->
+          <ellipse cx="13" cy="30" rx="6" ry="8" transform="rotate(-15 13 30)"/>
+          <ellipse cx="24" cy="22" rx="6" ry="8" transform="rotate(-5 24 22)"/>
+          <ellipse cx="40" cy="22" rx="6" ry="8" transform="rotate(5 40 22)"/>
+          <ellipse cx="51" cy="30" rx="6" ry="8" transform="rotate(15 51 30)"/>
+        </svg>
+      </div>
+      <div class="env-offer-desc">estadía para tu mascota</div>
+      <div class="env-promo-title">Tu perrito se aloja gratis</div>
+      <p class="env-promo-text">¿Viajás con tu compañero de cuatro patas? Los amigos peludos <strong>no abonan estadía.</strong> Las vacaciones son mejores juntos.</p>
+      <div class="env-divider"></div>
+      <a class="env-wa-btn"
+         href="https://wa.me/543517645037?text=Hola!%20Quisiera%20consultar%20por%20la%20promoci%C3%B3n%20para%20alojarme%20con%20mi%20mascota."
+         target="_blank" rel="noopener" onclick="event.stopPropagation()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Consultá por WhatsApp
+      </a>
+      <div class="promo-dots" onclick="event.stopPropagation()">
+        <button class="promo-dot" onclick="promoGo(0)"></button>
+        <button class="promo-dot" onclick="promoGo(1)"></button>
+        <button class="promo-dot active" onclick="promoGo(2)"></button>
+      </div>
+    </div>
+
+  </div><!-- /promo-card-container -->
+
+</div><!-- /promo-env-wrap -->
+
+<!-- Pill minimizado — aparece cuando el usuario cierra la tarjeta -->
+<div id="promo-pill" onclick="reopenPromo()" title="Ver promociones">
+  <div class="pill-monogram">SJ</div>
+  <span>Promociones</span>
+</div>
+
+<script>
+/* ══ PROMOCIONES ════════════════════════════════════════════════ */
+(function(){
+  const ROTATE_MS = 7000;
+  let current = 0, rotateTimer = null, minimized = false;
+  const cards  = document.querySelectorAll('.env-card');
+  const wrap   = document.getElementById('promo-env-wrap');
+  const pill   = document.getElementById('promo-pill');
+
+  function showCard(idx){
+    if(idx >= cards.length) idx = 0;
+    cards.forEach((c,i) => c.classList.toggle('ec-visible', i === idx));
+    document.querySelectorAll('.promo-dot').forEach((d,i) => d.classList.toggle('active', i === idx));
+    current = idx;
+  }
+
+  function startRotate(){
+    clearInterval(rotateTimer);
+    if(cards.length < 2) return;
+    rotateTimer = setInterval(() => showCard((current + 1) % cards.length), ROTATE_MS);
+  }
+
+  // Muestra la tarjeta completa
+  function show(){
+    minimized = false;
+    wrap.style.display = 'block';
+    pill.classList.remove('pill-visible');
+    showCard(0);
+    startRotate();
+  }
+
+  // Encoge la tarjeta → muestra el pill
+  window.minimizePromo = function(){
+    minimized = true;
+    wrap.style.display = 'none';
+    pill.classList.add('pill-visible');
+    clearInterval(rotateTimer);
+  };
+
+  // Reabre desde el pill
+  window.reopenPromo = function(){ show(); };
+
+  window.promoGo = function(idx){
+    clearInterval(rotateTimer);
+    showCard(idx);
+    startRotate();
+  };
+
+  // Alias para closePopup() del popup de grupos
+  window.openPromos = window.openEnvelope = show;
+
+  // Si el usuario minimizó, reabre al pasar el primer tercio de la página
+  window.addEventListener('scroll', function(){
+    if(!minimized) return;
+    if(window.scrollY + window.innerHeight >= document.body.scrollHeight / 3){
+      show();
+    }
+  }, {passive:true});
+})();
 </script>
 </body>
 </html>
